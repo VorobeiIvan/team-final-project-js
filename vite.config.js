@@ -26,5 +26,6 @@ export default defineConfig(({ command }) => {
       outDir: '../dist',
     },
     plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.otf'],
   };
 });
