@@ -6,17 +6,19 @@
 */
 @import url('./reset.css');
 @import url('./fonts.css');
+@import url('./common.css');
 @import url('./header.css');
+@import url('./footer.css');
 
 :root {
     font-family: 'DMSans', sans-serif;
     font-size: 16px;
     line-height: 24px;
-
     color: #242424;
     background-color: rgba(255, 255, 255, 0.87);
-
-    font-synthesis: none;
+    --basic-dark: #242424;
+    --basic-light: #F4F4F4;
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
