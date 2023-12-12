@@ -4,43 +4,27 @@
   | default @import url()
   |============================
 */
-@import url('./reset.css');
 
+@import url('./reset.css');
+@import url('./fonts.css');
+@import 'modern-normalize/modern-normalize.css';
+@import url('./loader.css');
 @import url('./header.css');
 @import url('./social-media.css');
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+    font-family: 'DMSans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    color: #242424;
+    --main-black: #242424;
+    background-color: rgba(255, 255, 255, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
 
-@font-face {
-  font-family: 'DMSans';
-  src: url('/fonts/DMSans-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'DMSansMedium';
-  src: url('/fonts/DMSans-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'DMSansItalic';
-  src: url('/fonts/DMSans-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
