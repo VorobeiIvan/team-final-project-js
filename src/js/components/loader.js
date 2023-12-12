@@ -1,7 +1,9 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-const loader = ({ targetElement, width, height } = {}) => {
-  disableBodyScroll(document.body);
+const loader = ({ targetElement, width, height, disableScroll = false } = {}) => {
+  if (disableScroll) {
+    disableBodyScroll(document.body);
+  }
   const appendElement = targetElement || document.body;
   const loaderContainer = document.createElement('div');
   loaderContainer.classList.add('loader-container');
@@ -14,6 +16,8 @@ const loader = ({ targetElement, width, height } = {}) => {
 
   return () => {
     appendElement.removeChild(loaderContainer);
-    enableBodyScroll(document.body);
+    if (disableScroll) {
+      enableBodyScroll(document.body);
+    }
   };
 };
