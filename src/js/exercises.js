@@ -1,17 +1,14 @@
-import { fetchExercises, fetchFilter } from './api.js';
+import { fetchExercises } from './api.js';
+import refs from './refs.js';
 
-const divExercises = document.getElementById('exercises');
-const getExercisesButton = document.getElementById('filters-exercises');
-
-
-getExercisesButton.addEventListener('click', async () => {
+refs.getExercisesButton.addEventListener('click', async () => {
   const data = await fetchExercises({
     page: 1,
     perPage: 10,
     filter: { keyword: 'cable low seated row', bodypart: 'back' },
   });
   console.log(data);
-  divExercises.innerHTML = JSON.stringify(data.results);
+  refs.divExercises.innerHTML = JSON.stringify(data.results);
 });
 
 
