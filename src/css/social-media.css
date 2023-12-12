@@ -1,16 +1,25 @@
-.social-media-list{
+/* social-media.css */
+.social-media-list {
     display: flex;
-  gap: 12px;
+    gap: 12px;
 }
-.social-media-link{
+
+.social-media-link {
     display: flex;
     padding: 8px;
     align-items: center;
-
     border-radius: 10px;
     border: 1px solid rgba(36, 36, 36, 0.10);
-}       
-.social-media-icon{
-    fill:#242424;
 }
 
+.social-media-icon {
+    fill: #242424;
+}
+
+.social-media-link:hover .social-media-icon,.social-media-link:focus .social-media-icon {
+
+    fill: #F4F4F4;
+  
+}
+.social-media-link:hover,.social-media-link:focus{border-color:  rgba(36, 36, 36, 0.10);
+background: rgba(36, 36, 36, 0.80);}

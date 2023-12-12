@@ -1,82 +1,130 @@
 <!-- header -->
-
 <header class="page-header">
   <!-- header container -->
-  <div class="header-container container">
+  <div class="header-container container ">
       <!-- header navigation -->
-
       <!-- logo -->
       <a class="logo" href="./index.html">
-        <svg class="icon-logo" width="132" height="24" aria-label="logo your energy ">
-          <use href="../img/logo-min.svg"></use>
-        </svg>
+          <svg class="icon-logo" width="132" height="24" aria-label="logo your energy">
+              <use href="../img/logo-min.svg"></use>
+          </svg>
       </a>
       <!-- navigation -->
-      <nav class="header-nav">
+      <nav class="header-nav ">
           <ul class="header-nav-list">
               <!-- menu -->
-              <li class="header-nav-item">
-                  <a class="header-nav-link" href="./home.html">
-                    Home
+              <li class="header-nav-item ">
+                  <a class="header-nav-link  js-active" href="../index.html">
+                      Home
                   </a>
               </li>
-              <li class="header-nav-item">
-                  <a class="header-nav-link" href="./exercises.html">
-                    Favorites
+              <li class="header-nav-item ">
+                  <a class="header-nav-link" href="../favorites.html">
+                      Favorites
                   </a>
               </li>
           </ul>
       </nav>
 
-     <!-- Добавляємо блок social media -->
-     <div id="socialMediaContainer"></div>
+<!-- social media -->
+<div class="social-media-container">
+  <ul class="social-media-list">
+      <!-- facebook -->
+      <li class="social-media-item">
+          <a class="social-media-link" href="https://www.facebook.com/goITclub/" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="social-media-icon" width="28" height="28" aria-label="facebook icon">
+                  <use href="./img/sprite.svg#facebook"></use>
+              </svg>
+          </a>
+      </li>
+      <!-- instagram -->
+      <li class="social-media-item">
+          <a class="social-media-link" href="https://www.instagram.com/goitclub/" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="social-media-icon" width="28" height="28" aria-label="instagram icon">
+                  <use href="./img/sprite.svg#instagram"></use>
+              </svg>
+          </a>
+      </li>
+      <!-- youtube -->
+      <li class="social-media-item">
+          <a class="social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="social-media-icon" width="28" height="28" aria-label="youtube icon">
+                  <use href="./img/sprite.svg#youtube"></use>
+              </svg>
+          </a>
+      </li>
+  </ul>
+</div>
 
       <!-- mobile burger menu -->
       <!--mobile header  -->
-      <button class="burger-menu-btn btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button class="burger-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="burger-icon" width="32" height="32" aria-label="burger menu icon for mobile">
-              <use href="../img/sprite.svg#burger-menu"></use>
+              <use href="./img/sprite.svg#burger-menu"></use>
           </svg>
       </button>
 
       <!-- modal burger menu  -->
-      <div class="menu-container js-menu-container" id="mobile-menu">
+      <div class="menu-container  js-menu-container" id="mobile-menu">
           <div class="modal">
               <button class="close-btn js-close-menu" type="button">
                   <svg class="close-modal-btn-icon" width="16" height="16"
                       aria-label="closing button icon for burger menu mobile">
-                      <use href="../img/sprite.svg#close"></use>
+                      <use href="./img/sprite.svg#close"></use>
                   </svg>
               </button>
               <nav class="nav-burger-menu">
                   <ul class="nav-burger-menu-list">
                       <li class="nav-burger-menu-item">
                           <a class="nav-burger-menu-link" href="./home.html">
-                            Home
+                              Home
                           </a>
                       </li>
                       <li class="nav-burger-menu-item">
                           <a class="nav-burger-menu-link" href="./exercises.html">
-                            Favorites
+                              Favorites
                           </a>
                       </li>
-                   
                   </ul>
               </nav>
 
-        <!-- Добавляємо блок social media -->
-        <div id="socialMediaContainerInBurgerMenu"></div>
-             
+     <!-- social media -->
+<div class="social-media-container">
+  <ul class="social-media-list">
+      <!-- facebook -->
+      <li class="social-media-item">
+          <a class="social-media-link" href="https://www.facebook.com/goITclub/" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="social-media-icon" width="28" height="28" aria-label="facebook icon">
+                  <use href="./img/sprite.svg#facebook"></use>
+              </svg>
+          </a>
+      </li>
+      <!-- instagram -->
+      <li class="social-media-item">
+          <a class="social-media-link" href="https://www.instagram.com/goitclub/" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="social-media-icon" width="28" height="28" aria-label="instagram icon">
+                  <use href="./img/sprite.svg#instagram"></use>
+              </svg>
+          </a>
+      </li>
+      <!-- youtube -->
+      <li class="social-media-item">
+          <a class="social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
+              rel="noopener noreferrer">
+              <svg class="social-media-icon" width="28" height="28" aria-label="youtube icon">
+                  <use href="./img/sprite.svg#youtube"></use>
+              </svg>
+          </a>
+      </li>
+  </ul>
+</div>
           </div>
       </div>
   </div>
-
-  <!-- Скрипт для завантаження соціальних медіа -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $("#socialMediaContainer, #socialMediaContainerInBurgerMenu").load("partials/social-media.html");
-    });
-  </script>
-
+  
 </header>
