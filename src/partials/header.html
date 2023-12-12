@@ -1,13 +1,81 @@
-<header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
+<!-- header -->
 
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
-      </li>
-    </ul>
-  </nav>
+<header class="page-header">
+  <!-- header container -->
+  <div class="header-container container">
+      <!-- header navigation -->
+
+      <!-- logo -->
+      <a class="logo" href="./index.html">
+        <svg class="icon-logo" width="132" height="24" aria-label="logo your energy ">
+          <use href="../img/logo-min.svg"></use>
+        </svg>
+      </a>
+      <!-- navigation -->
+      <nav class="header-nav">
+          <ul class="header-nav-list">
+              <!-- menu -->
+              <li class="header-nav-item">
+                  <a class="header-nav-link" href="./home.html">
+                    Home
+                  </a>
+              </li>
+              <li class="header-nav-item">
+                  <a class="header-nav-link" href="./exercises.html">
+                    Favorites
+                  </a>
+              </li>
+          </ul>
+      </nav>
+
+     <!-- Добавляємо блок social media -->
+     <div id="socialMediaContainer"></div>
+
+      <!-- mobile burger menu -->
+      <!--mobile header  -->
+      <button class="burger-menu-btn btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="burger-icon" width="32" height="32" aria-label="burger menu icon for mobile">
+              <use href="../img/sprite.svg#burger-menu"></use>
+          </svg>
+      </button>
+
+      <!-- modal burger menu  -->
+      <div class="menu-container js-menu-container" id="mobile-menu">
+          <div class="modal">
+              <button class="close-btn js-close-menu" type="button">
+                  <svg class="close-modal-btn-icon" width="16" height="16"
+                      aria-label="closing button icon for burger menu mobile">
+                      <use href="../img/sprite.svg#close"></use>
+                  </svg>
+              </button>
+              <nav class="nav-burger-menu">
+                  <ul class="nav-burger-menu-list">
+                      <li class="nav-burger-menu-item">
+                          <a class="nav-burger-menu-link" href="./home.html">
+                            Home
+                          </a>
+                      </li>
+                      <li class="nav-burger-menu-item">
+                          <a class="nav-burger-menu-link" href="./exercises.html">
+                            Favorites
+                          </a>
+                      </li>
+                   
+                  </ul>
+              </nav>
+
+        <!-- Добавляємо блок social media -->
+        <div id="socialMediaContainerInBurgerMenu"></div>
+             
+          </div>
+      </div>
+  </div>
+
+  <!-- Скрипт для завантаження соціальних медіа -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#socialMediaContainer, #socialMediaContainerInBurgerMenu").load("partials/social-media.html");
+    });
+  </script>
 </header>
