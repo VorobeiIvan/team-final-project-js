@@ -1,0 +1,37 @@
+.section {
+    margin: 0 20px 40px;
+}
+
+.hero-section {
+    position: relative;
+}
+
+.hero-title-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+.hero-title-icon {
+    position: absolute;
+    top: 5px;
+}
+
+.hero-title {
+    width: 100%;
+    color: #242424;;
+    font-size: 38px;
+    text-indent: 50px;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.76px;
+    margin-bottom: 20px;
+}
+
+.hero-image-small-desktop {
+    display: none;
+}
+
+.hero-hashtag-item::before {
+    content: "#";
+}
