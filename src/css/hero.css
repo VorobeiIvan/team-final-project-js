@@ -42,6 +42,22 @@
 .hero-image img {
     border-radius: 30px;
     overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.hero-hashtags-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hero-hashtag-item {
+    font-family: 'DMSans';
+    font-size: 14px;
+    line-height: 1.28;
+    border-radius: 30px;
+    border: 1px solid #242424;
+    padding: 4px 12px;
 }
 
 .hero-hashtag-item::before {
