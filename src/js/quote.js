@@ -1,10 +1,7 @@
 import { fetchQuote } from './api.js';
+import refs from './refs.js';
 
-const divQuote = document.getElementById('result-quote');
-const getQuoteButton = document.getElementById('quote');
-
-
-getQuoteButton.addEventListener('click', async () => {
+refs.getQuoteButton.addEventListener('click', async () => {
   const data = await fetchQuote();
-  divQuote.innerHTML = JSON.stringify(data);
+  refs.divQuote.innerHTML = JSON.stringify(data);
 });
