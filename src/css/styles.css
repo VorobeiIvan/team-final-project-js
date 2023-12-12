@@ -4,16 +4,21 @@
   | default @import url()
   |============================
 */
+
 @import url('./reset.css');
 @import url('./fonts.css');
+@import 'modern-normalize/modern-normalize.css';
 @import url('./header.css');
+@import url('./loader.css');
 
 :root {
     font-family: 'DMSans', sans-serif;
     font-size: 16px;
     line-height: 24px;
 
+
     color: #242424;
+    --main-black: #242424;
     background-color: rgba(255, 255, 255, 0.87);
 
     font-synthesis: none;
