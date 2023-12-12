@@ -34,6 +34,13 @@
 @font-face {
   font-family: 'DMSansMedium';
   src: url('/fonts/DMSans-Medium.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'DMSansItalic';
+  src: url('/fonts/DMSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
 }
