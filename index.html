@@ -9,10 +9,10 @@
 
   
   <script type="module" crossorigin src="/team-final-project-js/commonHelpers2.js"></script>
-  <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/header-737095d3.js">
-  <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-11491b9f.js">
-  <link rel="stylesheet" href="/team-final-project-js/assets/vendor-e5212ee8.css">
-  <link rel="stylesheet" href="/team-final-project-js/assets/styles-990516d1.css">
+  <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-61000f44.js">
+  <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/burger-menu-5139967a.js">
+  <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
+  <link rel="stylesheet" href="/team-final-project-js/assets/styles-17a168e3.css">
 </head>
 
 <body>
@@ -191,6 +191,7 @@
   </div>
 </div>
 
+    <div id='tui-pagination-container' class='tui-pagination pagination'></div>
     <button id='quote'>Get Quote</button>
 <div id='result-quote'>request</div>
     <section class='footer'>
@@ -201,38 +202,31 @@
         <div class='footer-svg-container flex-column'>
           <div style='color: #cacaca'>
             <a href='./index.html' class='footer-logo-link'>
-              <!--          <svg class='footer-logo-link-img' width='132' height='24'>-->
-              <!--            <use href='./img/sprite.svg#'></use>-->
-              <!--          </svg>-->
-              LOGO
+              <svg class='footer-logo-link-img' width='132' height='24'>
+                <use href='/team-final-project-js/assets/sprite-a91b1b92.svg#logo'></use>
+              </svg>
             </a>
 
             <ul class='footer-social-networks'>
               <li class='footer-social-item'>
-                <a
-                  href='https://www.facebook.com/goITclub/'
-                  class='footer-link-network' target='_blank' aria-label='Facebook' rel='noopener noreferrer'
-                >
+                <a href='https://www.facebook.com/goITclub/' class='footer-link-network' target='_blank'
+                   aria-label='Facebook' rel='noopener noreferrer'>
                   <svg class='footer-svg' width='24' height='24'>
                     <use href='/team-final-project-js/assets/sprite-a91b1b92.svg#facebook'></use>
                   </svg>
                 </a>
               </li>
               <li class='footer-social-item'>
-                <a
-                  href='https://www.instagram.com/goitclub/'
-                  class='footer-link-network' target='_blank' aria-label='Instagram' rel='noopener noreferrer'
-                >
+                <a href='https://www.instagram.com/goitclub/' class='footer-link-network' target='_blank'
+                   aria-label='Instagram' rel='noopener noreferrer'>
                   <svg class='footer-svg' width='24' height='24'>
                     <use href='/team-final-project-js/assets/sprite-a91b1b92.svg#instagram'></use>
                   </svg>
                 </a>
               </li>
               <li class='footer-social-item'>
-                <a
-                  href='https://www.youtube.com/c/GoIT'
-                  class='footer-link-network' target='_blank' aria-label='Youtube' rel='noopener noreferrer'
-                >
+                <a href='https://www.youtube.com/c/GoIT' class='footer-link-network' target='_blank'
+                   aria-label='Youtube' rel='noopener noreferrer'>
                   <svg class='footer-svg' width='24' height='24'>
                     <use href='/team-final-project-js/assets/sprite-a91b1b92.svg#youtube'></use>
                   </svg>
@@ -250,9 +244,9 @@
             with us
           </h2>
           <div class='footer-term-policy-rights'>
-            <a href='#'>Privacy Policy </a>
+            <a href='./privacy-policy.html' class='link-hover' target='_blank'>Privacy Policy </a>
             <span> / </span>
-            <a href='#'> Terms of Service</a>
+            <a href='./terms-of-service.html' class='link-hover' target='_blank'> Terms of Service</a>
           </div>
         </div>
 
@@ -261,14 +255,9 @@
             Subscribe and learn about new exercises!
           </p>
           <form class='footer-form' style='margin-bottom: 70px'>
-            <label class='footer-label-form-email' for='footer-email-input'>
-              <input
-                name='email'
-                type='email'
-                class='footer-email-input'
-                id='footer-email-input'
-                placeholder='Email'
-              />
+            <label class='footer-label-form-email' for='footer-email-input1'>
+              <input name='email' type='email' class='footer-email-input' id='footer-email-input1'
+                     placeholder='Email' />
             </label>
             <button type='submit' class='footer-btn-email'>Send</button>
           </form>
@@ -285,13 +274,7 @@
           </p>
           <form class='footer-form' style='margin-bottom: 70px'>
             <label class='footer-label-form-email' for='footer-email-input'>
-              <input
-                name='email'
-                type='email'
-                class='footer-email-input'
-                id='footer-email-input'
-                placeholder='Email'
-              />
+              <input name='email' type='email' class='footer-email-input' id='footer-email-input' placeholder='Email' />
             </label>
             <button type='submit' class='footer-btn-email'>Send</button>
           </form>
@@ -299,9 +282,9 @@
 
             <div class='footer-term-policy-rights'>
               <p class='hide-copyright'>Your Energy. All rights reserved.</p>
-              <a href='#'>Privacy Policy </a>
+              <a href='./privacy-policy.html' class='link-hover' target='_blank'>Privacy Policy </a>
               <span> / </span>
-              <a href='#'> Terms of Service</a>
+              <a href='./terms-of-service.html' class='link-hover' target='_blank'> Terms of Service</a>
             </div>
             <p class='footer-term-policy-rights'>&copy; 2023</p>
           </div>
@@ -317,7 +300,7 @@
         <use href="/team-final-project-js/assets/sprite-a91b1b92.svg#arrow-top"></use>
     </svg>
 </button>
-    
+
     
   </body>
 </html>
