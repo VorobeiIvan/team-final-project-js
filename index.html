@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/team-final-project-js/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/team-final-project-js/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
     <!-- styles -->
-  
-  <script type="module" crossorigin src="/team-final-project-js/assets/vendor-709355d0.js"></script>
-  <script type="module" crossorigin src="/team-final-project-js/assets/burger-menu-2142bf7a.js"></script>
-  <link rel="stylesheet" href="/team-final-project-js/assets/burger-menu-9291b5e7.css">
-  <link rel="stylesheet" href="/team-final-project-js/assets/vendor-e5212ee8.css">
-</head>
+    
+    <script type="module" crossorigin src="/team-final-project-js/assets/vendor-11491b9f.js"></script>
+    <script type="module" crossorigin src="/team-final-project-js/assets/burger-menu-bcc929e8.js"></script>
+    <link rel="stylesheet" href="/team-final-project-js/assets/burger-menu-0565af36.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/vendor-e5212ee8.css">
+  </head>
 
-<body>
-  <header class="page-header">
+  <body>
+    <header class="page-header">
   <!-- header container -->
   <div class="header-container container">
       <!-- header navigation -->
@@ -145,7 +144,7 @@
   </div>
 
 </header>
-  <section class="container hero-section">
+    <section class="container hero-section">
     <div class="hero-title-container">
         <svg class="hero-title-icon" width="38" height="38">
             <use href="/team-final-project-js/assets/sprite-8ee5b342.svg#icon-sun"></use>
@@ -175,20 +174,27 @@
         <li class="hero-hashtag-item">Diet</li>
     </ul>
 </section>
-
-
+    <div class="container categories-container">
   <div class="exercises-header">
-  <h2 class="exercises-title">Exercises</h2>
-  <ul id="filters" class="filters-list"></ul>
+    <h2 class="exercises-title">Exercises</h2>
+    <ul id="filters" class="filters-list"></ul>
+  </div>
+
+  <div id="categories-wrapper" class="categories-wrapper">
+    <ul id="categories" class="categories-list"></ul>
+  </div>
+
+  <div class="categories-loader-container">
+    <div class="loader" id="categories-loader"></div>
+  </div>
 </div>
-<ul id="categories" class="categories-list"></ul>
 
-  <button id='filters-exercises'>Get exercises</button>
-<div id='exercises'>request</div>
-  <button id='quote'>Get Quote</button>
+    <!-- <button id='filters-exercises'>Get exercises</button>
+<div id='exercises'>request</div> -->
+
+    <button id='quote'>Get Quote</button>
 <div id='result-quote'>request</div>
-
-  <section class='footer'>
+    <section class='footer'>
   <div class='container footer-container'>
     <div class='footer-wrapper'>
       <div class='footer-form-wrapper'>
@@ -308,7 +314,6 @@
   </div>
 </section>
 
-  
-</body>
-
+    
+  </body>
 </html>
