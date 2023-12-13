@@ -13,16 +13,9 @@ html {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    line-height: 1.5;
+    line-height: 0.5;
 }
 
 .scroll-up-button:hover {
     color: blue;
-}
-
-@media screen and (min-width: 768px) {
-    .scroll-up-button {
-        bottom: 20px;
-        right: 20px;
-    }
 }
