@@ -3,51 +3,38 @@ import storageApi from '../common/storage';
 
 const refs = {
   galleryRef: document.querySelector('.gallery'),
-  //   watched: document.querySelector('.watched'),
+  //   favorites: document.querySelector('.favorites'),
   closeBtn: document.querySelector('.modal_close_btn'),
   backdrop: document.querySelector('.backdrop'),
   modalContainer: document.querySelector('.modal-container'),
   //   tasksLoader: document.querySelector('.tasks-loader'),
-  //   addWatched: document.querySelector('.add-to-favorites'),
-  //   addQueued: document.querySelector('.give-a-rating'),
-  //   WATCHED_KEY: 'watched-films-list',
-  //   QUEUED_KEY: 'queued-films-list',
+  //   addFavorites: document.querySelector('.add-to-favorites'),
+  //   giveRating: document.querySelector('.give-a-rating'),
+  //   FAVORITES_KEY: 'favorites-list',
   cardRef: document.querySelector('.card'),
 };
 
-// refs.galleryRef.addEventListener('click', onGalleryClick);
-// refs.watched.addEventListener('click', onGalleryClick);
+// refs.galleryRef.addEventListener('click', onCardClick);
+// refs.favorites.addEventListener('click', onCardClick);
 console.log('refs.modalContainer: ', refs.modalContainer);
 refs.cardRef.addEventListener('click', openModal);
 
-// let title = null;
-// let poster_path = null;
-// let release_date = null;
-// let genresName = null;
-// let vote = null;
-// let votes = null;
-// let id = null;
-// let movieData = null;
-
 export function onCardClick(e) {
   e.preventDefault();
-  //   const isMovieCard =
+  //   const isCard =
   //     e.target.closest('.gallery__item') || e.target.closest('.slider-card');
-  //   if (!isMovieCard) {
+  //   if (!isCard) {
   //     return;
   //   }
 
-  //   openModal(isMovieCard.id);
+  //   openModal(isCard.id);
 
   openModal(exerciseId);
 }
 
 async function fetchExerciseDetails(exerciseId) {
   const url = `https://your-energy.b.goit.study/api/exercises/64f389465ae26083f39b17a2`;
-  const response = await fetch(
-    url
-    // `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`
-  );
+  const response = await fetch(url);
   const exerciseDetails = await response.json();
   return exerciseDetails;
 }
@@ -56,15 +43,6 @@ function openModal(exerciseId) {
   fetchExerciseDetails(exerciseId).then(exercise => {
     // console.log('exercise: ', exercise);
     createCardMarkup(exercise);
-    // id = film.id;
-    // title = film.title;
-    // votes = film.vote_count;
-    // poster_path = film.poster_path;
-    // release_date = film.release_date.split('-')[0];
-    // genresName = film.genres.map(genre => genre.name).join(', ');
-    // movieData = { ...film, genresName, release_date };
-    // comparisonQueue();
-    // comparisonWatched();
   });
   refs.backdrop.classList.remove('is-hidden');
   document.body.classList.add('no-scroll');
@@ -72,35 +50,18 @@ function openModal(exerciseId) {
   closeModal();
 }
 
-// function comparisonQueue() {
-//   refs.addQueued.textContent = 'add to queue';
-//   refs.addQueued.style.backgroundColor = '#fff';
-//   refs.addQueued.style.color = '#000';
-//   const savedData = storageApi.load(refs.QUEUED_KEY);
-//   if (savedData) {
-//     for (const el of savedData) {
-//       if (JSON.stringify(el) === JSON.stringify(movieData)) {
-//         refs.addQueued.textContent = 'remove from queue';
-//         refs.addQueued.style.backgroundColor = '#ff6b01';
-//         refs.addQueued.style.color = '#fff';
-//         break;
-//       }
-//     }
-//   }
-// }
-
-// function comparisonWatched() {
-//   refs.addWatched.textContent = 'add to watched';
-//   refs.addWatched.style.backgroundColor = '#fff';
-//   refs.addWatched.style.color = '#000';
-//   const savedDate = storageApi.load(refs.WATCHED_KEY);
+// function comparisonFavorites() {
+//   refs.addFavorite.textContent = 'add to favorites';
+//   refs.addFavorites.style.backgroundColor = '#fff';
+//   refs.addFavorites.style.color = '#000';
+//   const savedDate = storageApi.load(refs.FAVORITES_KEY);
 
 //   if (savedDate) {
 //     for (const el of savedDate) {
-//       if (JSON.stringify(el) === JSON.stringify(movieData)) {
-//         refs.addWatched.textContent = 'remove from watched';
-//         refs.addWatched.style.backgroundColor = '#ff6b01';
-//         refs.addWatched.style.color = '#fff';
+//       if (JSON.stringify(el) === JSON.stringify(data)) {
+//         refs.addFavorites.textContent = 'remove from favorites';
+//         refs.addFavorites.style.backgroundColor = '#ff6b01';
+//         refs.addFavorites.style.color = '#fff';
 //         break;
 //       }
 //     }
@@ -129,82 +90,44 @@ function closeModal() {
   });
 }
 
-// refs.addWatched.addEventListener('click', e => {
-//   if (e.target.textContent == 'remove from watched') {
-//     const savedData = storageApi.load(refs.WATCHED_KEY);
+// refs.addFavorites.addEventListener('click', e => {
+//   if (e.target.textContent == 'remove from favorites') {
+//     const savedData = storageApi.load(refs.FAVORITES_KEY);
 //     for (let i = 0; i < savedData.length; i++) {
-//       if (JSON.stringify(savedData[i]) === JSON.stringify(movieData)) {
+//       if (JSON.stringify(savedData[i]) === JSON.stringify(data)) {
 //         savedData.splice(i, 1);
 //         console.log(savedData);
-//         storageApi.save(refs.WATCHED_KEY, savedData);
-//         Notify.info(`Film is remove from watched`);
-//         refs.addWatched.textContent = 'add to watched';
-//         refs.addWatched.style.backgroundColor = '#fff';
-//         refs.addWatched.style.color = '#000';
+//         storageApi.save(refs.FAVORITES_KEY, savedData);
+//         Notify.info(`Film is remove from favorites`);
+//         refs.addFavorites.textContent = 'add to watched';
+//         refs.addFavorites.style.backgroundColor = '#fff';
+//         refs.addFavorites.style.color = '#000';
 //       }
 //     }
 //   } else {
 //     if (
-//       !storageApi.load(refs.WATCHED_KEY) ||
-//       storageApi.load(refs.WATCHED_KEY).length === 0
+//       !storageApi.load(refs.FAVORITES_KEY) ||
+//       storageApi.load(refs.FAVORITES_KEY).length === 0
 //     ) {
-//       storageApi.save(refs.WATCHED_KEY, [movieData]);
-//       Notify.info(`Added to watched`, {
+//       storageApi.save(refs.FAVORITES_KEY, [data]);
+//       Notify.info(`Added to favorites`, {
 //         background: '#ff6b01',
 //       });
-//       refs.addWatched.textContent = 'remove from watched';
-//       refs.addWatched.style.backgroundColor = '#ff6b01';
-//       refs.addWatched.style.color = '#fff';
+//       refs.addFavorites.textContent = 'remove from watched';
+//       refs.addFavorites.style.backgroundColor = '#ff6b01';
+//       refs.addFavorites.style.color = '#fff';
 //       return;
 //     }
-//     const savedData = storageApi.load(refs.WATCHED_KEY);
-//     savedData.push(movieData);
-//     storageApi.save(refs.WATCHED_KEY, savedData);
-//     Notify.info(`Added to watched`);
-//     refs.addWatched.textContent = 'remove from watched';
-//     refs.addWatched.style.backgroundColor = '#ff6b01';
-//     refs.addWatched.style.color = '#fff';
+//     const savedData = storageApi.load(refs.FAVORITES_KEY);
+//     savedData.push(data);
+//     storageApi.save(refs.FAVORITES_KEY, savedData);
+//     Notify.info(`Added to favorites`);
+//     refs.addFavorites.textContent = 'remove from watched';
+//     refs.addFavorites.style.backgroundColor = '#ff6b01';
+//     refs.addFavorites.style.color = '#fff';
 //   }
 
-//   refs.addWatched.removeEventListener;
-// });
-
-// refs.addQueued.addEventListener('click', e => {
-//   if (e.target.textContent == 'remove from queue') {
-//     const savedData = storageApi.load(refs.QUEUED_KEY);
-//     for (let i = 0; i < savedData.length; i++) {
-//       if (JSON.stringify(savedData[i]) === JSON.stringify(movieData)) {
-//         savedData.splice(i, 1);
-//         console.log(savedData);
-//         storageApi.save(refs.QUEUED_KEY, savedData);
-//         Notify.info(`Film is remove from Queue`);
-//         refs.addQueued.textContent = 'add to queue';
-//         refs.addQueued.style.backgroundColor = '#fff';
-//         refs.addQueued.style.color = '#000';
-//       }
-//     }
-//   } else {
-//     if (
-//       !storageApi.load(refs.QUEUED_KEY) ||
-//       storageApi.load(refs.QUEUED_KEY).length === 0
-//     ) {
-//       storageApi.save(refs.QUEUED_KEY, [movieData]);
-//       Notify.info(`Added to Queue`);
-//       refs.addQueued.textContent = 'remove from queue';
-//       refs.addQueued.style.backgroundColor = '#ff6b01';
-//       refs.addQueued.style.color = '#fff';
-//       return;
-//     }
-//     const savedData = storageApi.load(refs.QUEUED_KEY);
-//     savedData.push(movieData);
-//     storageApi.save(refs.QUEUED_KEY, savedData);
-//     Notify.info(`Added to Queue`);
-//     refs.addQueued.textContent = 'remove from queue';
-//     refs.addQueued.style.backgroundColor = '#ff6b01';
-//     refs.addQueued.style.color = '#fff';
-//   }
-
-//   refs.addQueued.removeEventListener;
+//   refs.addFavorites.removeEventListener;
 // });
 
 // iziToast.show({
