@@ -5,6 +5,5 @@ export default {
   divCategories: document.getElementById('categories'),
   filtersRef: document.getElementById('filters'),
   divExercises: document.getElementById('exercises'),
-  getExercisesButton: document.getElementById('filters-exercises'),
   footerForm: document.querySelectorAll('.footer-form'),
 };
