@@ -1,73 +1,92 @@
-.container{
+.page-header {
   max-width: 100%;
-  min-height: 102px;
+  padding: 20px 20px 40px 20px;
 }
 
-.header-container{
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
 }
 
-.header-nav-list{
+.header-nav-list {
   min-width: 265px;
   min-height: 52px;
 
   border-radius: 60px;
-  background: #242424;
+  background: var(--basic-dark);
 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 18px;
-  color: #F4F4F4;
-
-font-size: 16px;
-font-weight: 400;
-line-height: 24px; /* 150% */
-}
-.active-page{
-color: #242424;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px; /* 150% */
-
-display: inline-flex;
-padding: 6px 12px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-
-border-radius: 30px;
-background: #F4F4F4;
+  color: var(--basic-light);
 }
 
-.logo{
+.active-page {
+  color: var(--basic-dark);
+
+  display: inline-flex;
+  padding: 6px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 30px;
+  background: var(--basic-light);
+}
+
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 
-
-
-/* Адаптація */
-
 @media (max-width: 767px) {
-  .header-nav,.header-social-media-container{
+
+  .header-nav,
+  .header-social-media-container {
     display: none;
-  
-    }
-    .burger-menu-btn { position:relative;}
+
+  }
+
+  .burger-menu-btn {
+    position: relative;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .burger-menu-icon,.burger-menu-btn{
+
+  .burger-menu-icon,
+  .burger-menu-btn {
     display: none;
   }
-  .burger-menu-btn { position:absolute;}
+
+  .burger-menu-btn {
+    position: absolute;
+  }
+
+  .page-header {
+    max-width: 100%;
+    padding: 24px 32px 50px 32px;
+  }
 }
 
+@media screen and (min-width: 1440px) {
 
+  .burger-menu-icon,
+  .burger-menu-btn {
+    display: none;
+  }
 
+  .burger-menu-btn {
+    position: absolute;
+  }
+
+  .page-header {
+    max-width: 100%;
+    padding: 28px 32px 76px 32px;
+  }
+}
