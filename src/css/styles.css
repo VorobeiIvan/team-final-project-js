@@ -15,6 +15,7 @@
 @import url('./footer.css');
 @import url('./categories.css');
 @import url('./filters.css');
+@import url('./scroll-up.css');
 
 :root {
   font-family: 'DMSans', sans-serif;
