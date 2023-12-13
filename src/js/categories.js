@@ -1,20 +1,57 @@
 import { fetchCategories } from './api.js';
 import refs from './refs.js';
+import iziToast from 'izitoast';
 
 export async function renderCategories(filter) {
-  const data = await fetchCategories({ page: 1, perPage: 10, filter: filter });
+  const loader = document.getElementById('categories-loader');
+  const categoriesWrapper = document.getElementById('categories-wrapper');
 
-  const categoriesToRender = data.results.map(category => {
-    const categoryElement = createCategory(category);
+  loader.style.display = 'block';
 
-    categoryElement.addEventListener('click', function () {
-      console.log('Li element clicked!');
+  categoriesWrapper.style.display = 'none';
+
+  try {
+    const data = await fetchCategories({
+      page: 1,
+      perPage: 10,
+      filter: filter,
     });
 
-    return categoryElement;
-  });
+    const categoriesToRender = data.results.map(category => {
+      const categoryElement = createCategory(category);
 
-  refs.divCategories.append(...categoriesToRender);
+      categoryElement.addEventListener('click', function () {
+        console.log('Li element clicked!');
+      });
+
+      return categoryElement;
+    });
+
+    refs.divCategories.append(...categoriesToRender);
+  } catch (error) {
+    if (error.response && error.response.status === 409) {
+      const errorMessage = {
+        title: 'Error',
+        message: error.response.data.message,
+        position: 'topRight',
+        color: 'red',
+      };
+      return iziToast.show(errorMessage);
+    }
+    const errorMessage = {
+      title: 'Error',
+      message: 'Oops, something went wrong, try again later',
+      position: 'topRight',
+      color: 'red',
+    };
+    return iziToast.show(errorMessage);
+  } finally {
+    setTimeout(() => {
+      loader.style.display = 'none';
+
+      categoriesWrapper.style.display = 'flex';
+    }, 500);
+  }
 }
 
 function createCategory({ name, filter, imgURL }) {
