@@ -7,10 +7,10 @@
 
 @media screen and (min-width: 1280px) {
   .categories-wrapper {
-    display: grid;
+    /* display: grid; */
     flex-direction: initial;
     align-items: flex-start;
-    grid-template-columns: 444px 1fr;
+    /* grid-template-columns: 444px 1fr; */
   }
 }
 
