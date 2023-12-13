@@ -1,4 +1,5 @@
 import { fetchCategories } from './api.js';
+import { createQuoteMarkup } from './quote/quote.js';
 import { renderPagination } from './pagination.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
@@ -12,14 +13,19 @@ export async function renderCategories(filter, page) {
   categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
   try {
+    createQuoteMarkup();
+
     const data = await fetchCategories({
       page: page,
       perPage: 12,
       filter: filter,
     });
-    renderPagination(12, data.totalPages, page).on('afterMove', ({ page: newPage }) => {
-      renderCategories(filter, newPage);
-    });
+    renderPagination(12, data.totalPages, page).on(
+      'afterMove',
+      ({ page: newPage }) => {
+        renderCategories(filter, newPage);
+      }
+    );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
 
