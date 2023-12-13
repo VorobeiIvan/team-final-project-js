@@ -4,7 +4,6 @@ axios.defaults.baseURL = 'https://your-energy.b.goit.study/api';
 
 const FILTERS = 'filters';
 const EXERCISES = 'exercises';
-const QUOTE = 'quote';
 const SUBSCRIPTION = 'subscription';
 
 /**
@@ -43,8 +42,15 @@ export const fetchExercises = async ({
 export const fetchOneExercise = async id =>
   await axios.get(`/${EXERCISES}/${id}`).then(response => response.data);
 
-export const fetchQuote = async () =>
-  await axios.get(`/${QUOTE}`).then(response => response.data);
+export const fetchQuote = async () => {
+  try {
+    const { data } = await axios.get('/quote');
+
+    return data;
+  } catch (error) {
+    console.log('Error request "/quote"');
+  }
+};
 
 /**
  *  email: string

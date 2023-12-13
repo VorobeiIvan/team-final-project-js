@@ -1,12 +1,24 @@
 .categories-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+@media screen and (min-width: 1280px) {
+  .categories-wrapper {
+    display: grid;
+    flex-direction: initial;
+    align-items: flex-start;
+    grid-template-columns: 444px 1fr;
+  }
 }
 
 .categories-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 32px;
 }
 
 .categories-loader-container {

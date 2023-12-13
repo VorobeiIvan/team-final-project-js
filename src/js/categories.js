@@ -1,4 +1,5 @@
 import { fetchCategories } from './api.js';
+import { createQuoteMarkup } from './quote/quote.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
@@ -8,9 +9,11 @@ export async function renderCategories(filter) {
 
   loader.style.display = 'block';
 
-  categoriesWrapper.style.display = 'none';
+  // categoriesWrapper.style.display = 'none';
 
   try {
+    createQuoteMarkup();
+
     const data = await fetchCategories({
       page: 1,
       perPage: 10,
@@ -49,7 +52,7 @@ export async function renderCategories(filter) {
     setTimeout(() => {
       loader.style.display = 'none';
 
-      categoriesWrapper.style.display = 'flex';
+      // categoriesWrapper.style.display = 'flex';
     }, 500);
   }
 }

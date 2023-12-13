@@ -1,5 +1,26 @@
+:root {
+  --backgroudColor: #242424;
+  --whiteText: #f4f4f4;
+  --greyText: rgb(244, 244, 244, 0.6);
+}
+
 .quote-container {
   color: var(--whiteText);
+}
+
+@media screen and (min-width: 1280px) {
+  .quote-container {
+    margin-right: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .quote-wrap {
+    display: flex;
+    gap: 16px;
+    height: 250px;
+    margin-bottom: 32px;
+  }
 }
 
 .quote-wrapper {
@@ -8,6 +29,12 @@
   background: var(--backgroudColor);
   border-radius: 20px;
   margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .quote-wrapper {
+    margin-bottom: 0;
+  }
 }
 
 .quote-svg-wrap {
@@ -47,20 +74,40 @@
   color: var(--greyText);
 }
 
+@media screen and (min-width: 1280px) {
+  .quote-text {
+    margin-bottom: 10px;
+  }
+}
+
 .quote-author {
   color: var(--whiteText);
 }
 
 .quote-img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 727px;
+  height: 242px;
   border-radius: 20px;
   margin-bottom: 32px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .quote-img {
+    margin-bottom: 0;
+    height: inherit;
+  }
 }
 
 .quote-wrapper.article {
   background-color: #fff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .quote-wrapper.article {
+    height: 250px;
+  }
 }
 
 .quote-svg-wrap.article {
@@ -78,6 +125,18 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: var(--backgroudColor);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .quote-author.article {
+    -webkit-line-clamp: 5;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .quote-author.article {
+    -webkit-line-clamp: initial;
+  }
 }
 
 .quote-text.article {
