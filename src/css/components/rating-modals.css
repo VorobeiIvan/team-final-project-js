@@ -1,0 +1,227 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.close-rating-btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+}
+
+.close {
+  stroke: #f4f4f4;
+}
+
+.rating-feedback-form {
+  padding: 40px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  /*transform: translate(-50%, -50%) scale(1);*/
+  /*opacity: 0.3;*/
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  max-width: 335px;
+  max-height: 357px;
+  border-radius: 20px;
+  z-index: 100;
+  background: #242424;
+  transition: transform 150ms ease-in, opacity 250ms ease-in;
+}
+
+.rating-form-active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-feedback-form {
+    width: 430px;
+    height: 412px;
+    padding: 40px;
+  }
+}
+
+/*.rating-feedback-form:not(.visually-hidden) {*/
+/*  transform: translate(-50%, -50%) scale(1);*/
+/*  opacity: 1;*/
+/*}*/
+
+.rating-modal-title {
+  color: rgba(244, 244, 244, 0.4);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.rating-stars {
+  display: flex;
+  /*flex-direction: row-reverse;*/
+  /*justify-content: flex-end;*/
+  align-items: center;
+  padding: 0 2px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-stars {
+    margin-bottom: 32px;
+  }
+}
+
+.rating-number {
+  color: #f4f4f4;
+  display: block;
+  margin-right: 5px;
+  width: 17px;
+  height: 18px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.rating-user-email,
+.rating-user-comment {
+  color: rgba(244, 244, 244, 0.6);
+  background-color: transparent;
+  border: 1px solid #f4f4f4;
+  /* #f4f4f4 */
+  border-radius: 30px;
+  padding: 12px 14px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.29;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-user-email,
+  .rating-user-comment {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.rating-user-email {
+  margin-bottom: 10px;
+  height: 42px;
+}
+
+.rating-user-comment {
+  resize: none;
+  height: 93px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-user-email {
+    margin-bottom: 16px;
+    height: 48px;
+  }
+
+  .rating-user-comment {
+    margin-bottom: 32px;
+    height: 106px;
+  }
+}
+
+.star-radio {
+  display: none;
+}
+
+.star-label {
+  cursor: pointer;
+}
+
+/*.star-radio:checked ~ .star-label > .star,*/
+/*.star-label:hover ~ .star-label .star,*/
+/*.star-label:hover > .star {*/
+/*  fill: #eea10c;*/
+/*  transition: fill 150ms ease-in-out;*/
+/*}*/
+
+/*.star-radio:checked + .star-label:hover > .star,*/
+/*.star-radio:checked ~ label:hover > .star,*/
+/*.star-radio:checked ~ .star-label:hover ~ label > .star,*/
+/*.star-label:hover ~ .star-radio:checked ~ label > .star {*/
+/*  fill: #e8f807;*/
+/*  transition: fill 150ms ease-in-out;*/
+/*}*/
+
+.star {
+  fill: rgba(244, 244, 244, 0.2);
+  transition: fill 150ms ease-in-out;
+}
+
+/*.star,*/
+/*.star use {*/
+/*  pointer-events: none;*/
+/*}*/
+.star-checked {
+  fill: #EEA10C;
+  fill-opacity: 1;
+}
+
+.star-active {
+  fill: #ffe600;
+}
+
+.invalid {
+  border-color: red !important;
+}
+
+.rating-feedback-form.invalid .rating-error {
+  display: inline-block;
+}
+
+.rating-error {
+  display: none;
+  color: red;
+  margin-left: 5px;
+}
+
+.rating-submit-btn {
+  border-radius: 30px;
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  color: #242424;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.285;
+  transition: color, border, background-color 200ms ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .rating-submit-btn {
+    height: 48px;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+
+.rating-submit-btn:hover {
+  color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  background-color: transparent;
+}
