@@ -1,25 +1,60 @@
 import { fetchCategories } from './api.js';
 import { renderPagination } from './pagination.js';
 import refs from './refs.js';
+import iziToast from 'izitoast';
 
 export async function renderCategories(filter, page) {
-  refs.divCategories.innerHTML = '';
-  
-  const data = await fetchCategories({ page: page, perPage: 12, filter: filter });
-  renderPagination(12, data.totalPages, page).on('afterMove', ({ page: newPage }) => {
-    renderCategories(filter, newPage);
-  });
-  const categoriesToRender = data.results.map(category => {
-    const categoryElement = createCategory(category);
+  const loader = document.getElementById('categories-loader');
+  const categoriesWrapper = document.getElementById('categories-wrapper');
 
-    categoryElement.addEventListener('click', function() {
-      console.log('Li element clicked!');
+  loader.style.display = 'block';
+
+  categoriesWrapper.style.display = 'none';
+  refs.divCategories.innerHTML = '';
+  try {
+    const data = await fetchCategories({
+      page: page,
+      perPage: 12,
+      filter: filter,
+    });
+    renderPagination(12, data.totalPages, page).on('afterMove', ({ page: newPage }) => {
+      renderCategories(filter, newPage);
+    });
+    const categoriesToRender = data.results.map(category => {
+      const categoryElement = createCategory(category);
+
+      categoryElement.addEventListener('click', function () {
+        console.log('Li element clicked!');
+      });
+
+      return categoryElement;
     });
 
-    return categoryElement;
-  });
+    refs.divCategories.append(...categoriesToRender);
+  } catch (error) {
+    if (error.response && error.response.status === 409) {
+      const errorMessage = {
+        title: 'Error',
+        message: error.response.data.message,
+        position: 'topRight',
+        color: 'red',
+      };
+      return iziToast.show(errorMessage);
+    }
+    const errorMessage = {
+      title: 'Error',
+      message: 'Oops, something went wrong, try again later',
+      position: 'topRight',
+      color: 'red',
+    };
+    return iziToast.show(errorMessage);
+  } finally {
+    setTimeout(() => {
+      loader.style.display = 'none';
 
-  refs.divCategories.append(...categoriesToRender);
+      categoriesWrapper.style.display = 'flex';
+    }, 500);
+  }
 }
 
 function createCategory({ name, filter, imgURL }) {
