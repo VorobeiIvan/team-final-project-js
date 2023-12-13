@@ -111,6 +111,10 @@
     display: none;
 }
 
+.link-hover:hover {
+    text-decoration: underline;
+}
+
 
 @media (min-width: 320px) {
     .footer-btn-email {
