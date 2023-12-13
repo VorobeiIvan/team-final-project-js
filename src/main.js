@@ -4,3 +4,4 @@ import './js/exercises.js';
 import './js/quote.js';
 import './js/components/';
 import './js/footer.js';
+import './js/pagination.js';

@@ -1,13 +1,18 @@
 import { fetchCategories } from './api.js';
+import { renderPagination } from './pagination.js';
 import refs from './refs.js';
 
-export async function renderCategories(filter) {
-  const data = await fetchCategories({ page: 1, perPage: 10, filter: filter });
-
+export async function renderCategories(filter, page) {
+  refs.divCategories.innerHTML = '';
+  
+  const data = await fetchCategories({ page: page, perPage: 12, filter: filter });
+  renderPagination(12, data.totalPages, page).on('afterMove', ({ page: newPage }) => {
+    renderCategories(filter, newPage);
+  });
   const categoriesToRender = data.results.map(category => {
     const categoryElement = createCategory(category);
 
-    categoryElement.addEventListener('click', function () {
+    categoryElement.addEventListener('click', function() {
       console.log('Li element clicked!');
     });
 

@@ -12,10 +12,10 @@ const SUBSCRIPTION = 'subscription';
  */
 
 export const fetchCategories = async ({
-  page = 1,
-  perPage = 10,
-  filter = 'Muscles',
-} = {}) =>
+                                        page = 1,
+                                        perPage = 12,
+                                        filter = 'Muscles',
+                                      } = {}) =>
   await axios
     .get(`/${FILTERS}?filter=${filter}&page=${page}&limit=${perPage}`)
     .then(response => response.data);
@@ -24,15 +24,15 @@ export const fetchCategories = async ({
  *  {page: number, perPage: number, filter: {bodypart: string, muscles: string, equipment: string, keyword:string}}
  */
 export const fetchExercises = async ({
-  page = 1,
-  perPage = 10,
-  filter = {},
-} = {}) =>
+                                       page = 1,
+                                       perPage = 12,
+                                       filter = {},
+                                     } = {}) =>
   await axios
     .get(
       `/${EXERCISES}?${new URLSearchParams(
-        filter
-      ).toString()}&page=${page}&limit=${perPage}`
+        filter,
+      ).toString()}&page=${page}&limit=${perPage}`,
     )
     .then(response => response.data);
 

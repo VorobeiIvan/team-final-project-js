@@ -3,7 +3,7 @@ import refs from './refs.js';
 
 const filters = ['Muscles', 'Body parts', 'Equipment'];
 
-renderCategories(filters[0]);
+renderCategories(filters[0], 1);
 
 const filtersElements = renderFilters(filters);
 
@@ -41,5 +41,5 @@ function handleFilterClick(filter, newActiveLink) {
 
   refs.divCategories.innerHTML = '';
 
-  renderCategories(filter);
+  renderCategories(filter, 1);
 }
