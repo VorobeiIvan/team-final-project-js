@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', handlePageNavigation);
 
 function handlePageNavigation() {
   const currentPage = location.pathname;
-  const links = document.querySelectorAll('.header-nav-link');
+  const links = [...document.querySelectorAll('.header-nav-link'), ...document.querySelectorAll('.nav-burger-menu-link'), ...document.querySelectorAll('.nav-burger-menu-link')];
+
   links.forEach(function(link) {
     const linkPath = new URL(link.href).pathname;
     if (linkPath === currentPage || (currentPage === '/' && linkPath === '/index.html')) {
