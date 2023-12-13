@@ -9,7 +9,6 @@ function handlePageNavigation() {
 
   links.forEach(function(link) {
     const linkPath = formatUrl( new URL(link.href).pathname);
-    console.log({ linkPath, currentPage, link, links });
     if (linkPath === currentPage || (currentPage === '/' && linkPath === '/index.html')) {
       link.classList.add('active-page');
     } else {
