@@ -1,0 +1,98 @@
+/* SOCIAL MADIA */
+/*social media header */
+.header-social-media-list {
+    display: flex;
+    gap: 12px;
+
+  }
+  
+  .header-social-media-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #cacaca;
+    border-radius: 10px;
+    border: 1px solid rgba(36, 36, 36, 0.10);;
+    transition: background-color var(--transition);
+  }
+  
+  .header-social-media-link:hover,
+  .header-social-media-link:focus {
+      background-color: #242424;
+  }
+  
+  .header-social-media-icon {
+      fill:#242424 ;
+      transition: fill var(--transition);
+  }
+  
+  .header-social-media-link:hover .header-social-media-icon,
+  .header-social-media-link:focus .header-social-media-icon {
+      fill: #cacaca;
+  }
+  
+  /*social media burger */
+  .burger-social-media-list {
+    display: flex;
+    list-style-type: none;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  
+  
+  .burger-social-media-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #242424;
+    border-radius: 10px;
+    border: 1px solid rgba(244, 244, 244, 0.1);
+    transition: background-color var(--transition);
+  }
+  
+  .burger-social-media-icon {
+      fill: #cacaca;
+      transition: fill var(--transition);
+  }
+  
+
+
+/*social media footer */
+
+.footer-social-networks {
+    display: flex;
+    gap: 12px;
+ 
+  }
+  
+  
+  .footer-link-network {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #242424;
+    border-radius: 10px;
+    border: 1px solid rgba(244, 244, 244, 0.1);
+    transition: background-color var(--transition);
+  }
+  
+  .footer-link-network:hover,
+  .footer-link-network:focus {
+      background-color: #cacaca;
+  }
+
+  .footer-svg {
+      fill: #cacaca;
+      transition: fill var(--transition);
+  }
+  
+ .footer-link-network:hover .footer-svg,
+.footer-link-network:focus .footer-svg {
+      fill: #242424;
+  }
