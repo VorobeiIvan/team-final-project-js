@@ -11,24 +11,22 @@
     stroke: #242424;
      }
 
-  .menu-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    min-width: 100%;
-    min-height: 100%;
-    background-color: #242424;
-   
-
-
-    transform: translateX(100%); 
-    transition: var(--transition);
+     .menu-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      min-width: 100%;
+      min-height: 100%;
+      background-color: #242424;
+      display: none; 
+  
+      transition: transform var(--transition);
   }
-
+  
   .menu-container.is-open {
-    transition: var(--transition);
-    transform: translateX(0);
+      display: block;
+      transform: translateX(0);
   }
 
   .modal {
