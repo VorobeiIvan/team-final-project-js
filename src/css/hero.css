@@ -10,7 +10,6 @@
 
 .hero-title-icon {
     float: left;
-    padding-top: 5px;
     margin-right: 12px;
 }
 
@@ -111,6 +110,11 @@
         right: 0;
         width: 168px;
         height: 100px;
+    }
+
+    .hero-title-icon {
+        width: 59px;
+        height: 59px;
     }
 
     .hero-hashtags-list {
