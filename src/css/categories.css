@@ -1,7 +1,19 @@
+.categories-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .categories-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.categories-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
 }
 
 .category-item {

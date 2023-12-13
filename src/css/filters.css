@@ -1,7 +1,12 @@
+.exercises-header {
+  width: 100%;
+}
+
 .exercises-title {
   margin-bottom: 20px;
   font-size: 28px;
   line-height: 38px;
+  width: 100%;
 }
 
 .filters-list {

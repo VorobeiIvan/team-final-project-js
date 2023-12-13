@@ -15,7 +15,12 @@
 @import url('./footer.css');
 @import url('./categories.css');
 @import url('./filters.css');
+
 @import url('./scroll-up.css');
+
+@import url('./social-media.css');
+@import url('./burger-menu.css');
+
 
 :root {
   font-family: 'DMSans', sans-serif;
