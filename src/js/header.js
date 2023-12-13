@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', handlePageNavigation);
 
+
+const formatUrl = url =>'/' + url.split('/').pop();
+
 function handlePageNavigation() {
-  const currentPage = location.pathname;
+  const currentPage = formatUrl(location.pathname);
   const links = [...document.querySelectorAll('.header-nav-link'), ...document.querySelectorAll('.nav-burger-menu-link'), ...document.querySelectorAll('.nav-burger-menu-link')];
 
   links.forEach(function(link) {
-    const linkPath = '/' + new URL(link.href).pathname.split('/' ).pop();
+    const linkPath = formatUrl( new URL(link.href).pathname);
     console.log({ linkPath, currentPage, link, links });
     if (linkPath === currentPage || (currentPage === '/' && linkPath === '/index.html')) {
       link.classList.add('active-page');
