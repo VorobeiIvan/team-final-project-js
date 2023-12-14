@@ -10,21 +10,21 @@
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
-<body>
-  <load ="./partials/header.html" />
+<body class="favorites-body">
+  <main>
+    <load ="./partials/header.html" />
 
-  <section class="container">
-    <h2 class="favorites-title">Favorites</h2>
+    <section class="favorites-section">
+      <div class="container">
+        <h2 class="favorites-title">Favorites</h2>
 
-    <div class="favorites-container">
-      <div class="favorites-quote-wrapper quote-wrapper">
-        <div id="js-quote"></div>
+        <div class="favorites-container">
+          <load ="./partials/favorites/favorites-quote.html" />
+          <load ="./partials/favorites/favorites-list.html" />
+        </div>
       </div>
-  
-      <div class="favorites-list"></div> 
-    </div>
-  </section>
-
+    </section>
+  </main>
   <script type="module" src="./main.js"></script>
   <script type="module" src="./favorites.js"></script>
 </body>

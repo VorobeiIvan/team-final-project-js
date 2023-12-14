@@ -38,4 +38,4 @@ const getQuoteMarkupFavorites = ({ quote, author }) => `
   </div>
 `;
 
-export default getQuoteMarkup;
+export default getQuoteMarkupFavorites;
