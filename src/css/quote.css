@@ -8,13 +8,14 @@
   color: var(--whiteText);
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .quote-container {
     margin-right: 32px;
+    max-width: 444px;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrap {
     display: flex;
     gap: 16px;
@@ -31,9 +32,15 @@
   margin-bottom: 32px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrapper {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-wrapper {
+    min-height: 245px;
   }
 }
 
@@ -55,6 +62,13 @@
   height: 20px;
 }
 
+.quote-title-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .quote-title {
   display: flex;
   font-size: 20px;
@@ -74,7 +88,7 @@
   color: var(--greyText);
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .quote-text {
     margin-bottom: 10px;
   }
@@ -93,10 +107,10 @@
   object-fit: cover;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-img {
     margin-bottom: 0;
-    height: inherit;
+    height: 245px;
   }
 }
 
@@ -104,7 +118,7 @@
   background-color: #fff;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrapper.article {
     height: 250px;
   }
@@ -127,13 +141,7 @@
   color: var(--backgroudColor);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-  .quote-author.article {
-    -webkit-line-clamp: 5;
-  }
-}
-
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .quote-author.article {
     -webkit-line-clamp: initial;
   }

@@ -13,16 +13,19 @@
 @import url('./hero.css');
 @import url('./loader.css');
 @import url('./footer.css');
+@import url('./modal_main.css');
 @import url('./categories.css');
+@import url('./quote.css');
 @import url('./filters.css');
 @import url('./favorites.css');
 
+@import url('./exercises.css');
 @import url('./scroll-up.css');
-
 @import url('./social-media.css');
 @import url('./burger-menu.css');
 @import url('./pagination.css');
-
+@import url('./privacy-policy.css');
+@import url('./terms-of-service.css');
 
 :root {
   font-family: 'DMSans', sans-serif;
@@ -37,6 +40,7 @@
   --category-bg: rgba(17, 17, 17, 0.502);
   --basic-gray: #f4f4f466;
   --shadow-dark: #00000040;
+
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
