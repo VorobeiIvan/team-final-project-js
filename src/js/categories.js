@@ -1,9 +1,11 @@
 import { fetchCategories } from './api.js';
-import { createQuoteMarkup } from './quote.js';
+import { getQuoteMarkup } from './quote.js';
 import { renderPagination } from './pagination.js';
 import { renderExercises } from './exercises.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
+
+let QUOTE_INITIALIZED = false;
 
 export async function renderCategories(filter, page) {
   const loader = document.getElementById('categories-loader');
@@ -13,8 +15,12 @@ export async function renderCategories(filter, page) {
 
   categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
+  refs.divCategories.classList.remove('exercises-list');
   try {
-    createQuoteMarkup();
+    if (!QUOTE_INITIALIZED) {
+      getQuoteMarkup();
+      QUOTE_INITIALIZED = true;
+    }
 
     const data = await fetchCategories({
       page: page,
@@ -98,7 +104,7 @@ function capitalizeFirstLetter(inputString) {
 }
 
 function handleCardClick(newActiveCard) {
-  sessionStorage.setItem('category',JSON.stringify(newActiveCard.dataset));
+  sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
   refs.divExSearch.classList.remove('is-hidden');
   renderExercises();
 }
