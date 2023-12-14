@@ -259,33 +259,23 @@
   .target {
     max-width: 63px;
   }
-}
-@media only screen and (min-width: 1440px) {
-  .burned-calories {
-    max-width: 149px;
 
-@media only screen and (min-width: 768px) {
-  .bad-requast {
+  .bad-request {
     width: 600px;
     height: 450px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .categories-bad-requast {
+  .categories-bad-request {
     min-width: 900px;
   }
-}
 
-@media only screen and (min-width: 768px) {
-  .bad-requast {
-    width: 600px;
-    height: 450px;
+  .burned-calories {
+    max-width: 149px;
   }
-}
 
-@media only screen and (min-width: 1440px) {
-  .bad-requast {
+  .bad-request {
     width: 800px;
     height: 700px;
   }
