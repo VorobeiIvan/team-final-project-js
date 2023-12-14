@@ -1,0 +1,87 @@
+.switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    display: inline-block;
+}
+
+.switch span {
+    position: absolute;
+    background-color: var(--basic-dark);
+    border-radius: 15px;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: background-color .4s;
+}
+
+.switch span::before {
+    background-color: var(--basic-light);
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    height: 23px;
+    width: 23px;
+}
+
+input:checked + span {
+    background-color: var(--basic-light);
+}
+
+input:checked + span::before {
+    background-color: var(--basic-dark);
+}
+
+input:checked + span::before {
+    transform: translateX(30px);
+}
+
+.switch input {
+    display: none;
+}
+
+.switch {
+    position: relative;
+}
+
+.switch span {
+    background-color: var(--basic-dark);
+    transition: .4s;
+    grid-area: switch;
+}
+
+.darkTheme {
+    background-color: #151617;
+    color: var(--basic-light);
+}
+
+.border-color-theme {
+    border-color: var(--basic-light);
+}
+
+.header-nav-dark-theme {
+    background-color: var(--basic-light);
+    color: var(--basic-dark);
+}
+
+.header-nav-dark-theme .active-page {
+    background-color: var(--basic-dark);
+    color: var(--basic-light);
+}
+
+.pagination-button-dark-theme .tui-is-selected {
+    border-color: var(--basic-gray) !important;
+    color: var(--basic-gray) !important;
+}
+
+.filter-color-dark button {
+    color: var(--basic-light);
+}
+
+.darkTheme .filter-color-dark .filter-selected::after {
+    background-color: var(--basic-light);;
+}

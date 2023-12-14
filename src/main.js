@@ -8,4 +8,5 @@ import './js/header.js';
 import './js/burger-menu.js';
 import './js/exercises.js';
 import './js/pagination.js';
+import './js/darkThemeSwitch.js';
 
