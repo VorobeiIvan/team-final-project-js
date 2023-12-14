@@ -15,6 +15,12 @@
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .quote-container-favorites {
+    max-width: 600px;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrap {
     display: flex;
@@ -24,9 +30,23 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .quote-wrap-favorites {
+    display: flex;
+    min-height: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-wrap-favorites {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
 .quote-wrapper {
   display: flex;
-  padding: 40px;
+  padding: 20px;
   background: var(--backgroudColor);
   border-radius: 20px;
   margin-bottom: 32px;
@@ -38,11 +58,52 @@
     min-width: 400px;
     width: 400px;
   }
+
+  .quote-favorites {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-favorites {
+    margin-bottom: 16px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .quote-wrapper {
     min-height: 245px;
+    padding: 40px;
+  }
+
+  .quote-favorites {
+    margin-bottom: 16px;
+  }
+
+  .quote-wrapper.quote-favorites {
+    min-height: 230px;
+  }
+}
+
+.quote-wrapper.article.favorites {
+  display: block;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .quote-wrapper.article.favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    min-width: 352px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-wrapper.article.favorites {
+    margin-right: 16px;
+    padding: 25px;
+    min-height: 140px;
   }
 }
 
@@ -111,6 +172,12 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-img {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-img-favorites {
+    height: 140px;
   }
 }
 

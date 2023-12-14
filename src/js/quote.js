@@ -20,10 +20,8 @@ const getQuote = async () => {
   return data;
 };
 
-export const getQuoteMarkup = async () => {
-  const quoteRef = document.querySelector('.quote-title-wrap');
+const quoteRef = document.querySelector('.quote-title-wrap');
 
-  const data = await getQuote();
+const data = await getQuote();
 
-  quoteRef.insertAdjacentHTML('beforeend', createQuoteMarkup(data));
-};
+quoteRef.insertAdjacentHTML('beforeend', createQuoteMarkup(data));

@@ -1,11 +1,8 @@
 import { fetchCategories } from './api.js';
-import { getQuoteMarkup } from './quote.js';
 import { renderPagination } from './pagination.js';
 import { renderExercises } from './exercises.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
-
-let QUOTE_INITIALIZED = false;
 
 export async function renderCategories(filter, page) {
   const loader = document.getElementById('categories-loader');
@@ -17,11 +14,6 @@ export async function renderCategories(filter, page) {
   refs.divCategories.innerHTML = '';
   refs.divCategories.classList.remove('exercises-list');
   try {
-    if (!QUOTE_INITIALIZED) {
-      getQuoteMarkup();
-      QUOTE_INITIALIZED = true;
-    }
-
     const data = await fetchCategories({
       page: page,
       perPage: 12,
