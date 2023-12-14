@@ -2,21 +2,24 @@ import { fetchCategories } from './api.js';
 import { getQuoteMarkup } from './quote.js';
 import { renderPagination } from './pagination.js';
 import { renderExercises } from './exercises.js';
+import { loader } from './components';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
 let QUOTE_INITIALIZED = false;
 
 export async function renderCategories(filter, page) {
-  const loader = document.getElementById('categories-loader');
-  const categoriesWrapper = document.getElementById('categories-wrapper');
+  // const loader = document.getElementById('categories-loader');
+  // const categoriesWrapper = document.getElementById('categories-wrapper');
 
-  loader.style.display = 'block';
+  // loader.style.display = 'block';
 
-  categoriesWrapper.style.display = 'none';
+  // categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
-  refs.divCategories.classList.remove('exercises-list');
+  // refs.divCategories.classList.remove('exercises-list');
+  const { setLoader, deleteLoader } = loader({ disableScroll: true });
   try {
+    setLoader();
     if (!QUOTE_INITIALIZED) {
       getQuoteMarkup();
       QUOTE_INITIALIZED = true;
@@ -41,7 +44,6 @@ export async function renderCategories(filter, page) {
 
       return categoryElement;
     });
-
     refs.divCategories.append(...categoriesToRender);
   } catch (error) {
     console.log(error.message, 'catch');
@@ -62,11 +64,7 @@ export async function renderCategories(filter, page) {
     };
     return iziToast.show(errorMessage);
   } finally {
-    setTimeout(() => {
-      loader.style.display = 'none';
-
-      categoriesWrapper.style.display = 'flex';
-    }, 500);
+    deleteLoader();
   }
 }
 
