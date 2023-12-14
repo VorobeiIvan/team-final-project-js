@@ -59,7 +59,7 @@ import"./assets/burger-menu-5139967a.js";/* empty css                      */imp
           <p class="quote-author">${t}</p>
         </div>
       </div>
-      <img class="quote-img" src="../../../images/exercise-mobile@2x.jpg" alt="exercise" />
+      <img class="quote-img" src="./images/exercise-mobile@2x.jpg" alt="exercise" />
     </div>
     <div class="quote-wrapper article">
       <div class="quote-svg-wrap article">
