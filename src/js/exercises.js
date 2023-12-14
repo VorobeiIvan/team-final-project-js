@@ -6,7 +6,7 @@ document
     .querySelector('.exercises-search-wrapper input')
     .addEventListener('keydown', toSearch);
 
-async function toSearch(event) {
+function toSearch(event) {
   const keyword = event.target.value;
   if (event.keyCode === 13 || event.code === 'Enter') {
     renderExercises(keyword);
@@ -14,42 +14,32 @@ async function toSearch(event) {
  }
     
 export async function renderExercises(keyword='') {
-   
-  const activeCard = document
-    .getElementsByClassName('card-selected')[0];
-  if (!activeCard) {
-    console.log('not active card!!!')
-    return;
-  }
-  const datasetCard = activeCard.dataset;
-  const filter = {}
-     
-  for (const el in datasetCard) {
-    filter[el] = datasetCard[el];
-  }
-
-  if (keyword) {
-    filter.keyword = keyword;
-  };
-  console.log(filter);
+  
+    const curFilter = await JSON.parse(sessionStorage.getItem("category"));
+    if (!curFilter) {
+      console.log('not active category!!!')
+      return;
+    } 
+    if (keyword) {
+    curFilter.keyword = keyword;
+    };
+ 
   try {
     const data = await fetchExercises({
       page: 1,
       perPage: 10,
-      filter: filter,
+      filter: curFilter,
     });
         
     const exercisesToRender = createExercise(data.results);
 
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
-    console.log(exercisesToRender);
   } catch {
     console.log('ooops!!!');
   }
 }
                
- 
 function createExercise(arr) {
     return arr
       .map(
