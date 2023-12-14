@@ -235,6 +235,29 @@
   margin-left: 2px;
 }
 
-body {
-  background-color: var(--basic-light);
+@media only screen and (min-width: 768px) {
+  .bad-requast {
+    width: 600px;
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .categories-bad-requast {
+    min-width: 900px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .bad-requast {
+    width: 600px;
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .bad-requast {
+    width: 800px;
+    height: 700px;
+  }
 }
