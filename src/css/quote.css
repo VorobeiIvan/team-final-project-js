@@ -19,7 +19,7 @@
   .quote-wrap {
     display: flex;
     gap: 16px;
-    height: 250px;
+    min-height: 250px;
     margin-bottom: 32px;
   }
 }
@@ -35,6 +35,8 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrapper {
     margin-bottom: 0;
+    min-width: 400px;
+    width: 400px;
   }
 }
 
@@ -101,7 +103,6 @@
 .quote-img {
   display: block;
   width: 727px;
-  height: 242px;
   border-radius: 20px;
   margin-bottom: 32px;
   object-fit: cover;
@@ -110,7 +111,6 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-img {
     margin-bottom: 0;
-    height: 245px;
   }
 }
 
@@ -121,6 +121,7 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrapper.article {
     height: 250px;
+    max-width: 400px;
   }
 }
 
