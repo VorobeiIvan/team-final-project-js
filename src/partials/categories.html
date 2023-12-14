@@ -5,7 +5,7 @@
       <div class="exercises-search-wrapper is-hidden" id="search-wrapper">
         <input id="exercises-search" type="search" name="search" placeholder="Search" class="exercises-search" />
         <svg class="exercises-search-img" width="18" height="18">
-          <use href="../images/sprite.svg#search"></use>
+          <use href="./images/sprite.svg#search"></use>
         </svg>
       </div>
       <ul id="filters" class="filters-list"></ul>
@@ -29,12 +29,11 @@
                 <use href="./images/sprite.svg#commas"></use>
               </svg>
             </div>
-            <p class="quote-text">${quote}</p>
-            <p class="quote-author">${author}</p>
           </div>
         </div>
 
         <picture>
+
           <source media="(max-width: 767px)" srcset="
               ./images/exercise-mobile.webp    1x,
               ./images/exercise-mobile@2x.webp 2x
@@ -48,6 +47,7 @@
               ./images/exercise-desktop@2x.webp 2x
             " />
           <img src="./images/exercise-mobile.webp" alt="Exersices" class="quote-img" />
+          
         </picture>
       </div>
       <div class="quote-wrapper article">
