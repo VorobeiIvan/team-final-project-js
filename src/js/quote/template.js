@@ -18,7 +18,7 @@ const getQuoteMarkup = ({ quote, author }) => `
           <p class="quote-author">${author}</p>
         </div>
       </div>
-      <img class="quote-img" src="../../../images/exercise-mobile@2x.jpg" alt="exercise" />
+      <img class="quote-img" src="./images/exercise-mobile@2x.jpg" alt="exercise" />
     </div>
     <div class="quote-wrapper article">
       <div class="quote-svg-wrap article">
