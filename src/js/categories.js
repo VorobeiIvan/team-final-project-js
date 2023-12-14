@@ -5,8 +5,6 @@ import { renderExercises } from './exercises.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
-let isQuoteInitialized = false;
-
 export async function renderCategories(filter, page) {
   const loader = document.getElementById('categories-loader');
   const categoriesWrapper = document.getElementById('categories-wrapper');
@@ -16,10 +14,7 @@ export async function renderCategories(filter, page) {
   categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
   try {
-    if (!isQuoteInitialized) {
-      createQuoteMarkup();
-      isQuoteInitialized = true;
-    }
+    createQuoteMarkup();
 
     const data = await fetchCategories({
       page: page,
