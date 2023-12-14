@@ -29,7 +29,7 @@ export async function renderCategories(filter, page) {
       'afterMove',
       ({ page: newPage }) => {
         renderCategories(filter, newPage);
-      }
+      },
     );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
@@ -42,6 +42,7 @@ export async function renderCategories(filter, page) {
 
     refs.divCategories.append(...categoriesToRender);
   } catch (error) {
+    console.log(error.message, 'catch');
     if (error.response && error.response.status === 409) {
       const errorMessage = {
         title: 'Error',
