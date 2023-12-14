@@ -1,10 +1,11 @@
 import { fetchCategories } from './api.js';
-import { createQuoteMarkup } from './quote/quote.js';
+import { getQuoteMarkup } from './quote.js';
 import { renderPagination } from './pagination.js';
+import { renderExercises } from './exercises.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
-let isQuoteInitialized = false;
+let QUOTE_INITIALIZED = false;
 
 export async function renderCategories(filter, page) {
   const loader = document.getElementById('categories-loader');
@@ -14,10 +15,11 @@ export async function renderCategories(filter, page) {
 
   categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
+  refs.divCategories.classList.remove('exercises-list');
   try {
-    if (!isQuoteInitialized) {
-      createQuoteMarkup();
-      isQuoteInitialized = true;
+    if (!QUOTE_INITIALIZED) {
+      getQuoteMarkup();
+      QUOTE_INITIALIZED = true;
     }
 
     const data = await fetchCategories({
@@ -103,13 +105,7 @@ function capitalizeFirstLetter(inputString) {
 }
 
 function handleCardClick(newActiveCard) {
-  const curActiveCard = document.getElementsByClassName('card-selected');
-
-  if (curActiveCard[0]) {
-    curActiveCard[0].classList.remove('card-selected');
-  }
-
-  newActiveCard.classList.add('card-selected');
-
-  console.log('Li element clicked!');
+  sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
+  refs.divExSearch.classList.remove('is-hidden');
+  renderExercises();
 }

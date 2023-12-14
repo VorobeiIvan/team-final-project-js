@@ -1,13 +1,8 @@
-.page-header {
-  max-width: 100%;
-  padding: 20px 20px 40px 20px;
-}
-
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding: 20px 0 40px 0;
 }
 
 .header-nav-list {
@@ -44,7 +39,7 @@
 }
 
 
-@media (max-width: 767px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
 
   .header-nav,
   .header-social-media-container {
@@ -68,9 +63,9 @@
     position: absolute;
   }
 
-  .page-header {
+  .header-container {
     max-width: 100%;
-    padding: 24px 32px 50px 32px;
+    padding: 24px 0 50px 0;
   }
 }
 
@@ -85,8 +80,8 @@
     position: absolute;
   }
 
-  .page-header {
+  .header-container {
     max-width: 100%;
-    padding: 28px 32px 76px 32px;
+    padding: 28px 0 50px 0;
   }
 }

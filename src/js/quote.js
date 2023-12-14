@@ -1,6 +1,6 @@
-import { fetchQuote } from '../api';
-import { formatDate } from '../utils';
-import getQuoteMarkup from './template';
+import { fetchQuote } from './api';
+import { createQuoteMarkup } from './templates/createQuoteMarkup';
+import { formatDate } from './utils';
 
 const QUOTE_DATA = 'quoteData';
 const DAY = new Date();
@@ -20,10 +20,10 @@ const getQuote = async () => {
   return data;
 };
 
-export const createQuoteMarkup = async () => {
-  const quoteRef = document.getElementById('js-quote');
+export const getQuoteMarkup = async () => {
+  const quoteRef = document.querySelector('.quote-title-wrap');
 
   const data = await getQuote();
 
-  quoteRef.insertAdjacentHTML('beforeend', getQuoteMarkup(data));
+  quoteRef.insertAdjacentHTML('beforeend', createQuoteMarkup(data));
 };
