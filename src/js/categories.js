@@ -4,6 +4,8 @@ import { renderPagination } from './pagination.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
+let isQuoteInitialized = false;
+
 export async function renderCategories(filter, page) {
   const loader = document.getElementById('categories-loader');
   const categoriesWrapper = document.getElementById('categories-wrapper');
@@ -13,7 +15,10 @@ export async function renderCategories(filter, page) {
   categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
   try {
-    createQuoteMarkup();
+    if (!isQuoteInitialized) {
+      createQuoteMarkup();
+      isQuoteInitialized = true;
+    }
 
     const data = await fetchCategories({
       page: page,
@@ -29,7 +34,7 @@ export async function renderCategories(filter, page) {
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
       categoryElement.addEventListener('click', () => {
-        handleCardClick(categoryElement)
+        handleCardClick(categoryElement);
       });
 
       return categoryElement;
