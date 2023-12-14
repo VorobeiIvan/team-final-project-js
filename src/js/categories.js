@@ -1,22 +1,31 @@
 import { fetchCategories } from './api.js';
+import { createQuoteMarkup } from './quote/quote.js';
+import { renderPagination } from './pagination.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
-export async function renderCategories(filter) {
+export async function renderCategories(filter, page) {
   const loader = document.getElementById('categories-loader');
   const categoriesWrapper = document.getElementById('categories-wrapper');
 
   loader.style.display = 'block';
 
   categoriesWrapper.style.display = 'none';
-
+  refs.divCategories.innerHTML = '';
   try {
+    createQuoteMarkup();
+
     const data = await fetchCategories({
-      page: 1,
-      perPage: 10,
+      page: page,
+      perPage: 12,
       filter: filter,
     });
-
+    renderPagination(12, data.totalPages, page).on(
+      'afterMove',
+      ({ page: newPage }) => {
+        renderCategories(filter, newPage);
+      }
+    );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
       categoryElement.addEventListener('click', () => {

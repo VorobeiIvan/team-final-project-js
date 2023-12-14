@@ -20,6 +20,7 @@
 
 @import url('./social-media.css');
 @import url('./burger-menu.css');
+@import url('./pagination.css');
 
 :root {
   font-family: 'DMSans', sans-serif;
