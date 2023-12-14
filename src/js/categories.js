@@ -1,4 +1,5 @@
 import { fetchCategories } from './api.js';
+import { createQuoteMarkup } from './quote/quote.js';
 import { renderPagination } from './pagination.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
@@ -12,19 +13,23 @@ export async function renderCategories(filter, page) {
   categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
   try {
+    createQuoteMarkup();
+
     const data = await fetchCategories({
       page: page,
       perPage: 12,
       filter: filter,
     });
-    renderPagination(12, data.totalPages, page).on('afterMove', ({ page: newPage }) => {
-      renderCategories(filter, newPage);
-    });
+    renderPagination(12, data.totalPages, page).on(
+      'afterMove',
+      ({ page: newPage }) => {
+        renderCategories(filter, newPage);
+      }
+    );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
-
-      categoryElement.addEventListener('click', function () {
-        console.log('Li element clicked!');
+      categoryElement.addEventListener('click', () => {
+        handleCardClick(categoryElement)
       });
 
       return categoryElement;
@@ -60,7 +65,8 @@ export async function renderCategories(filter, page) {
 function createCategory({ name, filter, imgURL }) {
   const li = document.createElement('li');
   li.className = 'category-item';
-
+  const dataName = filter === 'Body parts' ? 'bodypart' : filter;
+  li.setAttribute('data-' + dataName, name);
   const img = document.createElement('img');
   img.className = 'category-item-img';
   img.src = imgURL;
@@ -88,4 +94,16 @@ function createCategory({ name, filter, imgURL }) {
 
 function capitalizeFirstLetter(inputString) {
   return inputString.charAt(0).toUpperCase() + inputString.slice(1);
+}
+
+function handleCardClick(newActiveCard) {
+  const curActiveCard = document.getElementsByClassName('card-selected');
+
+  if (curActiveCard[0]) {
+    curActiveCard[0].classList.remove('card-selected');
+  }
+
+  newActiveCard.classList.add('card-selected');
+
+  console.log('Li element clicked!');
 }
