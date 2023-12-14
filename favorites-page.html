@@ -8,14 +8,16 @@
   <title>Favorites</title>
     <!-- styles -->
   
-  <script type="module" crossorigin src="/team-final-project-js/assets/vendor-61000f44.js"></script>
-  <script type="module" crossorigin src="/team-final-project-js/assets/burger-menu-5139967a.js"></script>
+  <script type="module" crossorigin src="/team-final-project-js/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-ddeddc50.js">
+  <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/burger-menu-7d1a1872.js">
   <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-  <link rel="stylesheet" href="/team-final-project-js/assets/styles-c59da245.css">
+  <link rel="stylesheet" href="/team-final-project-js/assets/styles-ea978749.css">
 </head>
 
-<body>
-  <header class="page-header">
+<body class="favorites-body">
+  <main>
+    <header class="page-header">
     <!-- header container -->
     <div class="header-container">
         <!-- header navigation -->
@@ -36,7 +38,7 @@
                     </a>
                 </li>
                 <li class="header-nav-item">
-                    <a class="header-nav-link" href="./favorites.html">
+                    <a class="header-nav-link" href="./favorites-page.html">
                         Favorites
                     </a>
                 </li>
@@ -145,8 +147,35 @@
     </div>
 
 </header>
+    <section class="favorites-section">
+  <div class="container">
+    <h2 class="favorites-title">Favorites</h2>
 
+    <div class="favorites-container">
+      <div class="favorites-quote-column">
+        
+      </div>
 
+      <div class="favorites-list-wrapper">
+        <ul class="favorites-list js-list">
+          <li class="favorites-list-item">
+            <div class="favorites-list-item-nav"></div>
+            <h3 class="favorites-list-item-title"></h3>
+            <div class="favorites-list-item-"></div>
+          </li>
+        </ul>
+        <p class="favorites-list-notification">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+  
   
 </body>
 
