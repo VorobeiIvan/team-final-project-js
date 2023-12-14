@@ -1,5 +1,5 @@
 .quote-container {
-  color: var(-basic-light);
+  color: var(--basic-light);
 }
 
 @media screen and (min-width: 1440px) {
