@@ -12,7 +12,7 @@
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-61000f44.js">
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/burger-menu-5139967a.js">
     <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-    <link rel="stylesheet" href="/team-final-project-js/assets/styles-30988064.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/styles-c59da245.css">
   </head>
 
   <body>
@@ -202,7 +202,72 @@
   </div>
 
   <div id="categories-wrapper" class="categories-wrapper">
-    <div id="js-quote"></div>
+    <!-- Quote Content -->
+    <div class="quote-container">
+      <div class="quote-wrap">
+        <div class="quote-wrapper">
+          <div class="quote-svg-wrap">
+            <svg class="quote-svg" width="34" height="32">
+              <use href="/team-final-project-js/assets/sprite-984a0ff0.svg#run"></use>
+            </svg>
+          </div>
+          <div class="quote-title-wrap">
+            <div class="quote-title">
+              <h3>Quote of the day</h3>
+              <svg class="quote-title-svg" width="25" height="25">
+                <use href="/team-final-project-js/assets/sprite-984a0ff0.svg#commas"></use>
+              </svg>
+            </div>
+            <p class="quote-text">${quote}</p>
+            <p class="quote-author">${author}</p>
+          </div>
+        </div>
+
+        <picture>
+          <source
+            media="(max-width: 767px)"
+            srcset="/team-final-project-js/assets/exercise-mobile-5d3f515e.jpg 1x, /team-final-project-js/assets/exercise-mobile@2x-a716cab2.jpg 2x"
+          />
+          <source
+            media="(min-width: 768px) and (max-width: 1279px)"
+            srcset="/team-final-project-js/assets/exercise-tablet-8998c21a.jpg 1x, /team-final-project-js/assets/exercise-tablet@2x-3db09a76.jpg 2x"
+          />
+          <source
+            media="(min-width: 1280px)"
+            srcset="/team-final-project-js/assets/exercise-desktop-774e5bf4.jpg 1x, /team-final-project-js/assets/exercise-desktop@2x-7fd43557.jpg 2x"
+          />
+          <img
+            src="/team-final-project-js/assets/exercise-mobile-5d3f515e.jpg"
+            alt="Exersices"
+            class="quote-img"
+          />
+        </picture>
+      </div>
+      <div class="quote-wrapper article">
+        <div class="quote-svg-wrap article">
+          <svg class="quote-svg" width="34" height="32">
+            <use href="/team-final-project-js/assets/sprite-984a0ff0.svg#fluent-food"></use>
+          </svg>
+        </div>
+        <div>
+          <div class="quote-title article">
+            <h3>110 min</h3>
+          </div>
+          <p class="quote-text article">Daily norm of sports</p>
+          <p class="quote-author article">
+            The World Health Organization recommends at least 150 minutes of
+            moderate-intensity aerobic physical activity throughout the week for
+            adults aged 18-64. However, what happens if we adjust that number to
+            110 minutes every day? While it might seem like a high number to
+            hit, dedicating 110 minutes daily to sporting activities may offer
+            unparalleled benefits to physical health, mental well-being, and
+            overall quality of life.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categities Content -->
     <ul id="categories" class="categories-list"></ul>
   </div>
 
