@@ -16,11 +16,11 @@
 @import url('./modal_main.css');
 @import url('./categories.css');
 @import url('./filters.css');
+@import url('./exercises.css');
 @import url('./scroll-up.css');
 @import url('./social-media.css');
 @import url('./burger-menu.css');
 @import url('./pagination.css');
-
 
 :root {
   font-family: 'DMSans', sans-serif;
