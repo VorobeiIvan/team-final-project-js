@@ -1,6 +1,7 @@
 import { fetchQuote } from '../api';
 import { formatDate } from '../utils';
 import getQuoteMarkup from './template';
+import getQuoteMarkupFavorites from './template-favorites';
 import './quote.css';
 
 const QUOTE_DATA = 'quoteData';
@@ -27,4 +28,12 @@ export const createQuoteMarkup = async () => {
   const data = await getQuote();
 
   quoteRef.insertAdjacentHTML('beforeend', getQuoteMarkup(data));
+};
+
+export const createQuoteFavoritesMarkup = async () => { // Нова функція для відображення цитат у favorites.html
+  const quoteRef = document.getElementById('js-quote');
+
+  const data = await getQuote();
+
+  quoteRef.insertAdjacentHTML('beforeend', getQuoteMarkupFavorites(data));
 };

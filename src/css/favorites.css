@@ -1,0 +1,39 @@
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  line-height: 38px;
+  width: 100%;
+  font-weight: 400;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 1280px) {
+  
+}
+
+@media only screen and (min-width: 768px) {
+  
+}
+
+@media only screen and (min-width: 1440px) {
+  .favorites-container {
+    flex-direction: row;
+    column-gap: 32px;
+  }
+
+  .favorites-quote-wrapper {
+    width: 494px;
+    max-width: 494px;
+  }
+}
