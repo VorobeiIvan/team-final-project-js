@@ -1,4 +1,4 @@
-import svgSprite from '../images/sprite.svg';
+import svgSprite from './images/sprite.svg';
 import { fetchExercises } from './api.js';
 import refs from './refs.js';
 
