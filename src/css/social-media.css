@@ -22,11 +22,11 @@
 
 .header-social-media-link:hover,
 .header-social-media-link:focus {
-  background-color: var(--main-black);
+  background-color: var(--basic-dark);
 }
 
 .header-social-media-icon {
-  fill: var(--main-black);
+  fill: var(--basic-dark);
   transition: fill var(--transition);
 }
 
@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  fill: var(--main-black);
+  fill: var(--basic-dark);
   border-radius: 10px;
   border: 1px solid rgba(244, 244, 244, 0.1);
   transition: background-color var(--transition);
@@ -66,7 +66,7 @@
 
 .burger-social-media-link:hover .burger-social-media-icon,
 .burger-social-media-link:focus .burger-social-media-icon {
-  fill: var(--main-black);
+  fill: var(--basic-dark);
 }
 
 /*social media footer */
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  fill: var(--main-black);
+  fill: var(--basic-dark);
   border-radius: 10px;
   border: 1px solid rgba(244, 244, 244, 0.1);
   transition: background-color var(--transition);
@@ -102,5 +102,5 @@
 
 .footer-link-network:hover .footer-svg,
 .footer-link-network:focus .footer-svg {
-  fill: var(--main-black);
+  fill: var(--basic-dark);
 }
