@@ -2,6 +2,8 @@ import svgSprite from '../images/sprite.svg';
 import { fetchExercises } from './api.js';
 import refs from './refs.js';
 
+const screenWidth = window.screen.availWidth;
+
 document
   .querySelector('.exercises-search-wrapper input')
   .addEventListener('keydown', toSearch);
@@ -13,7 +15,15 @@ function toSearch(event) {
   }
 }
 
-export async function renderExercises(keyword = '') {
+function setPerPage() {
+  if (screenWidth < 768) {
+    return 8;
+  }
+
+  return 10;
+}
+  
+export async function renderExercises(keyword = '', page = 1) {
   const curFilter = await JSON.parse(sessionStorage.getItem('category'));
   if (!curFilter) {
     console.log('not active category!!!');
@@ -23,19 +33,23 @@ export async function renderExercises(keyword = '') {
     curFilter.keyword = keyword;
   }
 
+  const perPage = setPerPage();
+  
   try {
     const data = await fetchExercises({
-      page: 1,
-      perPage: 10,
+      page: page,
+      perPage: perPage,
       filter: curFilter,
     });
-
+    if (!data.results.length) {
+      console.log('Bad Requast');
+    }
     const exercisesToRender = createExercise(data.results);
 
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
   } catch {
-    console.log('ooops!!!');
+    console.log('ooops!!!')
   }
 }
 
@@ -68,19 +82,19 @@ function createExercise(arr) {
             </div>
             <ul class="exercise-item-list">
               <li class="exercise-item-list-information">
-                <p class="information-text">
+                <p class="information-text burned-calories">
                   Burned calories:<span class="information-text-span"
                     >${burnedCalories} / ${time} min</span
                   >
                 </p>
               </li>
               <li class="exercise-item-list-information">
-                <p class="information-text">
+                <p class="information-text body-part">
                   Body part:<span class="information-text-span">${bodyPart}</span>
                 </p>
               </li>
               <li class="exercise-item-list-information">
-                <p class="information-text">
+                <p class="information-text target">
                   Target:<span class="information-text-span">${target}</span>
                 </p>
               </li>
