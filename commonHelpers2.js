@@ -45,14 +45,14 @@ import"./assets/burger-menu-5139967a.js";/* empty css                      */imp
       <div class="quote-wrapper">
         <div class="quote-svg-wrap">
           <svg class="quote-svg" width="34" height="32">
-            <use href="../../../img/sprite.svg#run"></use>
+            <use href="./img/sprite.svg#run"></use>
           </svg>
         </div>
         <div>
           <div class="quote-title">
             <h3>Quote of the day</h3>
             <svg class="quote-title-svg" width="25" height="25">
-              <use href="../../../img/sprite.svg#commas"></use>
+              <use href="./img/sprite.svg#commas"></use>
             </svg>
           </div>
           <p class="quote-text">${e}</p>
@@ -64,7 +64,7 @@ import"./assets/burger-menu-5139967a.js";/* empty css                      */imp
     <div class="quote-wrapper article">
       <div class="quote-svg-wrap article">
         <svg class="quote-svg" width="34" height="32">
-          <use href="../../../img/sprite.svg#fluent-food"></use>
+          <use href="./img/sprite.svg#fluent-food"></use>
         </svg>
       </div>
       <div>
