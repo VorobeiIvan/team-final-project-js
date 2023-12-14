@@ -98,15 +98,7 @@ function capitalizeFirstLetter(inputString) {
 }
 
 function handleCardClick(newActiveCard) {
-  const curActiveCard = document.getElementsByClassName('card-selected');
-
-  if (curActiveCard[0]) {
-    curActiveCard[0].classList.remove('card-selected');
-  }
-
-  newActiveCard.classList.add('card-selected');
+  sessionStorage.setItem('category',JSON.stringify(newActiveCard.dataset));
   refs.divExSearch.classList.remove('is-hidden');
   renderExercises();
-
-  console.log('Li element clicked!');
 }
