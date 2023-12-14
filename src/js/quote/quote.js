@@ -1,7 +1,6 @@
 import { fetchQuote } from '../api';
 import { formatDate } from '../utils';
 import getQuoteMarkup from './template';
-import './quote.css';
 
 const QUOTE_DATA = 'quoteData';
 const DAY = new Date();
