@@ -1,6 +1,7 @@
 import { fetchCategories } from './api.js';
 import { createQuoteMarkup } from './quote/quote.js';
 import { renderPagination } from './pagination.js';
+import { renderExercises } from './exercises.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
@@ -109,6 +110,8 @@ function handleCardClick(newActiveCard) {
   }
 
   newActiveCard.classList.add('card-selected');
+  refs.divExSearch.classList.remove('is-hidden');
+  renderExercises();
 
   console.log('Li element clicked!');
 }

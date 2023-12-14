@@ -7,4 +7,5 @@ export default {
   divExercises: document.getElementById('exercises'),
   footerForm: document.querySelectorAll('.footer-form'),
   exSearch: document.getElementById('exercises-search'),
+  divExSearch: document.getElementById('search-wrapper'),
 };

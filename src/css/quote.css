@@ -11,6 +11,7 @@
 @media screen and (min-width: 1280px) {
   .quote-container {
     margin-right: 32px;
+    max-width: 444px;
   }
 }
 
