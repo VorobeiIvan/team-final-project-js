@@ -43,7 +43,9 @@ function handleFilterClick(filter, newActiveLink) {
   refs.divCategories.innerHTML = '';
 
   refs.exSearch.value = '';
-  
+  refs.divCategories.classList.remove('exercises-list');
+  refs.divExSearch.classList.add('is-hidden');
+
   renderCategories(filter, 1);
 
 }
