@@ -1,5 +1,5 @@
 import { fetchCategories } from './api.js';
-import { createQuoteMarkup } from './quote/quote.js';
+import { createQuoteMarkup } from './quote.js';
 import { renderPagination } from './pagination.js';
 import { renderExercises } from './exercises.js';
 import refs from './refs.js';
