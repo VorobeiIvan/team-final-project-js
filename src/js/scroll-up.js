@@ -1,4 +1,4 @@
-const myButton = document.getElementById('myBtn');
+const scrollUpButton = document.getElementById('scroll-up-btn');
 
 window.onscroll = function () {
   scrollFunction();
@@ -6,13 +6,13 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-    myButton.style.display = 'block';
+    scrollUpButton.style.display = 'block';
   } else {
-    myButton.style.display = 'none';
+    scrollUpButton.style.display = 'none';
   }
 }
 
-myButton.addEventListener('click', () => {
+scrollUpButton.addEventListener('click', () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
