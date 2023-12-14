@@ -11,6 +11,9 @@
 .hero-title-icon {
     float: left;
     margin-right: 12px;
+    width: 38px;
+    height: 41px;
+    padding-top: 3px;
 }
 
 .hero-title {
@@ -43,11 +46,20 @@
     display: none;
 }
 
+.hero-imag-container {
+    width: 335px;
+    height: 460px;
+    overflow: hidden;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
 .hero-image,
 .hero-image img {
-    border-radius: 30px;
-    overflow: hidden;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+    object-position: -192px -20px;
 }
 
 .hero-hashtags-list {
@@ -72,58 +84,91 @@
 @media screen and (min-width: 768px) {
     .hero-section {
         padding-top: 50px;
-        padding-bottom: 16px;
+        padding-bottom: 32px;
     }
     
     .hero-title {
         font-size: 74px;
     }
 
+    .hero-title-icon {
+        width: 59px;
+        height: 72px;
+        padding-top: 13px;
+    }
+
     .hero-subtitle {
         font-size: 18px;
         margin-bottom: 32px;
+        max-width: 528px;
+    }
+
+    .hero-imag-container {
+        width: 704px;
+        height: 550px;
+        overflow: hidden;
+        margin-bottom: 16px;
     }
 
     .hero-image,
     .hero-image img {
-        margin-bottom: 16px;
+        width: 100%;
+        height: 100%;
+        object-fit: none;
+        object-position: -200px -60px;
     }
 
     .hero-hashtags-list {
         justify-content: right;
     }
+
+    .hero-hashtag-item {
+        padding: 4px 16px;
+        font-size: 16px;
+    }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
     .container {
-        max-width: 1376px;
+        max-width: 1440px;
     }
 
     .hero-section {
         padding-bottom: 32px;
+        padding-top: 20px;
     }
 
     .hero-image-small-desktop {
         position: absolute;
         display: inline-flex;
-        top: 12px;
+        top: 15px;
         right: 0;
         width: 168px;
         height: 100px;
+        border-radius: 20px;
     }
 
-    .hero-title-icon {
-        width: 59px;
-        height: 59px;
+    .hero-imag-container {
+        width: 1376px;
+        height: 350px;
+    }
+
+    .hero-image,
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 -135px;
     }
 
     .hero-hashtags-list {
         position: absolute;
-        top: 194px;
-        right: 32px;
+        top: 190px;
+        right: 102px;
         display: flex;
-        width: 197px;
+        width: 200px;
         gap: 8px;
         flex-wrap: wrap;
     }
+
 }
