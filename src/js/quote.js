@@ -1,4 +1,5 @@
 import { fetchQuote } from './api';
+import { createQuoteMarkup } from './templates/createQuoteMarkup';
 import { formatDate } from './utils';
 
 const QUOTE_DATA = 'quoteData';
@@ -19,12 +20,10 @@ const getQuote = async () => {
   return data;
 };
 
-export const createQuoteMarkup = async () => {
-  const quoteTextRef = document.querySelector('.quote-text');
-  const quoteAuthor = document.querySelector('.quote-author');
+export const getQuoteMarkup = async () => {
+  const quoteRef = document.querySelector('.quote-title-wrap');
 
   const data = await getQuote();
 
-  quoteTextRef.textContent = data.quote;
-  quoteAuthor.textContent = data.author;
+  quoteRef.insertAdjacentHTML('beforeend', createQuoteMarkup(data));
 };
