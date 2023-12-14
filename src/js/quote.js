@@ -28,11 +28,3 @@ export const createQuoteMarkup = async () => {
   quoteTextRef.textContent = data.quote;
   quoteAuthor.textContent = data.author;
 };
-
-export const createQuoteFavoritesMarkup = async () => { // Нова функція для відображення цитат у favorites.html
-  const quoteRef = document.getElementById('js-quote');
-
-  const data = await getQuote();
-
-  quoteRef.insertAdjacentHTML('beforeend', getQuoteMarkupFavorites(data));
-};
