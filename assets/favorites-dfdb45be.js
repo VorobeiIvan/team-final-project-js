@@ -12,7 +12,7 @@ import{a as l,b,e as x}from"./vendor-5fe488fb.js";(function(){const t=document.c
           </svg>
         </button>
 
-        <button type="button" class="exercise-item-button">
+        <button id="${t}" type="button" class="exercise-item-button">
           Start&nbsp;&nbsp;
           <svg class="exercise-item-arrow" width="16" height="16">
             <use href="${d}#arrow-right"></use>
@@ -46,4 +46,4 @@ import{a as l,b,e as x}from"./vendor-5fe488fb.js";(function(){const t=document.c
       </ul>
     </div>
   `,a}document.addEventListener("DOMContentLoaded",L);document.addEventListener("click",e=>{if(e.target.classList.contains("exercise-item-button-delete")){const t=e.target.getAttribute("data-exercise-id");F(t)}});function F(e){const o=(f.load(h)||[]).filter(r=>r!==e);f.save(h,o),L()}export{d as a,q as b,j as c,H as f,K as p,i as r,f as s};
-//# sourceMappingURL=favorites-a97a7640.js.map
+//# sourceMappingURL=favorites-dfdb45be.js.map
