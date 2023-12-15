@@ -9,9 +9,9 @@
 
     
     <script type="module" crossorigin src="/team-final-project-js/assets/vendor-ddeddc50.js"></script>
-    <script type="module" crossorigin src="/team-final-project-js/assets/burger-menu-fa21535a.js"></script>
+    <script type="module" crossorigin src="/team-final-project-js/assets/favorites-b161e5e3.js"></script>
     <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-    <link rel="stylesheet" href="/team-final-project-js/assets/styles-3db4ea55.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/styles-27f8a686.css">
   </head>
 
   <body>
@@ -270,11 +270,12 @@
       <div class="categories-pagination">
         <ul id="categories" class="categories-list"></ul>
 
-        <div class="categories-bad-requast is-hidden">
+        <!-- <div class="categories-bad-requast is-hidden">
+
           <svg class="bad-requast" width="335" height="300">
-            <use href="./img/sprite.svg#BadRequast"></use>
+            <use href="./images/sprite.svg#BadRequast"></use>
           </svg>
-        </div>
+        </div> -->
 
         <!-- Pagination.html -->
         <div
@@ -283,14 +284,9 @@
         ></div>
       </div>
     </div>
-
-    <div class="categories-loader-container">
-      <div class="loader" id="categories-loader"></div>
-    </div>
   </div>
 </section>
 
-    <!-- <div id='tui-pagination-container' class='tui-pagination pagination'></div> -->
     <section class='footer'>
   <div class='container footer-container'>
     <div class='footer-wrapper'>
@@ -397,66 +393,18 @@
         <use href="/team-final-project-js/assets/sprite-c789443a.svg#arrow-top"></use>
     </svg>
 </button>
-    <!-- TODO: remove ul gallary -->
-<ul class="gallery">
-  <button class="card">Card with exercise</button>
-</ul>
+    <!-- Modal main -->
 <div class="backdrop is-hidden" data-modal>
   <div class="modal-main">
-    <button type="button" class="modal_close_btn" data-modal-close>
-      <svg class="modal-icon" width="20" height="20">
-        <use href="/src/images/symbol-defs.svg#icon-close"></use>
+    <button type="button" class="modal-close-btn" data-modal-close>
+      <svg class="modal-icon-close">
+        <use href="../images/sprite.svg#close"></use>
       </svg>
-      X
     </button>
-    <div class="modal-container">
-      <!-- <div class="modal-img">
-        <img src="${gifUrl}" alt="${name}" class="image" />
-      </div>
-      <div class="modal-rest">
-        <h3 class="modal-title">${name}</h3>
-        <div class="vote-element">
-          <p class="info-item">******</p>
-          <p class="count" id="vote">${rating}</p>
-        </div>
-        <div class="modal-info">
-          <div class="modal-table">
-            <div class="info-element">
-              <p class="info-item">Target</p>
-              <p class="count">${target}</p>
-            </div>
-            <div class="info-element">
-              <p class="info-item">Body part</p>
-              <p class="count">${bodyPart}</p>
-            </div>
-            <div class="info-element">
-              <p class="info-item">Equipment</p>
-              <p class="count">${equipment}</p>
-            </div>
-            <div class="info-element">
-              <p class="info-item">Popular</p>
-              <p class="count">${popularity}</p>
-            </div>
-            <div class="info-element">
-              <p class="info-item">Burned Calories</p>
-              <p class="count">${burnedCalories}</p>
-            </div>
-          </div>
-          <p class="about-info">${description}</p>
-        </div>
-        <div class="buttons">
-          <button class="add-to-favorites" type="button">
-            Add to favorites
-          </button>
-          <button class="give-a-rating" type="button">Give a rating</button>
-        </div>
-      </div> -->
-    </div>
+    <div class="modal-container"></div>
   </div>
 </div>
 
-    <!-- TODO: remove and add to main.js -->
-    
     
   </body>
 </html>
