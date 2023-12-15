@@ -1,240 +1,117 @@
-<section>
-  <div class="container">
-    <div class="categories-container">
-      <div class="exercises-header">
-        <h2 class="exercises-title">Exercises</h2>
-        <div class="exercises-filter">
-          <div class="exercises-search-wrapper is-hidden" id="search-wrapper">
-            <input
-              id="exercises-search"
-              type="search"
-              name="search"
-              placeholder="Search"
-              class="exercises-search"
-            />
-            <svg class="exercises-search-img" width="18" height="18">
-              <use href="./images/sprite.svg#search"></use>
-            </svg>
-          </div>
-          <ul id="filters" class="filters-list"></ul>
+<section class="section-container">
+  <div class="container categories-container">
+    <div class="exercises-header">
+      <h2 class="exercises-title">Exercises</h2>
+      <div class="exercises-filter">
+        <div class="exercises-search-wrapper is-hidden" id="search-wrapper">
+          <input
+            id="exercises-search"
+            type="search"
+            name="search"
+            placeholder="Search"
+            class="exercises-search"
+          />
+          <svg class="exercises-search-img" width="18" height="18">
+            <use href="./images/sprite.svg#search"></use>
+          </svg>
         </div>
+        <ul id="filters" class="filters-list"></ul>
       </div>
+    </div>
 
-      <div id="categories-wrapper" class="categories-wrapper">
-        <!-- Quote Content -->
-        <div class="quote-container">
-          <div class="quote-wrap">
-            <div class="quote-wrapper">
-              <div class="quote-svg-wrap">
-                <svg class="quote-svg" width="34" height="32">
-                  <use href="./images/sprite.svg#run"></use>
-                </svg>
-              </div>
-              <div class="quote-title-wrap">
-                <div class="quote-title">
-                  <h3>Quote of the day</h3>
-                  <svg class="quote-title-svg" width="25" height="25">
-                    <use href="./images/sprite.svg#commas"></use>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <picture>
-              <source
-                media="(max-width: 767px)"
-                srcset="
-                  ./images/exercise-mobile.webp    1x,
-                  ./images/exercise-mobile@2x.webp 2x
-                "
-              />
-              <source
-                media="(min-width: 768px) and (max-width: 1279px)"
-                srcset="
-                  ./images/exercise-tablet.webp    1x,
-                  ./images/exercise-tablet@2x.webp 2x
-                "
-              />
-              <source
-                media="(min-width: 1280px)"
-                srcset="
-                  ./images/exercise-desktop.webp    1x,
-                  ./images/exercise-desktop@2x.webp 2x
-                "
-              />
-              <img
-                src="./images/exercise-mobile.webp"
-                alt="Exersices"
-                class="quote-img"
-              />
-            </picture>
-          </div>
-          <div class="quote-wrapper article">
-            <div class="quote-svg-wrap article">
+    <div id="categories-wrapper" class="categories-wrapper">
+      <!-- Quote Content -->
+      <div class="quote-container">
+        <div class="quote-wrap">
+          <div class="quote-wrapper">
+            <div class="quote-svg-wrap">
               <svg class="quote-svg" width="34" height="32">
-                <use href="./images/sprite.svg#fluent-food"></use>
+                <use href="./images/sprite.svg#run"></use>
               </svg>
             </div>
-            <div>
-              <div class="quote-title article">
-                <h3>110 min</h3>
+            <div class="quote-title-wrap">
+              <div class="quote-title">
+                <h3>Quote of the day</h3>
+                <svg class="quote-title-svg" width="25" height="25">
+                  <use href="./images/sprite.svg#commas"></use>
+                </svg>
               </div>
-              <p class="quote-text article">Daily norm of sports</p>
-              <p class="quote-author article">
-                The World Health Organization recommends at least 150 minutes of
-                moderate-intensity aerobic physical activity throughout the week
-                for adults aged 18-64. However, what happens if we adjust that
-                number to 110 minutes every day? While it might seem like a high
-                number to hit, dedicating 110 minutes daily to sporting
-                activities may offer unparalleled benefits to physical health,
-                mental well-being, and overall quality of life.
-              </p>
             </div>
           </div>
-        </div>
 
-        <!-- Categities Content -->
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/exercise-mobile.webp    1x,
+                ./images/exercise-mobile@2x.webp 2x
+              "
+            />
+            <source
+              media="(min-width: 768px) and (max-width: 1279px)"
+              srcset="
+                ./images/exercise-tablet.webp    1x,
+                ./images/exercise-tablet@2x.webp 2x
+              "
+            />
+            <source
+              media="(min-width: 1280px)"
+              srcset="
+                ./images/exercise-desktop.webp    1x,
+                ./images/exercise-desktop@2x.webp 2x
+              "
+            />
+            <img
+              src="./images/exercise-mobile.webp"
+              alt="Exersices"
+              class="quote-img"
+            />
+          </picture>
+        </div>
+        <div class="quote-wrapper article">
+          <div class="quote-svg-wrap article">
+            <svg class="quote-svg" width="34" height="32">
+              <use href="./images/sprite.svg#fluent-food"></use>
+            </svg>
+          </div>
+          <div>
+            <div class="quote-title article">
+              <h3>110 min</h3>
+            </div>
+            <p class="quote-text article">Daily norm of sports</p>
+            <p class="quote-author article">
+              The World Health Organization recommends at least 150 minutes of
+              moderate-intensity aerobic physical activity throughout the week
+              for adults aged 18-64. However, what happens if we adjust that
+              number to 110 minutes every day? While it might seem like a high
+              number to hit, dedicating 110 minutes daily to sporting activities
+              may offer unparalleled benefits to physical health, mental
+              well-being, and overall quality of life.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categities Content -->
+      <div class="categories-pagination">
         <ul id="categories" class="categories-list"></ul>
-      </div>
 
-      <div class="categories-loader-container">
-        <div class="loader" id="categories-loader"></div>
-      </div>
+        <div class="categories-bad-requast is-hidden">
+          <svg class="bad-requast" width="335" height="300">
+            <use href="./img/sprite.svg#BadRequast"></use>
+          </svg>
+        </div>
 
-      <!-- <ul class="exercises-list">
-    <li class="exercise-item">
-      <div class="exercise-item-wrapper">
-        <div class="exercise-item-firth-wrapper">
-          <p class="exercise-item-workout">WORKOUT</p>
-          <p class="exercise-item-rating">4.0</p>
-          <svg width="18" height="18" class="exercise-item-star">
-            <use href="../images/sprite.svg#star"></use>
-          </svg>
-          <button type="button" class="exercise-item-button" id="1">
-            Start&nbsp;&nbsp;
-            <svg class="exercise-item-arrow" width="16" height="16">
-              <use href="../images/sprite.svg#arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="exercise-item-second-wrapper">
-          <div class="exercise-item-run-box">
-            <svg class="exercise-item-run" width="16" height="16">
-              <use href="../images/sprite.svg#run"></use>
-            </svg>
-          </div>
-          <h3 class="exercise-item-subtitle">Air bike</h3>
-        </div>
-        <ul class="exercise-item-list">
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Burned calories:<span class="information-text-span"
-                >312 / 3 min</span
-              >
-            </p>
-          </li>
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Body part:<span class="information-text-span">Waist</span>
-            </p>
-          </li>
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Target:<span class="information-text-span">Abs</span>
-            </p>
-          </li>
-        </ul>
+        <!-- Pagination.html -->
+        <div
+          id="tui-pagination-container"
+          class="tui-pagination pagination"
+        ></div>
       </div>
-    </li>
-    <li class="exercise-item">
-      <div class="exercise-item-wrapper">
-        <div class="exercise-item-firth-wrapper">
-          <p class="exercise-item-workout">WORKOUT</p>
-          <p class="exercise-item-rating">4.0</p>
-          <svg width="18" height="18" class="exercise-item-star">
-            <use href="../images/sprite.svg#star"></use>
-          </svg>
-          <button type="button" class="exercise-item-button" id="1">
-            Start&nbsp;&nbsp;
-            <svg class="exercise-item-arrow" width="16" height="16">
-              <use href="../images/sprite.svg#arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="exercise-item-second-wrapper">
-          <div class="exercise-item-run-box">
-            <svg class="exercise-item-run" width="16" height="16">
-              <use href="../images/sprite.svg#run"></use>
-            </svg>
-          </div>
-          <h3 class="exercise-item-subtitle">3/4 sit-up</h3>
-        </div>
-        <ul class="exercise-item-list">
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Burned calories:<span class="information-text-span"
-                >312 / 3 min</span
-              >
-            </p>
-          </li>
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Body part:<span class="information-text-span">Waist</span>
-            </p>
-          </li>
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Target:<span class="information-text-span">Abs</span>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li class="exercise-item">
-      <div class="exercise-item-wrapper">
-        <div class="exercise-item-firth-wrapper">
-          <p class="exercise-item-workout">WORKOUT</p>
-          <p class="exercise-item-rating">4.0</p>
-          <svg width="18" height="18" class="exercise-item-star">
-            <use href="../images/sprite.svg#star"></use>
-          </svg>
-          <button type="button" class="exercise-item-button" id="1">
-            Start&nbsp;&nbsp;
-            <svg class="exercise-item-arrow" width="16" height="16">
-              <use href="../images/sprite.svg#arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="exercise-item-second-wrapper">
-          <div class="exercise-item-run-box">
-            <svg class="exercise-item-run" width="16" height="16">
-              <use href="../images/sprite.svg#run"></use>
-            </svg>
-          </div>
-          <h3 class="exercise-item-subtitle">Barbell rollerout</h3>
-        </div>
-        <ul class="exercise-item-list">
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Burned calories:<span class="information-text-span"
-                >312 / 3 min</span
-              >
-            </p>
-          </li>
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Body part:<span class="information-text-span">Waist</span>
-            </p>
-          </li>
-          <li class="exercise-item-list-information">
-            <p class="information-text">
-              Target:<span class="information-text-span">Abs</span>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul> -->
+    </div>
+
+    <div class="categories-loader-container">
+      <div class="loader" id="categories-loader"></div>
     </div>
   </div>
 </section>
