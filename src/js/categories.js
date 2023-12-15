@@ -5,12 +5,6 @@ import refs from './refs.js';
 import iziToast from 'izitoast';
 
 export async function renderCategories(filter, page) {
-  const loader = document.getElementById('categories-loader');
-  const categoriesWrapper = document.getElementById('categories-wrapper');
-
-  loader.style.display = 'block';
-
-  categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
   refs.divCategories.classList.remove('exercises-list');
   try {
@@ -52,12 +46,6 @@ export async function renderCategories(filter, page) {
       color: 'red',
     };
     return iziToast.show(errorMessage);
-  } finally {
-    setTimeout(() => {
-      loader.style.display = 'none';
-
-      categoriesWrapper.style.display = 'flex';
-    }, 500);
   }
 }
 

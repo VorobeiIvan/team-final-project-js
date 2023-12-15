@@ -2,7 +2,6 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
 export const renderPagination = (perPage, totalPages, page) => {
-
   const paginationEl = document.getElementById('tui-pagination-container');
   const visiblePages = totalPages < 5 ? totalPages : 5;
   const options = {
@@ -22,7 +21,3 @@ export const renderPagination = (perPage, totalPages, page) => {
 
   return pagination;
 };
-
-
-
-
