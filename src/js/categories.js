@@ -1,13 +1,15 @@
 import { fetchCategories } from './api.js';
 import { renderPagination } from './pagination.js';
 import { renderExercises } from './exercises.js';
+import { loader } from './components';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
 export async function renderCategories(filter, page) {
   refs.divCategories.innerHTML = '';
-  refs.divCategories.classList.remove('exercises-list');
+  const { setLoader, deleteLoader } = loader({ disableScroll: true });
   try {
+    setLoader();
     const data = await fetchCategories({
       page: page,
       perPage: 12,
@@ -17,7 +19,8 @@ export async function renderCategories(filter, page) {
       'afterMove',
       ({ page: newPage }) => {
         renderCategories(filter, newPage);
-      }
+        refs.divCategoriesContainer.scrollIntoView();
+      },
     );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
@@ -27,7 +30,6 @@ export async function renderCategories(filter, page) {
 
       return categoryElement;
     });
-
     refs.divCategories.append(...categoriesToRender);
   } catch (error) {
     if (error.response && error.response.status === 409) {
@@ -46,6 +48,10 @@ export async function renderCategories(filter, page) {
       color: 'red',
     };
     return iziToast.show(errorMessage);
+  } finally {
+    setTimeout(() => {
+      deleteLoader();
+    }, 100);
   }
 }
 

@@ -10,24 +10,24 @@ const SUBSCRIPTION = 'subscription';
  *  {page: number, perPage: number,  filter: 'Body parts' || 'Muscles' || 'Equipment'}
  */
 
-export const fetchCategories = async ({
-                                        page = 1,
-                                        perPage = 12,
-                                        filter = 'Muscles',
-                                      } = {}) =>
-  await axios
+export const fetchCategories = ({
+                                  page = 1,
+                                  perPage = 12,
+                                  filter = 'Muscles',
+                                } = {}) =>
+  axios
     .get(`/${FILTERS}?filter=${filter}&page=${page}&limit=${perPage}`)
     .then(response => response.data);
 
 /**
  *  {page: number, perPage: number, filter: {bodypart: string, muscles: string, equipment: string, keyword:string}}
  */
-export const fetchExercises = async ({
-                                       page = 1,
-                                       perPage = 12,
-                                       filter = {},
-                                     } = {}) =>
-  await axios
+export const fetchExercises = ({
+                                 page = 1,
+                                 perPage = 12,
+                                 filter = {},
+                               } = {}) =>
+  axios
     .get(
       `/${EXERCISES}?${new URLSearchParams(
         filter,
@@ -39,8 +39,8 @@ export const fetchExercises = async ({
  *  id: string
  */
 
-export const fetchOneExercise = async id =>
-  await axios.get(`/${EXERCISES}/${id}`).then(response => response.data);
+export const fetchOneExercise = id =>
+  axios.get(`/${EXERCISES}/${id}`).then(response => response.data);
 
 export const fetchQuote = async () => {
   try {
@@ -55,8 +55,8 @@ export const fetchQuote = async () => {
 /**
  *  email: string
  */
-export const postSubscription = async email =>
-  await axios
+export const postSubscription = email =>
+  axios
     .post(`/${SUBSCRIPTION}`, { email })
     .then(response => response.data);
 
@@ -64,8 +64,8 @@ export const postSubscription = async email =>
  *  id: string
  *  data: {rate: number, email: string, review:string}
  */
-export const editExercisesRating = async (id, data) =>
-  await axios
+export const editExercisesRating = (id, data) =>
+  axios
     .patch(`/${EXERCISES}/${id}/rating`, data, {
       headers: {
         'content-type': 'application/json',

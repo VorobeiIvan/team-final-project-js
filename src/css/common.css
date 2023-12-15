@@ -1,23 +1,24 @@
 .container {
-  width: 100%;
-  padding: 0 32px;
+    width: 100%;
+    padding: 0 32px;
+    margin: auto;
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
-  .container {
-    max-width: 375px;
-    padding: 0 20px;
-  }
+    .container {
+        max-width: 375px;
+        padding: 0 20px;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+    .container {
+        max-width: 768px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-  }
+    .container {
+        max-width: 1440px;
+    }
 }
