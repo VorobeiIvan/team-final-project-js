@@ -1,5 +1,6 @@
 .favorites-body {
   background-color: var(--basic-light);
+  min-height: 100vh;
 }
 
 .favorites-container {
