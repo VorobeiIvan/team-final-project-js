@@ -125,6 +125,10 @@
         align-items: flex-end;
     }
 
+    .footer-form {
+        margin-bottom: 70px;
+    }
+
     .hide-mobile {
         display: none;
     }

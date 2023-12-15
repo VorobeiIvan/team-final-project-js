@@ -7,9 +7,9 @@ import iziToast from 'izitoast';
 
 export async function renderCategories(filter, page) {
   refs.divCategories.innerHTML = '';
-  // refs.divCategories.classList.remove('exercises-list');
   const { setLoader, deleteLoader } = loader({ disableScroll: true });
   try {
+    setLoader();
     const data = await fetchCategories({
       page: page,
       perPage: 12,
@@ -30,6 +30,7 @@ export async function renderCategories(filter, page) {
       return categoryElement;
     });
     refs.divCategories.append(...categoriesToRender);
+    refs.divCategoriesContainer.scrollIntoView();
   } catch (error) {
     if (error.response && error.response.status === 409) {
       const errorMessage = {
@@ -48,7 +49,10 @@ export async function renderCategories(filter, page) {
     };
     return iziToast.show(errorMessage);
   } finally {
-    deleteLoader();
+    setTimeout(() => {
+      deleteLoader();
+    }, 200);
+
   }
 }
 

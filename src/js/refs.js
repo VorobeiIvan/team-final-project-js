@@ -3,6 +3,7 @@ export default {
   divQuote: document.getElementById('result-quote'),
   getQuoteButton: document.getElementById('quote'),
   divCategories: document.getElementById('categories'),
+  divCategoriesContainer: document.querySelector('.categories-container'),
   filtersRef: document.getElementById('filters'),
   divExercises: document.getElementById('exercises'),
   footerForm: document.querySelectorAll('.footer-form'),
