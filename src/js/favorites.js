@@ -1,40 +1,9 @@
 import storageApi from '../common/storage';
-import svgSprite from "../img/sprite.svg";
+import svgSprite from '../img/sprite.svg';
 import { fetchExercises } from './api.js';
 import refs from './refs.js';
 
 const favoritesListKey = 'favorites-list';
-
-
-// const favoritesList = storageApi.load(favoritesListKey);
-const favoritesList = ["64f389465ae26083f39b17a2", "64f389465ae26083f39b17a7", "64f389465ae26083f39b17a3"];
-
-const exercisesList = await fetchExercises({
-  // page: 1,
-  // perPage: 10,
-  // filter: curFilter,
-});
-
-
-console.log(exercisesList);
-
-const favoritesFilter = exercisesList?.results?.filter( ( item )=>{
-
-  const id = item['_id'];
-
-  if (favoritesList.includes(id)) {
-    return true;
-  }
-  return false;
-
-} )
-
-console.log(favoritesFilter);
-
-console.log(data);
-console.log(favoritesList);
-
-
 
 async function renderFavorites() {
   try {
@@ -52,15 +21,21 @@ async function renderFavorites() {
 }
 
 function renderEmptyFavorites() {
-  const favoritesListWrapper = document.querySelector('.favorites-list-wrapper');
-  const favoritesNotification = document.querySelector('.favorites-list-notification');
+  const favoritesListWrapper = document.querySelector(
+    '.favorites-list-wrapper'
+  );
+  const favoritesNotification = document.querySelector(
+    '.favorites-list-notification'
+  );
 
   favoritesNotification.classList.remove('is-hidden');
   favoritesListWrapper.innerHTML = '';
 }
 
 function renderFavoriteExercises(exercises, favoritesList) {
-  const favoritesListWrapper = document.querySelector('.favorites-list-wrapper');
+  const favoritesListWrapper = document.querySelector(
+    '.favorites-list-wrapper'
+  );
   const favoritesListContainer = document.querySelector('.favorites-list');
 
   favoritesListContainer.innerHTML = '';
@@ -90,10 +65,11 @@ function createFavoriteExerciseItem(exercise) {
       <div class="exercise-item-wrapper">
         <div class="exercise-item-firth-wrapper">
           <p class="exercise-item-workout">WORKOUT</p>
-          <p class="exercise-item-rating">Favorite</p>
-          <svg class="exercise-item-trash" width="18" height="18">
-            <use href="${svgSprite}#trash"></use>
-          </svg>
+          <button type="button" class="exercise-item-button-delete" id=${_id}>
+            <svg class="exercise-item-trash-icon" width="16" height="16">
+              <use href="${svgSprite}#trash"></use>
+            </svg>
+          </button>
         </div>
         <div class="exercise-item-second-wrapper">
           <div class="exercise-item-run-box">
