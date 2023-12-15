@@ -1,5 +1,4 @@
 import { fetchCategories } from './api.js';
-import { createQuoteMarkup } from './quote.js';
 import { renderPagination } from './pagination.js';
 import { renderExercises } from './exercises.js';
 import refs from './refs.js';
@@ -13,9 +12,8 @@ export async function renderCategories(filter, page) {
 
   categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
+  refs.divCategories.classList.remove('exercises-list');
   try {
-    createQuoteMarkup();
-
     const data = await fetchCategories({
       page: page,
       perPage: 12,
@@ -98,7 +96,7 @@ function capitalizeFirstLetter(inputString) {
 }
 
 function handleCardClick(newActiveCard) {
-  sessionStorage.setItem('category',JSON.stringify(newActiveCard.dataset));
+  sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
   refs.divExSearch.classList.remove('is-hidden');
   renderExercises();
 }

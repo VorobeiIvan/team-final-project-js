@@ -1,49 +1,67 @@
-import svgSprite from "../img/sprite.svg";
+import svgSprite from '../images/sprite.svg';
 import { fetchExercises } from './api.js';
 import refs from './refs.js';
 
+const screenWidth = window.screen.availWidth;
+
 document
-    .querySelector('.exercises-search-wrapper input')
-    .addEventListener('keydown', toSearch);
+  .querySelector('.exercises-search-wrapper input')
+  .addEventListener('keydown', toSearch);
 
 function toSearch(event) {
   const keyword = event.target.value;
   if (event.keyCode === 13 || event.code === 'Enter') {
     renderExercises(keyword);
-  }          
- }
-    
-export async function renderExercises(keyword='') {
+  }
+}
+
+function setPerPage() {
+  if (screenWidth < 768) {
+    return 8;
+  }
+
+  return 10;
+}
   
-    const curFilter = await JSON.parse(sessionStorage.getItem("category"));
-    if (!curFilter) {
-      console.log('not active category!!!')
-      return;
-    } 
-    if (keyword) {
+export async function renderExercises(keyword = '', page = 1) {
+  const curFilter = await JSON.parse(sessionStorage.getItem('category'));
+  if (!curFilter) {
+    console.log('not active category!!!');
+    return;
+  }
+  if (keyword) {
     curFilter.keyword = keyword;
-    };
- 
+  }
+
+  const perPage = setPerPage();
+  
   try {
     const data = await fetchExercises({
-      page: 1,
-      perPage: 10,
+      page: page,
+      perPage: perPage,
       filter: curFilter,
     });
-        
+    if (!data.results.length) {
+      console.log('Bad Requast');
+    }
     const exercisesToRender = createExercise(data.results);
 
+    const exercisesToRender = createExercise(data.results);
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
   } catch {
-    console.log('ooops!!!');
+    console.log('ooops!!!')
   }
 }
-               
+
 function createExercise(arr) {
-    return arr
-      .map(
-        ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
+  return arr
+    .map(({ name, target, rating, burnedCalories, time, _id, bodyPart }) => {
+      const itemId = `${_id}item`;
+      return `
+               <li class="exercise-item" id=${itemId}>
+    .map(
+      ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
                <li class="exercise-item">
           <div class="exercise-item-wrapper">
             <div class="exercise-item-firth-wrapper">
@@ -69,27 +87,26 @@ function createExercise(arr) {
             </div>
             <ul class="exercise-item-list">
               <li class="exercise-item-list-information">
-                <p class="information-text">
+                <p class="information-text burned-calories">
                   Burned calories:<span class="information-text-span"
                     >${burnedCalories} / ${time} min</span
                   >
                 </p>
               </li>
               <li class="exercise-item-list-information">
-                <p class="information-text">
+                <p class="information-text body-part">
                   Body part:<span class="information-text-span">${bodyPart}</span>
                 </p>
               </li>
               <li class="exercise-item-list-information">
-                <p class="information-text">
+                <p class="information-text target">
                   Target:<span class="information-text-span">${target}</span>
                 </p>
               </li>
             </ul>
           </div>
         </li>
-         `
-      )
-      .join('');
-  }
-
+         `;
+    })
+    .join('');
+}

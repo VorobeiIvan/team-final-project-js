@@ -1,11 +1,5 @@
-:root {
-  --backgroudColor: #242424;
-  --whiteText: #f4f4f4;
-  --greyText: rgb(244, 244, 244, 0.6);
-}
-
 .quote-container {
-  color: var(--whiteText);
+  color: var(--basic-light);
 }
 
 @media screen and (min-width: 1440px) {
@@ -15,19 +9,39 @@
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .quote-container-favorites {
+    max-width: 600px;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrap {
     display: flex;
     gap: 16px;
-    height: 250px;
+    min-height: 250px;
     margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-wrap-favorites {
+    display: flex;
+    min-height: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-wrap-favorites {
+    display: grid;
+    grid-template-columns: 50% 50%;
   }
 }
 
 .quote-wrapper {
   display: flex;
-  padding: 40px;
-  background: var(--backgroudColor);
+  padding: 20px;
+  background: var(--main-black);
   border-radius: 20px;
   margin-bottom: 32px;
 }
@@ -35,12 +49,55 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrapper {
     margin-bottom: 0;
+    min-width: 400px;
+    width: 400px;
+  }
+
+  .quote-favorites {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-favorites {
+    margin-bottom: 16px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .quote-wrapper {
     min-height: 245px;
+    padding: 40px;
+  }
+
+  .quote-favorites {
+    margin-bottom: 16px;
+  }
+
+  .quote-wrapper.quote-favorites {
+    min-height: 230px;
+  }
+}
+
+.quote-wrapper.article.favorites {
+  display: block;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .quote-wrapper.article.favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    min-width: 352px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-wrapper.article.favorites {
+    margin-right: 16px;
+    padding: 25px;
+    min-height: 140px;
   }
 }
 
@@ -57,7 +114,7 @@
 }
 
 .quote-svg {
-  fill: var(--whiteText);
+  fill: var(--basic-light);
   width: 20px;
   height: 20px;
 }
@@ -75,7 +132,7 @@
   font-weight: 500;
   line-height: 1;
   margin-bottom: 6px;
-  color: var(--whiteText);
+  color: var(--basic-light);
 }
 
 .quote-title-svg {
@@ -85,7 +142,7 @@
 .quote-text {
   font-size: 14px;
   margin-bottom: 18px;
-  color: var(--greyText);
+  color: rgb(244, 244, 244, 0.6);
 }
 
 @media screen and (min-width: 1440px) {
@@ -95,13 +152,12 @@
 }
 
 .quote-author {
-  color: var(--whiteText);
+  color: var(--basic-light);
 }
 
 .quote-img {
   display: block;
   width: 727px;
-  height: 242px;
   border-radius: 20px;
   margin-bottom: 32px;
   object-fit: cover;
@@ -110,7 +166,12 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-img {
     margin-bottom: 0;
-    height: 245px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-img-favorites {
+    height: 140px;
   }
 }
 
@@ -121,15 +182,16 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .quote-wrapper.article {
     height: 250px;
+    max-width: 400px;
   }
 }
 
 .quote-svg-wrap.article {
-  background-color: var(--backgroudColor);
+  background-color: var(--main-black);
 }
 
 .quote-title.article {
-  color: var(--backgroudColor);
+  color: var(--main-black);
 }
 
 .quote-author.article {
@@ -138,7 +200,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  color: var(--backgroudColor);
+  color: var(--main-black);
 }
 
 @media screen and (min-width: 1440px) {

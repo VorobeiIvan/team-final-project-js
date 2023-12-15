@@ -133,6 +133,10 @@
         max-width: 1440px;
     }
 
+    .hero-section-wrapper {
+        position: relative;
+    }
+
     .hero-section {
         padding-bottom: 32px;
         padding-top: 20px;
@@ -163,8 +167,8 @@
 
     .hero-hashtags-list {
         position: absolute;
-        top: 190px;
-        right: 102px;
+        top: 168px;
+        right: 32px;
         display: flex;
         width: 200px;
         gap: 8px;
