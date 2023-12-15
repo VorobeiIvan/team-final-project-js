@@ -41,10 +41,17 @@ export async function renderExercises(keyword = '', page = 1) {
       perPage: perPage,
       filter: curFilter,
     });
+
+    let exercisesToRender = '';
     if (!data.results.length) {
-      console.log('Bad Requast');
+      exercisesToRender = `<li><div class="categories-bad-requast">
+          <svg class="bad-requast" width="335" height="300">
+            <use href="./images/sprite.svg#BadRequast"></use>
+          </svg>
+        </div></li>`;
+    } else {
+      exercisesToRender = createExercise(data.results);
     }
-    const exercisesToRender = createExercise(data.results);
 
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
