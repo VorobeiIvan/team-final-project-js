@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <!-- styles -->
-
     
     <script type="module" crossorigin src="/team-final-project-js/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-5fe488fb.js">
@@ -16,7 +15,7 @@
   </head>
 
   <body>
-    <header class="page-header">
+      <header class="page-header">
   <!-- header container -->
   <div class="container">
     <div class="header-container ">
@@ -160,7 +159,8 @@
   </div>
 
 </header>
-    <section class="hero-section">
+     <main>
+      <section class="hero-section">
     <div class="container hero-section-wrapper">
         <div class="hero-title-container">
             <svg class="hero-title-icon" width="38" height="38">
@@ -195,7 +195,7 @@
         </ul>
     </div>
 </section>
-    <section class="section-container">
+      <section class="section-container">
   <div class="container categories-container">
     <div class="exercises-header">
       <h2 class="exercises-title">Exercises</h2>
@@ -301,7 +301,25 @@
   </div>
 </section>
 
-    <footer class='footer'>
+      <button id="scroll-up-btn" class="scroll-up-button" type="button">
+    <svg class="scroll-up-icon" width="16" height="16" aria-label="scroll-up">
+        <use href="/team-final-project-js/assets/sprite-d821f38c.svg#arrow-top"></use>
+    </svg>
+</button>
+      <!-- Modal main -->
+<div class="backdrop is-hidden" data-modal>
+  <div class="modal-main">
+    <button type="button" class="modal-close-btn" data-modal-close>
+      <svg class="modal-icon-close">
+        <use href="../images/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="modal-container"></div>
+  </div>
+</div>
+
+    </main>
+       <footer class='footer'>
   <div class='container'>
     <div class='footer-wrapper'>
       <div class='footer-form-wrapper'>
@@ -406,23 +424,6 @@
 
   </div>
 </footer>
-    <button id="scroll-up-btn" class="scroll-up-button" type="button">
-    <svg class="scroll-up-icon" width="16" height="16" aria-label="scroll-up">
-        <use href="/team-final-project-js/assets/sprite-d821f38c.svg#arrow-top"></use>
-    </svg>
-</button>
-    <!-- Modal main -->
-<div class="backdrop is-hidden" data-modal>
-  <div class="modal-main">
-    <button type="button" class="modal-close-btn" data-modal-close>
-      <svg class="modal-icon-close">
-        <use href="../images/sprite.svg#close"></use>
-      </svg>
-    </button>
-    <div class="modal-container"></div>
-  </div>
-</div>
-
-    
+     
   </body>
 </html>
