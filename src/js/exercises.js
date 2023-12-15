@@ -46,7 +46,7 @@ export async function renderExercises(keyword = '', page = 1) {
     }
     const exercisesToRender = createExercise(data.results);
 
-    const exercisesToRender = createExercise(data.results);
+    // const exercisesToRender = createExercise(data.results);
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
   } catch {
@@ -56,21 +56,17 @@ export async function renderExercises(keyword = '', page = 1) {
 
 function createExercise(arr) {
   return arr
-    .map(({ name, target, rating, burnedCalories, time, _id, bodyPart }) => {
-      const itemId = `${_id}item`;
-      return `
-               <li class="exercise-item" id=${itemId}>
     .map(
       ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
-               <li class="exercise-item">
+        <li class="exercise-item" id="${_id}item">
           <div class="exercise-item-wrapper">
             <div class="exercise-item-firth-wrapper">
               <p class="exercise-item-workout">WORKOUT</p>
               <p class="exercise-item-rating">${rating}</p>
-              <svg class="exercise-item-star" width="18" height="18" >
+              <svg class="exercise-item-star" width="18" height="18">
                 <use href="${svgSprite}#star"></use>
               </svg>
-              <button type="button" class="exercise-item-button" id=${_id}>
+              <button type="button" class="exercise-item-button" id="${_id}">
                 Start&nbsp;&nbsp;
                 <svg class="exercise-item-arrow" width="16" height="16">
                   <use href="${svgSprite}#arrow-right"></use>
@@ -88,9 +84,7 @@ function createExercise(arr) {
             <ul class="exercise-item-list">
               <li class="exercise-item-list-information">
                 <p class="information-text burned-calories">
-                  Burned calories:<span class="information-text-span"
-                    >${burnedCalories} / ${time} min</span
-                  >
+                  Burned calories:<span class="information-text-span">${burnedCalories} / ${time} min</span>
                 </p>
               </li>
               <li class="exercise-item-list-information">
@@ -106,7 +100,7 @@ function createExercise(arr) {
             </ul>
           </div>
         </li>
-         `;
-    })
+      `
+    )
     .join('');
 }
