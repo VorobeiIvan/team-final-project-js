@@ -8,7 +8,7 @@
 import storageApi from '../common/storage';
 import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
-import svgSprite from '../img/sprite.svg';
+import svgSprite from '../images/sprite.svg';
 import refs from './refs.js';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
