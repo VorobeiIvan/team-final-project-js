@@ -1,5 +1,4 @@
 export default {
-  //ці змінні як приклад для подальшого використання
   divQuote: document.getElementById('result-quote'),
   getQuoteButton: document.getElementById('quote'),
   divCategories: document.getElementById('categories'),
@@ -18,13 +17,4 @@ export default {
   favorites: document.querySelector('.favorites-list'),
   buttonTheme: document.getElementById('theme-switch'),
   body: document.querySelector('body'),
-  heroTitle: document.querySelector('.hero-title'),
-  heroSubTitle: document.querySelector('.hero-subtitle'),
-  headerMediaLinks: document.querySelectorAll('.header-social-media-link'),
-  headerMediaLinksIcons: document.querySelectorAll('.header-social-media-icon'),
-  logoIcon: document.querySelector('.social-media-icon'),
-  heroTitleIcon: document.querySelector('.hero-title-icon'),
-  heroHashtagIcon: document.querySelectorAll('.hero-hashtag-item'),
-  headerNavBar: document.querySelector('.header-nav-list'),
-  paginationButton: document.getElementById('tui-pagination-container'),
 };

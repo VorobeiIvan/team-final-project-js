@@ -1,4 +1,5 @@
 import 'izitoast/dist/css/iziToast.min.css';
+import './js/darkThemeSwitch.js';
 import './js/filters.js';
 import './js/quote.js';
 import './js/components/';
@@ -10,4 +11,3 @@ import './js/burger-menu.js';
 import './js/exercises.js';
 import './js/pagination.js';
 import './js/favorites.js';
-import './js/darkThemeSwitch.js';

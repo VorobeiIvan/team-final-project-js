@@ -21,31 +21,11 @@ function getStorage() {
 
 function darkTheme() {
   refs.body.classList.add('darkTheme');
-  refs.heroTitle.classList.add('darkTheme');
-  refs.heroSubTitle.classList.add('darkTheme');
-  refs.headerMediaLinks.forEach(elem => elem.classList.add('footer-link-network'));
-  refs.headerMediaLinksIcons.forEach(elem => elem.classList.add('footer-svg'));
-  refs.logoIcon.classList.add('footer-logo-link-img');
-  refs.heroTitleIcon.classList.add('footer-logo-link-img');
-  refs.heroHashtagIcon.forEach(elem => elem.classList.add('border-color-theme'));
-  refs.headerNavBar.classList.add('header-nav-dark-theme');
-  refs.paginationButton.classList.add('pagination-button-dark-theme');
-  refs.filtersRef.classList.add('filter-color-dark');
   refs.buttonTheme.checked = true;
 }
 
 function lightTheme() {
   refs.body.classList.remove('darkTheme');
-  refs.heroTitle.classList.remove('darkTheme');
-  refs.heroSubTitle.classList.remove('darkTheme');
-  refs.headerMediaLinks.forEach(elem => elem.classList.remove('footer-link-network'));
-  refs.headerMediaLinksIcons.forEach(elem => elem.classList.remove('footer-svg'));
-  refs.logoIcon.classList.remove('footer-logo-link-img');
-  refs.heroTitleIcon.classList.remove('footer-logo-link-img');
-  refs.heroHashtagIcon.forEach(elem => elem.classList.remove('border-color-theme'));
-  refs.headerNavBar.classList.remove('header-nav-dark-theme');
-  refs.paginationButton.classList.remove('pagination-button-dark-theme');
-  refs.filtersRef.classList.remove('filter-color-dark');
   refs.buttonTheme.checked = false;
 }
 

@@ -1,87 +1,93 @@
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 40px 0;
 }
 
 .header-nav-list {
-  min-width: 265px;
-  min-height: 52px;
+    min-width: 265px;
+    min-height: 52px;
 
-  border-radius: 60px;
-  background: var(--basic-dark);
+    border-radius: 60px;
+    background: var(--basic-dark);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  color: var(--basic-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    color: var(--basic-light);
 }
 
 .active-page {
-  color: var(--basic-dark);
+    color: var(--basic-dark);
 
-  display: inline-flex;
-  padding: 6px 12px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+    display: inline-flex;
+    padding: 6px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
-  border-radius: 30px;
-  background: var(--basic-light);
+    border-radius: 30px;
+    background: var(--basic-light);
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-social-media-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
 
-  .header-nav,
-  .header-social-media-container {
-    display: none;
+    .header-nav,
+    .header-social-media-container {
+        display: none;
 
-  }
+    }
 
-  .burger-menu-btn {
-    position: relative;
-  }
+    .burger-menu-btn {
+        position: relative;
+    }
 }
 
 @media screen and (min-width: 768px) {
 
-  .burger-menu-icon,
-  .burger-menu-btn {
-    display: none;
-  }
+    .burger-menu-icon,
+    .burger-menu-btn {
+        display: none;
+    }
 
-  .burger-menu-btn {
-    position: absolute;
-  }
+    .burger-menu-btn {
+        position: absolute;
+    }
 
-  .header-container {
-    max-width: 100%;
-    padding: 24px 0 50px 0;
-  }
+    .header-container {
+        max-width: 100%;
+        padding: 24px 0 50px 0;
+    }
 }
 
 @media screen and (min-width: 1440px) {
 
-  .burger-menu-icon,
-  .burger-menu-btn {
-    display: none;
-  }
+    .burger-menu-icon,
+    .burger-menu-btn {
+        display: none;
+    }
 
-  .burger-menu-btn {
-    position: absolute;
-  }
+    .burger-menu-btn {
+        position: absolute;
+    }
 
-  .header-container {
-    max-width: 100%;
-    padding: 28px 0 50px 0;
-  }
+    .header-container {
+        max-width: 100%;
+        padding: 28px 0 50px 0;
+    }
 }
