@@ -2,8 +2,6 @@ import svgSprite from '../images/sprite.svg';
 import { fetchExercises } from './api.js';
 import refs from './refs.js';
 
-const screenWidth = window.screen.availWidth;
-
 document
   .querySelector('.exercises-search-wrapper input')
   .addEventListener('keydown', toSearch);
@@ -16,13 +14,12 @@ function toSearch(event) {
 }
 
 function setPerPage() {
-  if (screenWidth < 768) {
+  if (window.innerWidth < 768) {
     return 8;
   }
-
   return 10;
 }
-
+  
 export async function renderExercises(keyword = '', page = 1) {
   const curFilter = await JSON.parse(sessionStorage.getItem('category'));
   if (!curFilter) {
@@ -34,22 +31,29 @@ export async function renderExercises(keyword = '', page = 1) {
   }
 
   const perPage = setPerPage();
-
+  
   try {
     const data = await fetchExercises({
       page: page,
       perPage: perPage,
       filter: curFilter,
     });
-    if (!data.results.length) {
-      console.log('Bad Requast');
-    }
-    const exercisesToRender = createExercise(data.results);
 
+    let exercisesToRender = '';
+    if (!data.results.length) {
+      exercisesToRender = `<li><div class="categories-bad-requast">
+          <svg class="bad-requast" width="335" height="300">
+            <use href="./images/sprite.svg#BadRequast"></use>
+          </svg>
+        </div></li>`;
+    } else {
+      exercisesToRender = createExercise(data.results);
+    }
+    
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
   } catch {
-    console.log('ooops!!!');
+    console.log('ooops!!!')
   }
 }
 
@@ -57,7 +61,7 @@ function createExercise(arr) {
   return arr
     .map(
       ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
-        <li class="exercise-item" id="${_id}item">
+        <li class="exercise-item" id="${_id}">
           <div class="exercise-item-wrapper">
             <div class="exercise-item-firth-wrapper">
               <p class="exercise-item-workout">WORKOUT</p>
@@ -65,7 +69,7 @@ function createExercise(arr) {
               <svg class="exercise-item-star" width="18" height="18">
                 <use href="${svgSprite}#star"></use>
               </svg>
-              <button type="button" class="exercise-item-button" id="${_id}">
+              <button type="button" class="exercise-item-button">
                 Start&nbsp;&nbsp;
                 <svg class="exercise-item-arrow" width="16" height="16">
                   <use href="${svgSprite}#arrow-right"></use>
