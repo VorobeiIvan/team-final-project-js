@@ -91,7 +91,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 16px;
-  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -150,9 +149,11 @@
   display: flex;
   align-items: center;
 }
+
 .exercise-item-arrow {
   stroke: var(--basic-dark);
 }
+
 .exercise-item-second-wrapper {
   display: flex;
   align-items: center;
@@ -168,20 +169,28 @@
   align-items: center;
   margin-right: 16px;
 }
+
 .exercise-item-run {
   fill: var(--basic-light);
 }
+
 .exercise-item-subtitle {
   max-width: 250px;
   color: var(--basic-dark);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 24px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: lowercase;
 }
+
+.exercise-item-subtitle::first-letter {
+  text-transform: uppercase;
+}
+
 @media only screen and (min-width: 768px) {
   .exercise-item-subtitle {
     max-width: 272px;
@@ -247,6 +256,10 @@
 @media only screen and (min-width: 1440px) {
   .burned-calories {
     max-width: 149px;
+  }
+
+  .target {
+    max-width: 100px;
   }
 }
 @media only screen and (min-width: 768px) {
