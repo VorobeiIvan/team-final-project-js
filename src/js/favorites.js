@@ -40,6 +40,7 @@ function createFavoriteExerciseItem(exercise) {
   const { _id, name, burnedCalories, time, bodyPart, target } = exercise;
   const exerciseItem = document.createElement('li');
   exerciseItem.className = 'exercise-item';
+  exerciseItem.id = `${_id}`;
 
   exerciseItem.innerHTML = `
     <div class="exercise-item-wrapper">
@@ -52,7 +53,7 @@ function createFavoriteExerciseItem(exercise) {
           </svg>
         </button>
 
-        <button type="button" class="exercise-item-button" id="${_id}">
+        <button type="button" class="exercise-item-button">
           Start&nbsp;&nbsp;
           <svg class="exercise-item-arrow" width="16" height="16">
             <use href="${svgSprite}#arrow-right"></use>
