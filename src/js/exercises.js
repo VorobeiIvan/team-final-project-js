@@ -67,6 +67,7 @@ export async function renderExercises(keyword = '', page = 1) {
       refs.divCategories.classList.add('exercises-list-bed-requast');
     } else {
       exercisesToRender = createExercise(data.results);
+      refs.divCategories.classList.remove('exercises-list-bed-requast');
       refs.divCategories.classList.add('exercises-list');
     }
 
