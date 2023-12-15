@@ -187,6 +187,7 @@
   fill: var(--basic-light);
 }
 .exercise-item-subtitle {
+  max-width: 250px;
   color: var(--basic-dark);
   font-size: 20px;
   font-style: normal;
@@ -195,6 +196,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+@media only screen and (min-width: 768px) {
+  .exercise-item-subtitle {
+    max-width: 272px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .exercise-item-subtitle {
+    max-width: 318px;
+  }
 }
 .exercise-item-list {
   display: flex;
@@ -228,6 +239,30 @@
   text-transform: capitalize;
   margin-left: 2px;
 }
+
+.burned-calories {
+  max-width: 131px;
+}
+.body-part {
+  max-width: 91px;
+}
+.target {
+  max-width: 61px;
+}
+@media only screen and (min-width: 768px) {
+  .burned-calories {
+    max-width: 136px;
+  }
+  .body-part {
+    max-width: 93px;
+  }
+  .target {
+    max-width: 63px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .burned-calories {
+    max-width: 149px;
 
 @media only screen and (min-width: 768px) {
   .bad-requast {
