@@ -30,21 +30,20 @@
 }
 
 .favorites-list-wrapper {
-
 }
 
-.favorites-list {
-  display: flex;
-  flex-wrap: wrap;
+.favorites-exercise-list {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 32px 16px;
+  /* max-width: 900px; */
+  margin-left: auto;
 
   height: 487px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px 16px;
   overflow-y: scroll;
 }
 
-.favorites-list-item {
+.favorites-list-exercise-item {
   height: 141px;
   background: #fff;
   padding: 16px 18px;
@@ -57,7 +56,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  
 }
 
 @media only screen and (max-width: 768px) {
@@ -74,8 +72,8 @@
   }
 
   .favorites-quote-container {
-   display: flex;
-   flex-direction: column; 
+    display: flex;
+    flex-direction: column;
   }
 
   .favorites-quote-column {
@@ -96,7 +94,7 @@
 
   .favorites-quote-bottom-wrapper {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     justify-content: space-between;
     column-gap: 16px;
   }
