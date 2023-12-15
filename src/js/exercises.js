@@ -23,6 +23,7 @@ function toSearch(event) {
      renderExercises(keyword);
   }
 }
+
 function setPerPage() {
   if (window.innerWidth < 768) {
     return 8;
