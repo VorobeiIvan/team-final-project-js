@@ -23,8 +23,7 @@ export function handleExerciseCardClick(e, exerciseId) {
     return;
   }
 
-  const convertCardIdToNormalId = isCard.id.slice(0, isCard.id.length - 4);
-  openModal(convertCardIdToNormalId);
+  openModal(isCard.id);
 }
 
 // handleFavoritesCardClick(){
