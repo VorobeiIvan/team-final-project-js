@@ -18,7 +18,7 @@
 
 .hero-title {
   width: 100%;
-  font-family: 'DMSans';
+  font-family: var(--font-family);
   color: var(--basic-dark);
   font-size: 38px;
   font-weight: 400;
@@ -33,7 +33,7 @@
 
 .hero-subtitle {
   width: 100%;
-  font-family: 'DMSans';
+  font-family: var(--font-family);
   color: var(--basic-dark);
   font-size: 14px;
   font-weight: 400;
@@ -69,7 +69,7 @@
 }
 
 .hero-hashtag-item {
-  font-family: 'DMSans';
+  font-family: var(--font-family);
   font-size: 14px;
   line-height: 1.28;
   border-radius: 30px;
@@ -124,7 +124,7 @@
 
   .hero-hashtag-item {
     padding: 4px 16px;
-    font-size: 16px;
+    font-size: var(--font-size);
   }
 }
 
