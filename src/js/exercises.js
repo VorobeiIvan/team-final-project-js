@@ -46,6 +46,7 @@ export async function renderExercises(keyword = '', page = 1) {
     }
     const exercisesToRender = createExercise(data.results);
 
+    const exercisesToRender = createExercise(data.results);
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
   } catch {
@@ -55,6 +56,10 @@ export async function renderExercises(keyword = '', page = 1) {
 
 function createExercise(arr) {
   return arr
+    .map(({ name, target, rating, burnedCalories, time, _id, bodyPart }) => {
+      const itemId = `${_id}item`;
+      return `
+               <li class="exercise-item" id=${itemId}>
     .map(
       ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
                <li class="exercise-item">
@@ -101,7 +106,7 @@ function createExercise(arr) {
             </ul>
           </div>
         </li>
-         `
-    )
+         `;
+    })
     .join('');
 }
