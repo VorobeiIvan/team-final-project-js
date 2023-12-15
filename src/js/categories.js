@@ -19,6 +19,7 @@ export async function renderCategories(filter, page) {
       'afterMove',
       ({ page: newPage }) => {
         renderCategories(filter, newPage);
+        refs.divCategoriesContainer.scrollIntoView();
       },
     );
     const categoriesToRender = data.results.map(category => {
@@ -30,7 +31,6 @@ export async function renderCategories(filter, page) {
       return categoryElement;
     });
     refs.divCategories.append(...categoriesToRender);
-    refs.divCategoriesContainer.scrollIntoView();
   } catch (error) {
     if (error.response && error.response.status === 409) {
       const errorMessage = {
@@ -51,8 +51,7 @@ export async function renderCategories(filter, page) {
   } finally {
     setTimeout(() => {
       deleteLoader();
-    }, 200);
-
+    }, 100);
   }
 }
 

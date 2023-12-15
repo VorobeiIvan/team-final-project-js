@@ -2,6 +2,7 @@ import svgSprite from '../images/sprite.svg';
 import { fetchExercises } from './api.js';
 import refs from './refs.js';
 import { renderPagination } from './pagination.js';
+import { loader } from './components/index.js';
 
 document
   .querySelector('.exercises-search-wrapper input')
@@ -32,8 +33,10 @@ export async function renderExercises(keyword = '', page = 1) {
   }
 
   const perPage = setPerPage();
+  const { setLoader, deleteLoader } = loader({ disableScroll: true });
 
   try {
+    setLoader();
     const data = await fetchExercises({
       page: page,
       perPage: perPage,
@@ -44,6 +47,7 @@ export async function renderExercises(keyword = '', page = 1) {
       'afterMove',
       ({ page: newPage }) => {
         renderExercises(keyword, newPage);
+        refs.divCategoriesContainer.scrollIntoView();
       },
     );
 
@@ -60,9 +64,12 @@ export async function renderExercises(keyword = '', page = 1) {
 
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
-    refs.divCategoriesContainer.scrollIntoView();
   } catch {
     console.log('ooops!!!');
+  } finally {
+    setTimeout(() => {
+      deleteLoader();
+    }, 100);
   }
 }
 
