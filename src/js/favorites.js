@@ -53,7 +53,7 @@ function createFavoriteExerciseItem(exercise) {
           </svg>
         </button>
 
-        <button type="button" class="exercise-item-button">
+        <button id="${_id}" type="button" class="exercise-item-button">
           Start&nbsp;&nbsp;
           <svg class="exercise-item-arrow" width="16" height="16">
             <use href="${svgSprite}#arrow-right"></use>
