@@ -10,142 +10,155 @@
     
     <script type="module" crossorigin src="/team-final-project-js/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-5fe488fb.js">
-    <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/favorites-7929b6b4.js">
+    <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/favorites-30f433d3.js">
     <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-    <link rel="stylesheet" href="/team-final-project-js/assets/styles-3a5a1eba.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/styles-93c90ef9.css">
   </head>
 
   <body>
     <header class="page-header">
-    <!-- header container -->
-    <div class="container">
-        <div class="header-container ">
-            <!-- header navigation -->
-        <!-- logo -->
-        <a class="logo" href="./index.html">
-            <svg class="social-media-icon" width="132" height="24" aria-label="logo your energy">
-                <use href="/team-final-project-js/assets/sprite-c789443a.svg#logo"></use>
-            </svg>
-        </a>
-        <!-- navigation -->
-        <nav class="header-nav">
-            <ul class="header-nav-list">
-                <!-- menu -->
-                <li class="header-nav-item">
-                    <a class="header-nav-link " href="./index.html">
-                        Home
-                    </a>
-                </li>
-                <li class="header-nav-item">
-                    <a class="header-nav-link" href="./favorites-page.html">
-                        Favorites
-                    </a>
-                </li>
+  <!-- header container -->
+  <div class="container">
+    <div class="header-container ">
+      <!-- header navigation -->
+      <!-- logo -->
+      <a class="logo" href="./index.html">
+        <svg class="social-media-icon" width="132" height="24" aria-label="logo your energy">
+          <use href="/team-final-project-js/assets/sprite-c789443a.svg#logo"></use>
+        </svg>
+      </a>
+      <!-- navigation -->
+      <nav class="header-nav">
+        <ul class="header-nav-list">
+          <!-- menu -->
+          <li class="header-nav-item">
+            <a class="header-nav-link " href="./index.html">
+              Home
+            </a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="./favorites-page.html">
+              Favorites
+            </a>
+          </li>
 
-            </ul>
-        </nav>
-        <!-- social media -->
-        <div class="header-social-media-container">
-            <ul class="header-social-media-list">
-                <!-- facebook -->
-                <li class="header-social-media-item">
-                    <a class="header-social-media-link" href="https://www.facebook.com/goITclub/" target="_blank"
-                        rel="noopener noreferrer">
-                        <svg class="header-social-media-icon" width="28" height="28" aria-label="facebook icon">
-                            <use href="/team-final-project-js/assets/sprite-c789443a.svg#facebook"></use>
-                        </svg>
-                    </a>
-                </li>
-                <!-- instagram -->
-                <li class="header-social-media-item">
-                    <a class="header-social-media-link" href="https://www.instagram.com/goitclub/" target="_blank"
-                        rel="noopener noreferrer">
-                        <svg class="header-social-media-icon" width="28" height="28" aria-label="instagram icon">
-                            <use href="/team-final-project-js/assets/sprite-c789443a.svg#instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-                <!-- youtube -->
-                <li class="header-social-media-item">
-                    <a class="header-social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
-                        rel="noopener noreferrer">
-                        <svg class="header-social-media-icon" width="28" height="28" aria-label="youtube icon">
-                            <use href="/team-final-project-js/assets/sprite-c789443a.svg#youtube"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+        </ul>
+      </nav>
+      <!-- social media -->
+      <div class="header-social-media-container header-social-media-wrapper">
+        <div>
+          <label class="switch">
+            <input type="checkbox" class="theme-switch">
+            <span></span>
+          </label>
         </div>
+        <ul class="header-social-media-list">
+          <!-- facebook -->
+          <li class="header-social-media-item">
+            <a class="header-social-media-link" href="https://www.facebook.com/goITclub/" target="_blank"
+               rel="noopener noreferrer">
+              <svg class="header-social-media-icon" width="28" height="28" aria-label="facebook icon">
+                <use href="/team-final-project-js/assets/sprite-c789443a.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <!-- instagram -->
+          <li class="header-social-media-item">
+            <a class="header-social-media-link" href="https://www.instagram.com/goitclub/" target="_blank"
+               rel="noopener noreferrer">
+              <svg class="header-social-media-icon" width="28" height="28" aria-label="instagram icon">
+                <use href="/team-final-project-js/assets/sprite-c789443a.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <!-- youtube -->
+          <li class="header-social-media-item">
+            <a class="header-social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
+               rel="noopener noreferrer">
+              <svg class="header-social-media-icon" width="28" height="28" aria-label="youtube icon">
+                <use href="/team-final-project-js/assets/sprite-c789443a.svg#youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        <!-- mobile burger menu -->
-        <!--mobile header  -->
+      <!-- mobile burger menu -->
+      <!--mobile header  -->
+      <div class="header-social-media-wrapper toggle-switch">
+        <div class="header-social-media-wrapper">
+          <label class="switch">
+            <input type="checkbox" class="theme-switch">
+            <span></span>
+          </label>
+        </div>
         <button class="burger-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
-            <svg class="burger-menu-icon" width="32" height="32" aria-label="burger menu icon for mobile">
-                <use href="/team-final-project-js/assets/sprite-c789443a.svg#burger-menu"></use>
-            </svg>
+          <svg class="burger-menu-icon" width="32" height="32" aria-label="burger menu icon for mobile">
+            <use href="/team-final-project-js/assets/sprite-c789443a.svg#burger-menu"></use>
+          </svg>
         </button>
-
-        <!-- modal burger menu  -->
-        <div class="menu-container js-menu-container" id="mobile-menu">
-            <div class="modal">
-                <button class="close-btn js-close-menu" type="button">
-                    <svg class="close-modal-btn-icon" width="32" height="32"
-                        aria-label="closing button icon for burger menu mobile">
-                        <use href="/team-final-project-js/assets/sprite-c789443a.svg#close"></use>
-                    </svg>
-                </button>
-                <nav class="nav-burger-menu">
-                    <ul class="nav-burger-menu-list">
-                        <li class="nav-burger-menu-item">
-                            <a class="nav-burger-menu-link" href="./index.html">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-burger-menu-item">
-                            <a class="nav-burger-menu-link" href="./favorites-page.html">
-                                Favorites
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- social media -->
-                <div class="burger-social-media-container">
-                    <ul class="burger-social-media-list">
-                        <!-- facebook -->
-                        <li class="burger-social-media-item">
-                            <a class="burger-social-media-link" href="https://www.facebook.com/goITclub/"
-                                target="_blank" rel="noopener noreferrer">
-                                <svg class="burger-social-media-icon" width="24" height="24" aria-label="facebook icon">
-                                    <use href="/team-final-project-js/assets/sprite-c789443a.svg#facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <!-- instagram -->
-                        <li class="burger-social-media-item">
-                            <a class="burger-social-media-link" href="https://www.instagram.com/goitclub/"
-                                target="_blank" rel="noopener noreferrer">
-                                <svg class="burger-social-media-icon" width="24" height="24"
-                                    aria-label="instagram icon">
-                                    <use href="/team-final-project-js/assets/sprite-c789443a.svg#instagram"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <!-- youtube -->
-                        <li class="burger-social-media-item">
-                            <a class="burger-social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
-                                rel="noopener noreferrer">
-                                <svg class="burger-social-media-icon" width="24" height="24" aria-label="youtube icon">
-                                    <use href="/team-final-project-js/assets/sprite-c789443a.svg#youtube"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
+      </div>
+      <!-- modal burger menu  -->
+      <div class="menu-container js-menu-container" id="mobile-menu">
+        <div class="modal">
+          <button class="close-btn js-close-menu" type="button">
+            <svg class="close-modal-btn-icon" width="32" height="32"
+                 aria-label="closing button icon for burger menu mobile">
+              <use href="/team-final-project-js/assets/sprite-c789443a.svg#close"></use>
+            </svg>
+          </button>
+          <nav class="nav-burger-menu">
+            <ul class="nav-burger-menu-list">
+              <li class="nav-burger-menu-item">
+                <a class="nav-burger-menu-link" href="./index.html">
+                  Home
+                </a>
+              </li>
+              <li class="nav-burger-menu-item">
+                <a class="nav-burger-menu-link" href="./favorites-page.html">
+                  Favorites
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- social media -->
+          <div class="burger-social-media-container">
+            <ul class="burger-social-media-list">
+              <!-- facebook -->
+              <li class="burger-social-media-item">
+                <a class="burger-social-media-link" href="https://www.facebook.com/goITclub/"
+                   target="_blank" rel="noopener noreferrer">
+                  <svg class="burger-social-media-icon" width="24" height="24" aria-label="facebook icon">
+                    <use href="/team-final-project-js/assets/sprite-c789443a.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <!-- instagram -->
+              <li class="burger-social-media-item">
+                <a class="burger-social-media-link" href="https://www.instagram.com/goitclub/"
+                   target="_blank" rel="noopener noreferrer">
+                  <svg class="burger-social-media-icon" width="24" height="24"
+                       aria-label="instagram icon">
+                    <use href="/team-final-project-js/assets/sprite-c789443a.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <!-- youtube -->
+              <li class="burger-social-media-item">
+                <a class="burger-social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
+                   rel="noopener noreferrer">
+                  <svg class="burger-social-media-icon" width="24" height="24" aria-label="youtube icon">
+                    <use href="/team-final-project-js/assets/sprite-c789443a.svg#youtube"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
+
 </header>
     <section class="hero-section">
     <div class="container hero-section-wrapper">
