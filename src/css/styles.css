@@ -26,6 +26,8 @@
 @import url('./pagination.css');
 @import url('./privacy-policy.css');
 @import url('./terms-of-service.css');
+@import url('./toggle.css');
+@import url('dark-theme.css');
 
 :root {
   font-family: 'DMSans', sans-serif;
