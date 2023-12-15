@@ -1,6 +1,6 @@
 import './js/header.js';
 import './js/burger-menu.js';
-
+import './js/quote.js';
 
 // Припустимо, що у вас є об'єкт для зберігання збережених вправ в localStorage
 const savedExercises = JSON.parse(localStorage.getItem('savedExercises')) || [];

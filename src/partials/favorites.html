@@ -3,8 +3,66 @@
     <h2 class="favorites-title">Favorites</h2>
 
     <div class="favorites-container">
-      <div class="favorites-quote-column">
-        
+      <!-- Quote Content -->
+      <div class="quote-container quote-container-favorites">
+        <div class="quote-wrapper quote-favorites">
+          <div class="quote-svg-wrap">
+            <svg class="quote-svg" width="34" height="32">
+              <use href="./images/sprite.svg#run"></use>
+            </svg>
+          </div>
+          <div class="quote-title-wrap">
+            <div class="quote-title">
+              <h3>Quote of the day</h3>
+              <svg class="quote-title-svg" width="25" height="25">
+                <use href="./images/sprite.svg#commas"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-wrap quote-wrap-favorites">
+          <div class="quote-wrapper article favorites">
+            <svg class="quote-favorites-svg" width="20" height="20">
+              <use href="./images/sprite.svg#fluent-food"></use>
+            </svg>
+
+            <div>
+              <div class="quote-title article">
+                <h3>110 min</h3>
+              </div>
+              <p class="quote-text article">Daily norm of sports</p>
+            </div>
+          </div>
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                ./images/favorites-mobile.webp    1x,
+                ./images/favorites-mobile@2x.webp 2x
+              "
+            />
+            <source
+              media="(min-width: 768px) and (max-width: 1439px)"
+              srcset="
+                ./images/favorites-tablet.webp    1x,
+                ./images/favorites-tablet@2x.webp 2x
+              "
+            />
+            <source
+              media="(min-width: 1440px)"
+              srcset="
+                ./images/favorites-desktop.webp    1x,
+                ./images/favorites-desktop@2x.webp 2x
+              "
+            />
+            <img
+              src="./images/favorites-mobile.webp"
+              alt="exersices together"
+              class="quote-img quote-img-favorites"
+            />
+          </picture>
+        </div>
       </div>
 
       <div class="favorites-list-wrapper">

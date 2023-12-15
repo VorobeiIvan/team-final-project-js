@@ -30,7 +30,6 @@
 }
 
 .favorites-list-wrapper {
-
 }
 
 .favorites-list {
@@ -57,7 +56,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  
 }
 
 @media only screen and (max-width: 768px) {
@@ -74,8 +72,8 @@
   }
 
   .favorites-quote-container {
-   display: flex;
-   flex-direction: column; 
+    display: flex;
+    flex-direction: column;
   }
 
   .favorites-quote-column {
@@ -96,7 +94,7 @@
 
   .favorites-quote-bottom-wrapper {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     justify-content: space-between;
     column-gap: 16px;
   }
