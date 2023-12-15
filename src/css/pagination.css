@@ -1,58 +1,58 @@
 #tui-pagination-container {
     margin: 0;
-
-    .tui-page-btn {
-        border: none;
-        align-items: center;
-        justify-content: center;
-        color: #D4D4D4;
-        font-size: 20px;
-        line-height: 20px;
-        letter-spacing: 0.8px;
-        margin-right: 8px;
-    }
-
-    @media screen and (min-width: 768px) {
-        .tui-page-btn {
-            font-size: 24px;
-        }
-    }
-
-    .tui-is-selected {
-        display: inline-flex;
-        text-align: center;
-        border: 1px solid #242424;
-        border-radius: 50%;
-        padding: 6px 12px;
-        width: 31px;
-        height: 31px;
-        color: var(--basic-dark);
-        background-color: inherit;
-    }
-
-    @media screen and (min-width: 768px) {
-        .tui-is-selected {
-            width: 32px;
-            height: 32px;
-        }
-    }
-
-    .tui-page-btn:hover {
-        background-color: inherit;
-    }
-
-    .tui-ico-first,
-    .tui-ico-prev,
-    .tui-ico-next,
-    .tui-ico-last {
-        display: none;
-    }
-
-    .tui-first,
-    .tui-next,
-    .tui-prev,
-    .tui-last {
-        display: none;
-    }
-
 }
+
+#tui-pagination-container .tui-page-btn {
+    border: none;
+    align-items: center;
+    justify-content: center;
+    color: #D4D4D4;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    margin-right: 8px;
+}
+
+@media screen and (min-width: 768px) {
+    #tui-pagination-container .tui-page-btn {
+        font-size: 24px;
+    }
+}
+
+#tui-pagination-container .tui-is-selected {
+    display: inline-flex;
+    text-align: center;
+    border: 1px solid #242424;
+    border-radius: 50%;
+    padding: 6px 12px;
+    width: 31px;
+    height: 31px;
+    color: var(--basic-dark);
+    background-color: inherit;
+}
+
+@media screen and (min-width: 768px) {
+    #tui-pagination-container .tui-is-selected {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+#tui-pagination-container .tui-page-btn:hover {
+    background-color: inherit;
+}
+
+#tui-pagination-container .tui-ico-first,
+#tui-pagination-container .tui-ico-prev,
+#tui-pagination-container .tui-ico-next,
+#tui-pagination-container .tui-ico-last {
+    display: none;
+}
+
+#tui-pagination-container .tui-first,
+#tui-pagination-container .tui-next,
+#tui-pagination-container .tui-prev,
+#tui-pagination-container .tui-last {
+    display: none;
+}
+
