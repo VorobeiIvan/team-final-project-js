@@ -39,6 +39,10 @@
     fill: var(--basic-light)
 }
 
+.darkTheme .burger-menu-icon {
+    stroke: var(--basic-light)
+}
+
 .darkTheme .hero-hashtag-item {
     border-color: var(--basic-light);
 }

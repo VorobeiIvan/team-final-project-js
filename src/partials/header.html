@@ -30,7 +30,7 @@
       <div class='header-social-media-container header-social-media-wrapper'>
         <div>
           <label class='switch'>
-            <input type='checkbox' id='theme-switch' checked>
+            <input type='checkbox' class='theme-switch'>
             <span></span>
           </label>
         </div>
@@ -67,12 +67,19 @@
 
       <!-- mobile burger menu -->
       <!--mobile header  -->
-      <button class='burger-menu-btn js-open-menu' aria-expanded='false' aria-controls='mobile-menu'>
-        <svg class='burger-menu-icon' width='32' height='32' aria-label='burger menu icon for mobile'>
-          <use href='./images/sprite.svg#burger-menu'></use>
-        </svg>
-      </button>
-
+      <div class='header-social-media-wrapper toggle-switch'>
+        <div class='header-social-media-wrapper'>
+          <label class='switch'>
+            <input type='checkbox' class='theme-switch'>
+            <span></span>
+          </label>
+        </div>
+        <button class='burger-menu-btn js-open-menu' aria-expanded='false' aria-controls='mobile-menu'>
+          <svg class='burger-menu-icon' width='32' height='32' aria-label='burger menu icon for mobile'>
+            <use href='./images/sprite.svg#burger-menu'></use>
+          </svg>
+        </button>
+      </div>
       <!-- modal burger menu  -->
       <div class='menu-container js-menu-container' id='mobile-menu'>
         <div class='modal'>

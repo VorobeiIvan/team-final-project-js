@@ -15,6 +15,6 @@ export default {
   giveRating: document.querySelector('.give-a-rating'),
   FAVORITES_KEY: 'favorites-list',
   favorites: document.querySelector('.favorites-list'),
-  buttonTheme: document.getElementById('theme-switch'),
+  buttonTheme: document.querySelectorAll('.theme-switch'),
   body: document.querySelector('body'),
 };
