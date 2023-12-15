@@ -58,12 +58,13 @@ export async function renderExercises(keyword = '', page = 1) {
             <use href='./images/sprite.svg#BadRequast'></use>
           </svg>
         </div></li>`;
+      refs.divCategories.classList.add('exercises-list-bed-requast');
     } else {
       exercisesToRender = createExercise(data.results);
+      refs.divCategories.classList.add('exercises-list');
     }
 
     refs.divCategories.innerHTML = exercisesToRender;
-    refs.divCategories.classList.add('exercises-list');
   } catch {
     console.log('ooops!!!');
   } finally {
