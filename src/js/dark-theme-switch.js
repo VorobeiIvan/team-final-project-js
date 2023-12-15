@@ -18,11 +18,11 @@ refs.buttonTheme.forEach(elem => {
   const themeCheck = localStorage.getItem('theme');
   if (themeCheck === null || themeCheck === 'light-theme') {
     setLocalStorage(Theme.LIGHT);
-    refs.body.classList.remove('darkTheme');
+    refs.body.classList.remove('dark-theme');
     refs.buttonTheme.forEach(b => b.checked = false);
   } else if (themeCheck === 'dark-theme') {
     refs.buttonTheme.forEach(b => b.checked = true);
-    refs.body.classList.add('darkTheme');
+    refs.body.classList.add('dark-theme');
   }
 })();
 
@@ -31,11 +31,11 @@ function themeChange() {
   if (isDark) {
     refs.buttonTheme.forEach(b => b.checked = false);
     setLocalStorage(Theme.LIGHT);
-    return refs.body.classList.remove('darkTheme');
+    return refs.body.classList.remove('dark-theme');
   }
   refs.buttonTheme.forEach(b => b.checked = true);
   setLocalStorage(Theme.DARK);
-  return refs.body.classList.add('darkTheme');
+  return refs.body.classList.add('dark-theme');
 }
 
 function setLocalStorage(info) {

@@ -1,5 +1,5 @@
 import 'izitoast/dist/css/iziToast.min.css';
-import './js/darkThemeSwitch.js';
+import './js/dark-theme-switch.js';
 import './js/filters.js';
 import './js/quote.js';
 import './js/components/';

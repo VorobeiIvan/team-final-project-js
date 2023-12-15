@@ -1,55 +1,55 @@
 .switch {
-    position: relative;
-    width: 50px;
-    height: 25px;
-    display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  display: inline-block;
 }
 
 .switch span {
-    position: absolute;
-    background-color: var(--basic-dark);
-    border-radius: 15px;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: background-color .4s;
+  position: absolute;
+  background-color: var(--basic-dark);
+  border-radius: 15px;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color .4s;
 }
 
 .switch span::before {
-    background-color: var(--basic-light);
-    border-radius: 50%;
-    content: "";
-    position: absolute;
-    left: 3px;
-    bottom: 4px;
-    height: 18px;
-    width: 18px;
+  background-color: var(--basic-light);
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 3px;
+  bottom: 4px;
+  height: 18px;
+  width: 18px;
 }
 
 input:checked + span {
-    background-color: var(--basic-light);
+  background-color: var(--basic-light);
 }
 
 input:checked + span::before {
-    background-color: var(--basic-dark);
+  background-color: var(--basic-dark);
 }
 
 input:checked + span::before {
-    transform: translateX(25px);
+  transform: translateX(25px);
 }
 
 .switch input {
-    display: none;
+  display: none;
 }
 
 .switch {
-    position: relative;
+  position: relative;
 }
 
 .switch span {
-    background-color: var(--basic-dark);
-    transition: .4s;
-    grid-area: switch;
+  background-color: var(--basic-dark);
+  transition: .4s;
+  grid-area: switch;
 }

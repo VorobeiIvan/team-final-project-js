@@ -27,35 +27,35 @@
 @import url('./privacy-policy.css');
 @import url('./terms-of-service.css');
 @import url('./toggle.css');
-@import url('./darkTheme.css');
+@import url('dark-theme.css');
 
 :root {
-    font-family: 'DMSans', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
+  font-family: 'DMSans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 
-    color: #242424;
-    --main-black: #242424;
-    background-color: rgba(255, 255, 255, 0.87);
-    --basic-dark: #242424;
-    --basic-light: #f4f4f4;
-    --category-bg: rgba(17, 17, 17, 0.502);
-    --basic-gray: #f4f4f466;
-    --shadow-dark: #00000040;
-    --orange: #eea10c;
+  color: #242424;
+  --main-black: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+  --basic-dark: #242424;
+  --basic-light: #f4f4f4;
+  --category-bg: rgba(17, 17, 17, 0.502);
+  --basic-gray: #f4f4f466;
+  --shadow-dark: #00000040;
+  --orange: #eea10c;
 
-    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-    background-color: var(--basic-light);
+  background-color: var(--basic-light);
 }
 
 button {
-    background-color: inherit;
-    border: none;
+  background-color: inherit;
+  border: none;
 }
