@@ -49,6 +49,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  background-color: var(--basic-light);
+}
+
 button {
   background-color: inherit;
   border: none;
