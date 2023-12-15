@@ -30,15 +30,13 @@
   border-radius: 20px;
 }
 
-.favorites-list-wrapper {
-}
-
 .favorites-exercise-list {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  grid-gap: 32px 16px;
-  /* max-width: 900px; */
+  gap: 32px 16px;
+  /* max-width: 842px; */
   margin-left: auto;
+  max-height: 487px;
 
   height: 487px;
   overflow-y: scroll;
@@ -68,7 +66,6 @@
 @media only screen and (min-width: 1440px) {
   .favorites-container {
     flex-direction: row;
-    column-gap: 32px;
     justify-content: space-between;
   }
 
