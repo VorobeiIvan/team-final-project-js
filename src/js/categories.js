@@ -1,20 +1,13 @@
 import { fetchCategories } from './api.js';
-import { createQuoteMarkup } from './quote/quote.js';
 import { renderPagination } from './pagination.js';
+import { renderExercises } from './exercises.js';
 import refs from './refs.js';
 import iziToast from 'izitoast';
 
 export async function renderCategories(filter, page) {
-  const loader = document.getElementById('categories-loader');
-  const categoriesWrapper = document.getElementById('categories-wrapper');
-
-  loader.style.display = 'block';
-
-  categoriesWrapper.style.display = 'none';
   refs.divCategories.innerHTML = '';
+  refs.divCategories.classList.remove('exercises-list');
   try {
-    createQuoteMarkup();
-
     const data = await fetchCategories({
       page: page,
       perPage: 12,
@@ -29,7 +22,7 @@ export async function renderCategories(filter, page) {
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
       categoryElement.addEventListener('click', () => {
-        handleCardClick(categoryElement)
+        handleCardClick(categoryElement);
       });
 
       return categoryElement;
@@ -53,12 +46,6 @@ export async function renderCategories(filter, page) {
       color: 'red',
     };
     return iziToast.show(errorMessage);
-  } finally {
-    setTimeout(() => {
-      loader.style.display = 'none';
-
-      categoriesWrapper.style.display = 'flex';
-    }, 500);
   }
 }
 
@@ -97,13 +84,7 @@ function capitalizeFirstLetter(inputString) {
 }
 
 function handleCardClick(newActiveCard) {
-  const curActiveCard = document.getElementsByClassName('card-selected');
-
-  if (curActiveCard[0]) {
-    curActiveCard[0].classList.remove('card-selected');
-  }
-
-  newActiveCard.classList.add('card-selected');
-
-  console.log('Li element clicked!');
+  sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
+  refs.divExSearch.classList.remove('is-hidden');
+  renderExercises();
 }

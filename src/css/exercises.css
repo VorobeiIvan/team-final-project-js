@@ -18,8 +18,31 @@
   border: 1px solid var(--basic-dark);
   display: flex;
   margin-bottom: 20px;
-  /* margin-top: 40px; */
 }
+
+@media only screen and (min-width: 768px) {
+  .exercises-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .exercises-search-wrapper {
+    width: 273px;
+    padding: 12px 14px;
+    border-radius: 30px;
+    border: 1px solid var(--basic-dark);
+    display: flex;
+    margin-bottom: 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .exercises-search-wrapper {
+    margin-right: 30px;
+  }
+}
+
 .exercises-search {
   background-color: transparent;
   flex-grow: 1;
@@ -48,16 +71,35 @@
 }
 
 .exercises-list {
-  margin-bottom: 20px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .exercises-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px 16px;
+    max-width: 705px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .exercises-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px 16px;
+    max-width: 900px;
+    margin-left: auto;
+  }
 }
 
 /* Вправи */
 
 .exercise-item {
-  width: 335px;
+  max-width: 344px;
   height: 140px;
   border-radius: 15px;
   background: #fff;
@@ -66,9 +108,19 @@
   white-space: nowrap;
   padding: 16px;
 }
-.exercise-item-wrapper {
-  width: 303px;
+
+@media only screen and (min-width: 768px) {
+  .exercise-item {
+    max-width: 344px;
+  }
 }
+
+@media only screen and (min-width: 1440px) {
+  .exercise-item {
+    min-width: 442px;
+  }
+}
+
 .exercise-item-firth-wrapper {
   display: flex;
   align-items: center;
@@ -135,6 +187,7 @@
   fill: var(--basic-light);
 }
 .exercise-item-subtitle {
+  max-width: 250px;
   color: var(--basic-dark);
   font-size: 20px;
   font-style: normal;
@@ -143,6 +196,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+@media only screen and (min-width: 768px) {
+  .exercise-item-subtitle {
+    max-width: 272px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .exercise-item-subtitle {
+    max-width: 318px;
+  }
 }
 .exercise-item-list {
   display: flex;
@@ -177,6 +240,49 @@
   margin-left: 2px;
 }
 
-body {
-  background-color: var(--basic-light);
+.burned-calories {
+  max-width: 131px;
+}
+.body-part {
+  max-width: 91px;
+}
+.target {
+  max-width: 61px;
+}
+@media only screen and (min-width: 768px) {
+  .burned-calories {
+    max-width: 136px;
+  }
+  .body-part {
+    max-width: 93px;
+  }
+  .target {
+    max-width: 63px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .burned-calories {
+    max-width: 149px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .bad-requast {
+    width: 600px;
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .categories-bad-request {
+    min-width: 900px;
+  }
+
+  .burned-calories {
+    max-width: 149px;
+  }
+
+  .bad-request {
+    width: 800px;
+    height: 700px;
+  }
 }
