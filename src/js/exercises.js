@@ -15,6 +15,9 @@ function toInput(event) {
   } else {
     refs.exSearchImg.classList.add('is-hidden');
   }
+  if (event.inputType === undefined) {
+    renderExercises();
+ } 
 }
 
 function toSearch(event) {
