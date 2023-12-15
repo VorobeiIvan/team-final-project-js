@@ -27,9 +27,9 @@ export function handleExerciseCardClick(e, exerciseId) {
   openModal(convertCardIdToNormalId);
 }
 
-handleFavoritesCardClick(){
-  // TODO: add functionality
-};
+// handleFavoritesCardClick(){
+//   // TODO: add functionality
+// };
 
 function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
