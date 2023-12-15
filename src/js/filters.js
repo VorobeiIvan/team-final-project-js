@@ -1,20 +1,51 @@
-import { fetchFilter } from './api.js';
+import { renderCategories } from './categories.js';
 import refs from './refs.js';
 
+const filters = ['Muscles', 'Body parts', 'Equipment'];
 
-const filters = ['Body parts', 'Muscles', 'Equipment'];
+renderCategories(filters[0], 1);
 
-filters.forEach(filter => {
-  const li = document.createElement('li');
-  const button = document.createElement('button');
+const filtersElements = renderFilters(filters);
 
-  button.innerHTML = filter;
-  li.appendChild(button);
+refs.filtersRef.append(...filtersElements);
+ 
+function renderFilters(filters) {
+  return filters.map(filter => {
+    const li = document.createElement('li');
+    li.setAttribute('id', filter);
+   
+    if (filter === 'Muscles') {
+      li.classList.add('filter-selected');
+    }
 
-  button.addEventListener('click', async () => {
-    const data = await fetchFilter({ page: 1, perPage: 10, filter: filter });
-    console.log(data);
-    refs.divResult.innerHTML = JSON.stringify(data.results);
+    const button = document.createElement('button');
+    button.innerHTML = filter;
+    button.addEventListener('click', () => {
+      handleFilterClick(filter, li);
+    });
+
+    li.appendChild(button);
+
+    return li;
   });
-  refs.filtersRef.appendChild(li);
-});
+}
+
+function handleFilterClick(filter, newActiveLink) {
+  const currentActiveLink = document.getElementsByClassName('filter-selected');
+
+  if (!currentActiveLink[0]) {
+    return;
+  }
+
+  currentActiveLink[0].classList.remove('filter-selected');
+  newActiveLink.classList.add('filter-selected');
+
+  refs.divCategories.innerHTML = '';
+
+  refs.exSearch.value = '';
+  refs.divCategories.classList.remove('exercises-list');
+  refs.divExSearch.classList.add('is-hidden');
+
+  renderCategories(filter, 1);
+
+}

@@ -1,0 +1,32 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-up-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    background-color: #242424;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 0.5;
+}
+
+.scroll-up-button:hover {
+    opacity: 80%;
+}
+
+@media screen and (min-width: 768px) {
+    .scroll-up-button {
+        width: 100px;
+        height: 100px;
+    }
+
+    .scroll-up-icon {
+        width: 33px;
+        height: 33px;
+    }
+}

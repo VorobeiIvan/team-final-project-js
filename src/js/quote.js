@@ -1,7 +1,20 @@
-import { fetchQuote } from './api.js';
-import refs from './refs.js';
+import { fetchQuote } from './api';
+import { createQuoteMarkup } from './templates/createQuoteMarkup';
+import { formatDate } from './utils';
 
-refs.getQuoteButton.addEventListener('click', async () => {
-  const data = await fetchQuote();
-  refs.divQuote.innerHTML = JSON.stringify(data);
-});
+const QUOTE_DATA = 'quoteData';
+const DAY = formatDate(new Date());
+const quoteRef = document.querySelector('.quote-title-wrap');
+
+
+const getQuote = ( async () => {
+  let data = JSON.parse(localStorage.getItem(QUOTE_DATA));
+  if (!data || data.date !== DAY) {
+    data = await fetchQuote();
+
+    localStorage.setItem(QUOTE_DATA, JSON.stringify({ date: DAY, ...data }));
+  }
+  quoteRef.insertAdjacentHTML('beforeend', createQuoteMarkup(data));
+})();
+
+

@@ -4,41 +4,58 @@ axios.defaults.baseURL = 'https://your-energy.b.goit.study/api';
 
 const FILTERS = 'filters';
 const EXERCISES = 'exercises';
-const QUOTE = 'quote';
 const SUBSCRIPTION = 'subscription';
 
 /**
  *  {page: number, perPage: number,  filter: 'Body parts' || 'Muscles' || 'Equipment'}
  */
 
-export const fetchFilter = async ({ page = 1, perPage = 10, filter = 'Body parts' } = {}) => await axios
-  .get(`/${FILTERS}?filter=${filter}&page=${page}&limit=${perPage}`)
-  .then(response => response.data);
-
+export const fetchCategories = async ({
+                                        page = 1,
+                                        perPage = 12,
+                                        filter = 'Muscles',
+                                      } = {}) =>
+  await axios
+    .get(`/${FILTERS}?filter=${filter}&page=${page}&limit=${perPage}`)
+    .then(response => response.data);
 
 /**
  *  {page: number, perPage: number, filter: {bodypart: string, muscles: string, equipment: string, keyword:string}}
  */
-export const fetchExercises = async ({ page = 1, perPage = 10, filter = {} } = {}) =>
+export const fetchExercises = async ({
+                                       page = 1,
+                                       perPage = 12,
+                                       filter = {},
+                                     } = {}) =>
   await axios
-    .get(`/${EXERCISES}?${new URLSearchParams(filter).toString()}&page=${page}&limit=${perPage}`)
+    .get(
+      `/${EXERCISES}?${new URLSearchParams(
+        filter,
+      ).toString()}&page=${page}&limit=${perPage}`,
+    )
     .then(response => response.data);
-
 
 /**
  *  id: string
  */
 
-export const fetchOneExercise = async (id) =>
+export const fetchOneExercise = async id =>
   await axios.get(`/${EXERCISES}/${id}`).then(response => response.data);
 
-export const fetchQuote = async () => await axios.get(`/${QUOTE}`).then(response => response.data);
+export const fetchQuote = async () => {
+  try {
+    const { data } = await axios.get('/quote');
 
+    return data;
+  } catch (error) {
+    console.log('Error request "/quote"');
+  }
+};
 
 /**
  *  email: string
  */
-export const postSubscription = async (email) =>
+export const postSubscription = async email =>
   await axios
     .post(`/${SUBSCRIPTION}`, { email })
     .then(response => response.data);

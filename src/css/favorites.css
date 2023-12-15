@@ -1,0 +1,117 @@
+.favorites-body {
+  background-color: var(--basic-light);
+  min-height: 100vh;
+}
+
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  line-height: 38px;
+  width: 100%;
+  font-weight: 400;
+}
+
+.favorites-quote-bottom-wrapper {
+  flex-direction: column;
+}
+
+.favorites-quote-bottom-wrapper .article {
+  background: #fff;
+}
+
+.favorites-quote-img {
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.favorites-list-wrapper {
+}
+
+.favorites-exercise-list {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 32px 16px;
+  /* max-width: 900px; */
+  margin-left: auto;
+
+  height: 487px;
+  overflow-y: scroll;
+}
+
+.favorites-list-exercise-item {
+  height: 141px;
+  background: #fff;
+  padding: 16px 18px;
+  border-radius: 15px;
+}
+
+.favorites-list-notification {
+  text-align: center;
+  padding: 0 8px;
+}
+
+@media screen and (min-width: 1280px) {
+}
+
+@media only screen and (max-width: 768px) {
+  .favorites-list-text {
+    padding: 0 75px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .favorites-container {
+    flex-direction: row;
+    column-gap: 32px;
+    justify-content: space-between;
+  }
+
+  .favorites-quote-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .favorites-quote-column {
+    width: 494px;
+    max-width: 494px;
+  }
+
+  .favorites-quote-wrapper.quote-wrapper {
+    width: 494px;
+    max-width: 494px;
+
+    display: flex;
+    padding: 40px;
+    background: var(--backgroudColor);
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .favorites-quote-bottom-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 16px;
+  }
+
+  .favorites-quote-bottom-wrapper .quote-wrapper {
+    margin-bottom: 0;
+    padding: 25px;
+  }
+
+  .favorites-quote-img {
+    max-width: 239px;
+    min-height: 141px;
+  }
+
+  .favorites-list-text {
+    max-width: 554px;
+    margin: 0 auto;
+  }
+}

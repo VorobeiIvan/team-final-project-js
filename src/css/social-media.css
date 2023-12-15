@@ -1,0 +1,106 @@
+/* SOCIAL MEDIA */
+
+/*social media header */
+.header-social-media-list {
+  display: flex;
+  gap: 12px;
+
+}
+
+.header-social-media-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--basic-light);
+  border-radius: 10px;
+  border: 1px solid rgba(36, 36, 36, 0.10);
+  ;
+  transition: background-color var(--transition);
+}
+
+.header-social-media-link:hover,
+.header-social-media-link:focus {
+  background-color: var(--basic-dark);
+}
+
+.header-social-media-icon {
+  fill: var(--basic-dark);
+  transition: fill var(--transition);
+}
+
+.header-social-media-link:hover .header-social-media-icon,
+.header-social-media-link:focus .header-social-media-icon {
+  fill: var(--basic-light);
+}
+
+/*social media burger */
+.burger-social-media-list {
+  display: flex;
+  gap: 12px;
+}
+
+
+.burger-social-media-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--basic-dark);
+  border-radius: 10px;
+  border: 1px solid rgba(244, 244, 244, 0.1);
+  transition: background-color var(--transition);
+}
+
+.burger-social-media-link:hover,
+.burger-social-media-link:focus {
+  background-color: var(--basic-light);
+}
+
+.burger-social-media-icon {
+  fill: var(--basic-light);
+  transition: fill var(--transition);
+}
+
+.burger-social-media-link:hover .burger-social-media-icon,
+.burger-social-media-link:focus .burger-social-media-icon {
+  fill: var(--basic-dark);
+}
+
+/*social media footer */
+
+.footer-social-networks {
+  display: flex;
+  gap: 12px;
+
+}
+
+
+.footer-link-network {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--basic-dark);
+  border-radius: 10px;
+  border: 1px solid rgba(244, 244, 244, 0.1);
+  transition: background-color var(--transition);
+}
+
+.footer-link-network:hover,
+.footer-link-network:focus {
+  background-color: var(--basic-light);
+}
+
+.footer-svg {
+  fill: var(--basic-light);
+  transition: fill var(--transition);
+}
+
+.footer-link-network:hover .footer-svg,
+.footer-link-network:focus .footer-svg {
+  fill: var(--basic-dark);
+}

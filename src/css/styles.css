@@ -8,24 +8,52 @@
 @import url('./reset.css');
 @import url('./fonts.css');
 @import 'modern-normalize/modern-normalize.css';
-@import url('./loader.css');
+@import url('./common.css');
 @import url('./header.css');
+@import url('./hero.css');
 @import url('./loader.css');
-@import url('./components/rating-modals.css');
+@import url('./footer.css');
+@import url('./modal-main.css');
+@import url('./categories.css');
+@import url('./quote.css');
+@import url('./filters.css');
+@import url('./favorites.css');
 
+@import url('./exercises.css');
+@import url('./scroll-up.css');
+@import url('./social-media.css');
+@import url('./burger-menu.css');
+@import url('./pagination.css');
+@import url('./privacy-policy.css');
+@import url('./terms-of-service.css');
+@import url('./components/rating-modals.css');
 :root {
   font-family: 'DMSans', sans-serif;
   font-size: 16px;
-
+  line-height: 24px;
 
   color: #242424;
   --main-black: #242424;
   background-color: rgba(255, 255, 255, 0.87);
+  --basic-dark: #242424;
+  --basic-light: #f4f4f4;
+  --category-bg: rgba(17, 17, 17, 0.502);
+  --basic-gray: #f4f4f466;
+  --shadow-dark: #00000040;
+  --orange: #eea10c;
 
-  font-synthesis: none;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  background-color: var(--basic-light);
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
