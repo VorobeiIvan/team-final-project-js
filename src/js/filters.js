@@ -44,6 +44,7 @@ function handleFilterClick(filter, newActiveLink) {
 
   refs.exSearch.value = '';
   refs.divCategories.classList.remove('exercises-list');
+  refs.divCategories.classList.remove('exercises-list-bed-requast');
   refs.divExSearch.classList.add('is-hidden');
 
   renderCategories(filter, 1);
