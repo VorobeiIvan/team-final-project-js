@@ -22,7 +22,7 @@ function setPerPage() {
 
   return 10;
 }
-  
+
 export async function renderExercises(keyword = '', page = 1) {
   const curFilter = await JSON.parse(sessionStorage.getItem('category'));
   if (!curFilter) {
@@ -34,7 +34,7 @@ export async function renderExercises(keyword = '', page = 1) {
   }
 
   const perPage = setPerPage();
-  
+
   try {
     const data = await fetchExercises({
       page: page,
@@ -46,11 +46,10 @@ export async function renderExercises(keyword = '', page = 1) {
     }
     const exercisesToRender = createExercise(data.results);
 
-    // const exercisesToRender = createExercise(data.results);
     refs.divCategories.innerHTML = exercisesToRender;
     refs.divCategories.classList.add('exercises-list');
   } catch {
-    console.log('ooops!!!')
+    console.log('ooops!!!');
   }
 }
 
