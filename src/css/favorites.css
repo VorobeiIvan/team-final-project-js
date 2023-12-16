@@ -111,3 +111,7 @@
     margin: 0 auto;
   }
 }
+
+.exercise-item-trash-icon {
+  pointer-events: none;
+}

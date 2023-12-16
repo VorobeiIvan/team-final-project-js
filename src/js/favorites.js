@@ -1,22 +1,20 @@
 import svgSprite from '../images/sprite.svg';
 import storageApi from './common/storage.js';
-import iziToast from 'izitoast';
-import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
 
-const favoritesListKey = FAVORITES_KEY;
+const onRemove = (e) => {
+  const id = e.target.getAttribute('data-exercise-id');
+  const favoritesList = storageApi.load(FAVORITES_KEY);
+  storageApi.save(FAVORITES_KEY, favoritesList.filter(el => el._id !== id));
+};
 
-// console.log(favoritesListKey);
+export async function renderFavorites() {
+  const favoritesList = storageApi.load(FAVORITES_KEY) || [];
 
-async function renderFavorites() {
-  const favoritesList = storageApi.load(favoritesListKey) || [];
-
-  console.log(favoritesList);
 
   const favoritesListWrapper = refs.favorites;
 
-  console.log(favoritesList);
 
   const favoritesNotification = document.querySelector('.favorites-list-notification');
   const favoritesListContainer = document.querySelector('.favorites-exercise-list');
@@ -26,28 +24,21 @@ async function renderFavorites() {
     favoritesListWrapper.innerHTML = '';
   } else {
     renderFavoriteExercises(favoritesList);
-    // console.log(renderFavoriteExercises);
-    // const exercisesList = await fetchExercises();
-    // const favoriteExercises = exercisesList.results.filter(exercise => favoritesList.includes(exercise._id));
-    
-    // if (favoriteExercises.length === 0) {
-    //   favoritesNotification.classList.remove('is-hidden');
-    //   favoritesListContainer.innerHTML = '';
-    // } else {
-    //   renderFavoriteExercises(favoriteExercises);
-    //   favoritesNotification.classList.add('is-hidden');
-    // }
+
+    document.querySelectorAll('.exercise-item-button-delete').forEach((el) => {
+      el.addEventListener('click', onRemove);
+    });
   }
 }
-renderFavorites();
 
-// renderFavoriteExercises();
+renderFavorites();
 
 function renderFavoriteExercises(favoriteExercises) {
   const favoritesListContainer = document.querySelector('.favorites-exercise-list');
-
+  if (!favoritesListContainer) {
+    return;
+  }
   favoritesListContainer.innerHTML = '';
-  
   favoriteExercises.forEach(exercise => {
     const exerciseItem = createFavoriteExerciseItem(exercise);
     favoritesListContainer.appendChild(exerciseItem);
@@ -119,9 +110,9 @@ document.addEventListener('click', e => {
 });
 
 function removeFavoriteExercise(exerciseId) {
-  const favoritesList = storageApi.load(favoritesListKey) || [];
+  const favoritesList = storageApi.load(FAVORITES_KEY) || [];
   const updatedFavorites = favoritesList.filter(id => id !== exerciseId);
-  storageApi.save(favoritesListKey, updatedFavorites);
+  storageApi.save(FAVORITES_KEY, updatedFavorites);
 
   renderFavorites();
 }

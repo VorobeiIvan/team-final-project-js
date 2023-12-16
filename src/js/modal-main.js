@@ -4,6 +4,7 @@ import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
+import { renderFavorites } from './favorites.js';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
@@ -67,6 +68,7 @@ const onClose = e => {
     document.removeEventListener('keydown', onClose);
     refs.closeModalBtn.removeEventListener('click', onClose);
     refs.addFavorite.removeEventListener('click', toggleFavorite);
+    renderFavorites();
   }
 };
 
@@ -84,7 +86,7 @@ export function toggleFavorite() {
     FAVORITES_KEY,
     isInFavorites
       ? savedData.filter(el => el._id !== activeItem?._id)
-      : [...savedData, activeItem]
+      : [...savedData, activeItem],
   );
   setButtonContent();
 
