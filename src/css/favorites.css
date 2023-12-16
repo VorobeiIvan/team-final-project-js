@@ -40,7 +40,7 @@
   max-height: 487px;
 
   height: 487px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 

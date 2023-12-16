@@ -33,7 +33,6 @@ export async function renderFavorites() {
 renderFavorites();
 
 function renderFavoriteExercises(exercises) {
-  const favoritesListWrapper = refs.favorites;
   const favoritesListContainer = document.querySelector(
     '.favorites-exercise-list',
   );
