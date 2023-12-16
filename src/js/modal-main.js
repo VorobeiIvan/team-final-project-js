@@ -20,7 +20,6 @@ const addButtonContent = `Add to favorites
 const findFavorite = (array, id) => array.find(el => el?._id === id);
 
 const setButtonContent = () => {
-
   const savedData = storageApi.load(FAVORITES_KEY) || [];
   const isInFavorites = !!findFavorite(savedData, activeItem?._id);
   if (isInFavorites) {
@@ -29,7 +28,6 @@ const setButtonContent = () => {
   }
   document.querySelector('.add-to-favorites').innerHTML = addButtonContent;
 };
-
 
 export function handleExerciseCardClick(e) {
   e.preventDefault();
@@ -52,13 +50,16 @@ function openModal(exerciseId) {
   document.body.classList.add('no-scroll');
   refs.backdrop.classList.add('scroll');
   closeModal();
-
 }
 
 const iconRef = document.querySelector('.modal-close-btn');
-const onClose = (e) => {
+const onClose = e => {
   // додати правильни ref
-  if (e.target === refs.backdrop || e.key === 'Escape' || e.target === iconRef) {
+  if (
+    e.target === refs.backdrop ||
+    e.key === 'Escape' ||
+    e.target === iconRef
+  ) {
     refs.backdrop.classList.add('is-hidden');
     document.body.classList.remove('no-scroll');
     refs.backdrop.classList.remove('scroll');
@@ -69,7 +70,6 @@ const onClose = (e) => {
   }
 };
 
-
 function closeModal() {
   refs.backdrop.addEventListener('click', onClose);
   document.addEventListener('keydown', onClose);
@@ -77,14 +77,16 @@ function closeModal() {
   refs.addFavorite.addEventListener('click', toggleFavorite);
 }
 
-
 export function toggleFavorite() {
-
   const savedData = storageApi.load(FAVORITES_KEY) || [];
   const isInFavorites = !!findFavorite(savedData, activeItem?._id);
-  storageApi.save(FAVORITES_KEY, isInFavorites ? savedData.filter(el => el._id !== activeItem?._id) : [...savedData, activeItem]);
+  storageApi.save(
+    FAVORITES_KEY,
+    isInFavorites
+      ? savedData.filter(el => el._id !== activeItem?._id)
+      : [...savedData, activeItem]
+  );
   setButtonContent();
-
 
   iziToast.show({
     message: isInFavorites ? 'Removed from favorites' : 'Added to favorites',

@@ -191,7 +191,7 @@
   border: var(--basic-light, #f4f4f4) 1px solid;
   color: var(--basic-light, #f4f4f4);
   transition: background-color var(--transition), border-color var(--transition),
-  color var(--transition);
+    color var(--transition);
 }
 
 .add-to-favorites:hover,
@@ -228,8 +228,7 @@
     height: 30px;
   }
 
-  transition: background-color var(--transition),
-  border-color var(--transition);
+  transition: background-color var(--transition), border-color var(--transition);
 }
 
 .modal-close-btn:hover,
@@ -268,8 +267,7 @@
     height: 20px;
   }
 
-  transition: stroke var(--transition),
-  fill var(--transition);
+  transition: stroke var(--transition), fill var(--transition);
 }
 
 .add-to-favorites:hover .modal-icon-heart,
