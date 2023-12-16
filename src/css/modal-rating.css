@@ -21,7 +21,7 @@
   width: calc(100% - 20px);
   height: calc(100% - 20px);
   border-radius: 20px;
-  z-index: 100;
+  z-index: 1000;
   max-height: 430px;
   max-width: 430px;
   background: var(--main-black);
