@@ -5,14 +5,25 @@ import { renderPagination } from './pagination.js';
 import { loader } from './components/index.js';
 import iziToast from 'izitoast';
 
-document
-  .querySelector('.exercises-search-wrapper input')
-  .addEventListener('keydown', toSearch);
+refs.exSearch.addEventListener('input', toInput);
+refs.exSearch.addEventListener('keydown', toSearch);
+
+function toInput(event) {
+  const keyword = event.target.value;
+  if (keyword==='') {
+    refs.exSearchImg.classList.remove('is-hidden');
+  } else {
+    refs.exSearchImg.classList.add('is-hidden');
+  }
+  if (event.inputType === undefined) {
+    renderExercises();
+ } 
+}
 
 function toSearch(event) {
   const keyword = event.target.value;
-  if (event.keyCode === 13 || event.code === 'Enter') {
-    renderExercises(keyword);
+  if (event.code === 'Enter') {
+     renderExercises(keyword);
   }
 }
 
