@@ -1,43 +1,57 @@
-import storageApi from './common/storage.js';
 import svgSprite from '../images/sprite.svg';
-import { fetchExercises } from './api.js';
+import storageApi from './common/storage.js';
+import iziToast from 'izitoast';
+import { fetchOneExercise } from './api';
 import refs from './refs.js';
+import { FAVORITES_KEY } from './consts.js';
 
-const favoritesListKey = refs.FAVORITES_KEY;
+const favoritesListKey = FAVORITES_KEY;
+
+// console.log(favoritesListKey);
 
 async function renderFavorites() {
   const favoritesList = storageApi.load(favoritesListKey) || [];
+
+  console.log(favoritesList);
+
   const favoritesListWrapper = refs.favorites;
-  const favoritesNotification = document.querySelector(
-    '.favorites-list-notification'
-  );
+
+  console.log(favoritesList);
+
+  const favoritesNotification = document.querySelector('.favorites-list-notification');
+  const favoritesListContainer = document.querySelector('.favorites-exercise-list');
 
   if (favoritesList.length === 0) {
     favoritesNotification.classList.remove('is-hidden');
     favoritesListWrapper.innerHTML = '';
   } else {
-    const exercisesList = await fetchExercises();
-    renderFavoriteExercises(exercisesList.results, favoritesList);
-    favoritesNotification.classList.add('is-hidden');
+    renderFavoriteExercises(favoritesList);
+    // console.log(renderFavoriteExercises);
+    // const exercisesList = await fetchExercises();
+    // const favoriteExercises = exercisesList.results.filter(exercise => favoritesList.includes(exercise._id));
+    
+    // if (favoriteExercises.length === 0) {
+    //   favoritesNotification.classList.remove('is-hidden');
+    //   favoritesListContainer.innerHTML = '';
+    // } else {
+    //   renderFavoriteExercises(favoriteExercises);
+    //   favoritesNotification.classList.add('is-hidden');
+    // }
   }
 }
+renderFavorites();
 
-function renderFavoriteExercises(exercises, favoritesList) {
-  const favoritesListWrapper = refs.favorites;
-  const favoritesListContainer = document.querySelector(
-    '.favorites-exercise-list'
-  );
+// renderFavoriteExercises();
+
+function renderFavoriteExercises(favoriteExercises) {
+  const favoritesListContainer = document.querySelector('.favorites-exercise-list');
 
   favoritesListContainer.innerHTML = '';
-
-  exercises.forEach(exercise => {
-    if (favoritesList.includes(exercise._id)) {
-      const exerciseItem = createFavoriteExerciseItem(exercise);
-      favoritesListContainer.appendChild(exerciseItem);
-    }
+  
+  favoriteExercises.forEach(exercise => {
+    const exerciseItem = createFavoriteExerciseItem(exercise);
+    favoritesListContainer.appendChild(exerciseItem);
   });
-
-  favoritesListWrapper.classList.remove('is-hidden');
 }
 
 function createFavoriteExerciseItem(exercise) {
