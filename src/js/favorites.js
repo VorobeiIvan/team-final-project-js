@@ -9,7 +9,7 @@ async function renderFavorites() {
   const favoritesList = storageApi.load(favoritesListKey) || [];
   const favoritesListWrapper = refs.favorites;
   const favoritesNotification = document.querySelector(
-    '.favorites-list-notification'
+    '.favorites-list-notification',
   );
 
   if (favoritesList.length === 0) {
@@ -25,7 +25,7 @@ async function renderFavorites() {
 function renderFavoriteExercises(exercises, favoritesList) {
   const favoritesListWrapper = refs.favorites;
   const favoritesListContainer = document.querySelector(
-    '.favorites-exercise-list'
+    '.favorites-exercise-list',
   );
 
   favoritesListContainer.innerHTML = '';

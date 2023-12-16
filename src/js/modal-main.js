@@ -4,6 +4,7 @@ import * as bodyScrollLock from 'body-scroll-lock';
 import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
+import { onCloseRatingModal, onOpenRatingModal } from './components';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
@@ -43,6 +44,7 @@ function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
     activeItem = exercise;
     createCardMarkup(exercise);
+    onOpenRatingModal(exerciseId);
     setButtonContent();
   });
 
@@ -58,6 +60,7 @@ const onClose = e => {
     e.key === 'Escape' ||
     e.target === iconRef
   ) {
+    onCloseRatingModal();
     refs.backdrop.classList.add('is-hidden');
     bodyScrollLock.enableBodyScroll(document.body);
     document.removeEventListener('click', onClose);
@@ -81,7 +84,7 @@ export function toggleFavorite() {
     FAVORITES_KEY,
     isInFavorites
       ? savedData.filter(el => el._id !== activeItem?._id)
-      : [...savedData, activeItem]
+      : [...savedData, activeItem],
   );
   setButtonContent();
 
