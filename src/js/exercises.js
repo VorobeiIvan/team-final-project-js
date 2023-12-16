@@ -3,6 +3,7 @@ import { fetchExercises } from './api.js';
 import refs from './refs.js';
 import { renderPagination } from './pagination.js';
 import { loader } from './components/index.js';
+import iziToast from 'izitoast';
 
 document
   .querySelector('.exercises-search-wrapper input')
@@ -25,8 +26,13 @@ function setPerPage() {
 export async function renderExercises(keyword = '', page = 1) {
   const curFilter = await JSON.parse(sessionStorage.getItem('category'));
   if (!curFilter) {
-    console.log('not active category!!!');
-    return;
+    const errorMessage = {
+      title: 'Error',
+      message: 'Oops, not active category',
+      position: 'topRight',
+      color: 'red',
+    };
+    return iziToast.show(errorMessage);
   }
   if (keyword) {
     curFilter.keyword = keyword;
@@ -55,17 +61,25 @@ export async function renderExercises(keyword = '', page = 1) {
     if (!data.results.length) {
       exercisesToRender = `<li><div class='categories-bad-requast'>
           <svg class='bad-requast' width='335' height='300'>
-            <use href='./images/sprite.svg#BadRequast'></use>
+            <use href='${svgSprite}#BadRequast'></use>
           </svg>
         </div></li>`;
+      refs.divCategories.classList.add('exercises-list-bed-requast');
     } else {
       exercisesToRender = createExercise(data.results);
+      refs.divCategories.classList.remove('exercises-list-bed-requast');
+      refs.divCategories.classList.add('exercises-list');
     }
 
     refs.divCategories.innerHTML = exercisesToRender;
-    refs.divCategories.classList.add('exercises-list');
   } catch {
-    console.log('ooops!!!');
+    const errorMessage = {
+      title: 'Error',
+      message: 'Oops, something went wrong, try again later',
+      position: 'topRight',
+      color: 'red',
+    };
+    return iziToast.show(errorMessage);
   } finally {
     setTimeout(() => {
       deleteLoader();
@@ -77,15 +91,15 @@ function createExercise(arr) {
   return arr
     .map(
       ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
-        <li class='exercise-item' id='${_id}'>
+        <li class='exercise-item'>
           <div class='exercise-item-wrapper'>
             <div class='exercise-item-firth-wrapper'>
               <p class='exercise-item-workout'>WORKOUT</p>
-              <p class='exercise-item-rating'>${rating}</p>
+              <p class='exercise-item-rating'>${rating.toFixed(1)}</p>
               <svg class='exercise-item-star' width='18' height='18'>
                 <use href='${svgSprite}#star'></use>
               </svg>
-              <button type='button' class='exercise-item-button'>
+              <button type='button' class='exercise-item-button' id='${_id}'>
                 Start&nbsp;&nbsp;
                 <svg class='exercise-item-arrow' width='16' height='16'>
                   <use href='${svgSprite}#arrow-right'></use>

@@ -1,5 +1,4 @@
 export default {
-  //ці змінні як приклад для подальшого використання
   divQuote: document.getElementById('result-quote'),
   getQuoteButton: document.getElementById('quote'),
   divCategories: document.getElementById('categories'),
@@ -16,4 +15,6 @@ export default {
   giveRating: document.querySelector('.give-a-rating'),
   FAVORITES_KEY: 'favorites-list',
   favorites: document.querySelector('.favorites-list'),
+  buttonTheme: document.querySelectorAll('.theme-switch'),
+  body: document.querySelector('body'),
 };
