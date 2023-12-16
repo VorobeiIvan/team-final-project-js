@@ -69,7 +69,7 @@ function createCategory({ name, filter, imgURL }) {
   const div = document.createElement('div');
   div.className = 'category-item-bg';
 
-  refs.divExSearch.style.display = 'none';
+  // refs.divExSearch.style.display = 'none';
 
   const title = document.createElement('p');
   title.className = 'category-item-title';
@@ -93,7 +93,8 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
-  // refs.divExSearch.classList.remove('is-hidden');
-  refs.divExSearch.style.display = 'flex';
+  //Input Search
+  refs.divExSearch.classList.remove('is-hidden');
+  // refs.divExSearch.style.display = 'flex';
   renderExercises();
 }
