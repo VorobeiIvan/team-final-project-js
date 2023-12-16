@@ -9,9 +9,9 @@
     
     <script type="module" crossorigin src="/team-final-project-js/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-5fe488fb.js">
-    <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/favorites-2604e44e.js">
+    <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/favorites-a6996fa9.js">
     <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-    <link rel="stylesheet" href="/team-final-project-js/assets/styles-862e4e39.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/styles-57ba72b4.css">
   </head>
 
   <body>
@@ -350,6 +350,66 @@
   </div>
 </div>
 
+       <form class='rating-feedback-form is-hidden'>
+  <button class='close-rating-btn' type='button'>
+    <svg class='close-rating-btn-icon' width='24' height='24'>
+      <use href='/team-final-project-js/assets/sprite-59e25010.svg#close'></use>
+    </svg>
+  </button>
+  <p class='rating-modal-title'>Rating <span class='rating-error'>add rating to submit</span></p>
+
+  <div class='rating-stars'>
+    <span class='rating-number'>0.0</span>
+    <input class='star-radio' name='star' id='star1' type='radio' value='1' />
+    <label class='star-label' for='star1' data-value='1'>
+      <svg class='star' width='24' height='24'>
+        <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
+      </svg>
+    </label>
+    <input class='star-radio' name='star' id='star2' type='radio' value='2' />
+    <label class='star-label' for='star2' data-value='2'>
+      <svg class='star' width='24' height='24'>
+        <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
+      </svg>
+    </label>
+    <input class='star-radio' name='star' id='star3' type='radio' value='3' />
+    <label class='star-label' for='star3' data-value='3'>
+      <svg class='star' width='24' height='24'>
+        <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
+      </svg>
+    </label>
+    <input class='star-radio' name='star' id='star4' type='radio' value='4' />
+    <label class='star-label' for='star4' data-value='4'>
+      <svg class='star' width='24' height='24'>
+        <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
+      </svg>
+    </label>
+    <input class='star-radio' name='star' id='star5' type='radio' value='5' />
+    <label class='star-label' for='star5' data-value='5'>
+      <svg class='star' width='24' height='24'>
+        <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
+      </svg>
+    </label>
+
+
+  </div>
+  <label>
+    <input
+      class='rating-user-email'
+      name='email'
+      placeholder='Email'
+    />
+  </label>
+  <label for='textarea-rating'>
+<textarea
+  id='textarea-rating'
+  class='rating-user-comment'
+  name='review'
+  placeholder='Your comment'
+></textarea>
+  </label>
+  <button type='submit' class='rating-submit-btn'>Send</button>
+</form>
     </main>
        <footer class='footer'>
   <div class='container'>
@@ -456,6 +516,6 @@
 
   </div>
 </footer>
-     
+    
   </body>
 </html>
