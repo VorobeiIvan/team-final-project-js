@@ -36,7 +36,9 @@ function renderFavoriteExercises(exercises) {
   const favoritesListContainer = document.querySelector(
     '.favorites-exercise-list',
   );
-
+  if (!favoritesListContainer) {
+    return;
+  }
   favoritesListContainer.innerHTML = '';
   exercises.forEach(exercise => {
     const exerciseItem = createFavoriteExerciseItem(exercise);
