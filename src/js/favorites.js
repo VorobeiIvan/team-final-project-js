@@ -17,6 +17,9 @@ export async function renderFavorites() {
   const favoritesNotification = document.querySelector(
     '.favorites-list-notification',
   );
+  if (!favoritesNotification) {
+    return
+  }
 
   if (favoritesList.length === 0) {
     favoritesNotification.classList.remove('is-hidden');
