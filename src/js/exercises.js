@@ -48,7 +48,7 @@ export async function renderExercises(keyword = '', page = 1) {
       ({ page: newPage }) => {
         renderExercises(keyword, newPage);
         refs.divCategoriesContainer.scrollIntoView();
-      },
+      }
     );
 
     let exercisesToRender = '';
@@ -120,7 +120,7 @@ function createExercise(arr) {
             </ul>
           </div>
         </li>
-      `,
+      `
     )
     .join('');
 }

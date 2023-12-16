@@ -8,12 +8,12 @@ renderCategories(filters[0], 1);
 const filtersElements = renderFilters(filters);
 
 refs.filtersRef.append(...filtersElements);
- 
+
 function renderFilters(filters) {
   return filters.map(filter => {
     const li = document.createElement('li');
     li.setAttribute('id', filter);
-   
+
     if (filter === 'Muscles') {
       li.classList.add('filter-selected');
     }
@@ -47,5 +47,4 @@ function handleFilterClick(filter, newActiveLink) {
   refs.divExSearch.classList.add('is-hidden');
 
   renderCategories(filter, 1);
-
 }

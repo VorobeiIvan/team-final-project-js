@@ -20,7 +20,7 @@ export async function renderCategories(filter, page) {
       ({ page: newPage }) => {
         renderCategories(filter, newPage);
         refs.divCategoriesContainer.scrollIntoView();
-      },
+      }
     );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);

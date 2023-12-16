@@ -7,7 +7,7 @@
       <div class="quote-container quote-container-favorites">
         <div class="quote-wrapper quote-favorites">
           <div class="quote-svg-wrap">
-            <svg class="quote-svg" width="34" height="32">
+            <svg class="quote-svg" width="34" height="32" aria-label="icon run man">
               <use href="./images/sprite.svg#run"></use>
             </svg>
           </div>
@@ -23,7 +23,7 @@
 
         <div class="quote-wrap quote-wrap-favorites">
           <div class="quote-wrapper article favorites">
-            <svg class="quote-favorites-svg" width="20" height="20">
+            <svg class="quote-favorites-svg" width="20" height="20" aria-label="icon fluent food">
               <use href="./images/sprite.svg#fluent-food"></use>
             </svg>
 
@@ -35,32 +35,19 @@
             </div>
           </div>
           <picture>
-            <source
-              media="(max-width: 767px)"
-              srcset="
+            <source media="(max-width: 767px)" srcset="
                 ./images/favorites-mobile.webp    1x,
                 ./images/favorites-mobile@2x.webp 2x
-              "
-            />
-            <source
-              media="(min-width: 768px) and (max-width: 1439px)"
-              srcset="
+              " />
+            <source media="(min-width: 768px) and (max-width: 1439px)" srcset="
                 ./images/favorites-tablet.webp    1x,
                 ./images/favorites-tablet@2x.webp 2x
-              "
-            />
-            <source
-              media="(min-width: 1440px)"
-              srcset="
+              " />
+            <source media="(min-width: 1440px)" srcset="
                 ./images/favorites-desktop.webp    1x,
                 ./images/favorites-desktop@2x.webp 2x
-              "
-            />
-            <img
-              src="./images/favorites-mobile.webp"
-              alt="exersices together"
-              class="quote-img quote-img-favorites"
-            />
+              " />
+            <img class="quote-img quote-img-favorites" src="./images/favorites-mobile.webp" alt="exercises together" />
           </picture>
         </div>
       </div>
@@ -72,19 +59,20 @@
           for easier access in the future.
         </p>
 
-        <ul id="categories" class="favorites-exercise-list favorites-list js-list">
+        <ul class="favorites-exercise-list favorites-list js-list" id="categories">
           <li class="exercise-item">
             <div class="exercise-item-wrapper">
               <div class="exercise-item-firth-wrapper">
                 <p class="exercise-item-workout">WORKOUT</p>
-        
-                <button type="button" class="exercise-item-button-delete" data-exercise-id="${_id}">
+
+                <button class="exercise-item-button-delete" type="button" data-exercise-id="${_id}"
+                  aria-label="icon trash">
                   <svg class="exercise-item-trash-icon" width="16" height="16">
                     <use href="${svgSprite}#trash"></use>
                   </svg>
                 </button>
-        
-                <button type="button" class="exercise-item-button">
+
+                <button class="exercise-item-button" type="button" aria-label="icon arrow right">
                   Start&nbsp;&nbsp;
                   <svg class="exercise-item-arrow" width="16" height="16">
                     <use href="${svgSprite}#arrow-right"></use>

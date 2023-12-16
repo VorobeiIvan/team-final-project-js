@@ -6,8 +6,7 @@ const QUOTE_DATA = 'quoteData';
 const DAY = formatDate(new Date());
 const quoteRef = document.querySelector('.quote-title-wrap');
 
-
-const getQuote = ( async () => {
+const getQuote = (async () => {
   let data = JSON.parse(localStorage.getItem(QUOTE_DATA));
   if (!data || data.date !== DAY) {
     data = await fetchQuote();
@@ -16,5 +15,3 @@ const getQuote = ( async () => {
   }
   quoteRef.insertAdjacentHTML('beforeend', createQuoteMarkup(data));
 })();
-
-

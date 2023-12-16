@@ -1,5 +1,4 @@
 export default {
-  //ці змінні як приклад для подальшого використання
   divQuote: document.getElementById('result-quote'),
   getQuoteButton: document.getElementById('quote'),
   divCategories: document.getElementById('categories'),

@@ -9,4 +9,4 @@ import './js/burger-menu.js';
 import './js/exercises.js';
 import './js/pagination.js';
 import './js/favorites.js';
-// import './js/modal-main.js';
+import './js/modal-main.js';

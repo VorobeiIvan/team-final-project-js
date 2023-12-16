@@ -1,4 +1,3 @@
-
 import './js/quote.js';
 import './js/modal-main.js';
 import './js/header.js';

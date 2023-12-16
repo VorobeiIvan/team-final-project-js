@@ -35,12 +35,14 @@
   flex-grow: 1;
   border: none;
 }
+
 .exercises-search:active,
 :hover,
 :focus {
   outline: 0;
   outline-offset: 0;
 }
+
 .exercises-search::placeholder {
   color: var(--basic-dark);
   font-size: 14px;
@@ -48,6 +50,7 @@
   font-weight: 400;
   line-height: 20px;
 }
+
 .exercises-search:focus::placeholder {
   color: transparent;
 }
@@ -80,13 +83,12 @@
   }
 }
 
-/* Вправи */
 
 .exercise-item {
   max-width: 344px;
   height: 140px;
   border-radius: 15px;
-  background: #fff;
+  background: var(--white);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -111,6 +113,7 @@
   align-items: center;
   margin-bottom: 27px;
 }
+
 .exercise-item-workout {
   color: var(--basic-dark);
   font-size: 12px;
@@ -122,6 +125,7 @@
   padding: 5px 7.5px;
   margin-right: 16px;
 }
+
 .exercise-item-rating {
   color: var(--basic-dark);
   font-size: 12px;
@@ -130,11 +134,13 @@
   line-height: 18px;
   margin-right: 2px;
 }
+
 .exercise-item-star {
   padding-bottom: 4px;
-  fill: #eea10c;
-  stroke: #eea10c;
+  fill: var(--orange);
+  stroke: var(--orange);
 }
+
 .exercise-item-button {
   margin-left: auto;
   background-color: transparent;
@@ -150,14 +156,17 @@
   display: flex;
   align-items: center;
 }
+
 .exercise-item-arrow {
   stroke: var(--basic-dark);
 }
+
 .exercise-item-second-wrapper {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
 }
+
 .exercise-item-run-box {
   width: 24px;
   height: 24px;
@@ -168,9 +177,11 @@
   align-items: center;
   margin-right: 16px;
 }
+
 .exercise-item-run {
   fill: var(--basic-light);
 }
+
 .exercise-item-subtitle {
   max-width: 250px;
   color: var(--basic-dark);
@@ -182,25 +193,30 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 @media only screen and (min-width: 768px) {
   .exercise-item-subtitle {
     max-width: 272px;
   }
 }
+
 @media only screen and (min-width: 1440px) {
   .exercise-item-subtitle {
     max-width: 318px;
   }
 }
+
 .exercise-item-list {
   display: flex;
   gap: 9px;
   width: calc((100% - 15px) / 2);
 }
+
 .information-text:last-child {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 .exercise-item-list-information {
   display: flex;
 }
@@ -213,6 +229,7 @@
   line-height: 18px;
   white-space: nowrap;
 }
+
 .information-text-span {
   color: var(--basic-dark);
   font-feature-settings: 'clig' off, 'liga' off;
@@ -227,28 +244,35 @@
 .burned-calories {
   max-width: 131px;
 }
+
 .body-part {
   max-width: 91px;
 }
+
 .target {
   max-width: 61px;
 }
+
 @media only screen and (min-width: 768px) {
   .burned-calories {
     max-width: 136px;
   }
+
   .body-part {
     max-width: 93px;
   }
+
   .target {
     max-width: 63px;
   }
 }
+
 @media only screen and (min-width: 1440px) {
   .burned-calories {
     max-width: 149px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .bad-requast {
     width: 600px;
