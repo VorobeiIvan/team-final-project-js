@@ -11,12 +11,12 @@ async function renderFavorites() {
   const favoritesNotification = document.querySelector('.favorites-list-notification');
 
   if (favoritesList.length === 0) {
-    favoritesNotification.classList.remove('is-hidden');
+    // favoritesNotification.classList.remove('is-hidden');
     favoritesListWrapper.innerHTML = '';
   } else {
     const exercisesList = await fetchExercises();
     renderFavoriteExercises(exercisesList.results, favoritesList);
-    favoritesNotification.classList.add('is-hidden');
+    // favoritesNotification.classList.add('is-hidden');
   }
 }
 

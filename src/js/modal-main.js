@@ -10,6 +10,7 @@ import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
 import svgSprite from '../images/sprite.svg';
 import refs from './refs.js';
+import { onOpenRatingModal } from './components';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 refs.favorites.addEventListener('click', handleFavoritesCardClick);
@@ -33,6 +34,7 @@ export function handleExerciseCardClick(e, exerciseId) {
 function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
     createCardMarkup(exercise);
+    onOpenRatingModal(exerciseId);
   });
 
   // comparisonFavorites();

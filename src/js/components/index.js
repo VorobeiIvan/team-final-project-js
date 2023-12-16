@@ -1,2 +1,2 @@
 export * from './loader.js';
-export * from './rating-stars.js';
+export * from './modal-rating.js';

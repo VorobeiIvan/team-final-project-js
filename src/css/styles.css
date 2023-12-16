@@ -26,7 +26,8 @@
 @import url('./pagination.css');
 @import url('./privacy-policy.css');
 @import url('./terms-of-service.css');
-@import url('./components/rating-modals.css');
+@import url('./rating-modals.css');
+
 :root {
   font-family: 'DMSans', sans-serif;
   font-size: 16px;
