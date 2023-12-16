@@ -3,7 +3,7 @@
   padding: 12px 14px;
   border-radius: 30px;
   border: 1px solid var(--basic-dark);
-  display: flex;
+  display: none;
   margin-bottom: 20px;
 }
 
@@ -16,10 +16,6 @@
 
   .exercises-search-wrapper {
     width: 273px;
-    padding: 12px 14px;
-    border-radius: 30px;
-    border: 1px solid var(--basic-dark);
-    display: flex;
     margin-bottom: 32px;
   }
 }
@@ -83,7 +79,6 @@
   }
 }
 
-
 .exercise-item {
   max-width: 344px;
   height: 140px;
@@ -93,11 +88,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 16px;
-  transition: var(--transition);
-}
-
-.exercise-item:hover {
-  transform: scale(1.05);
 }
 
 @media only screen and (min-width: 768px) {
@@ -158,7 +148,11 @@
   height: 18px;
   padding: 0;
   display: flex;
-  align-items: center;
+  transition: var(--transition);
+}
+
+.exercise-item-button:hover {
+  transform: scale(1.2);
 }
 
 .exercise-item-arrow {

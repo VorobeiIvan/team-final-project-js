@@ -18,7 +18,7 @@
 @import url('./quote.css');
 @import url('./filters.css');
 @import url('./favorites.css');
-
+@import url('./modal-rating.css');
 @import url('./exercises.css');
 @import url('./scroll-up.css');
 @import url('./social-media.css');
@@ -39,12 +39,11 @@
   background-color: rgba(255, 255, 255, 0.87);
   --basic-dark: #242424;
   --basic-light: #f4f4f4;
+  --white: #ffffff;
   --category-bg: rgba(17, 17, 17, 0.502);
   --basic-gray: #f4f4f466;
   --shadow-dark: #00000040;
   --orange: #eea10c;
-  --white: #fff;
-
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
