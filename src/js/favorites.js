@@ -113,6 +113,7 @@ document.addEventListener('click', e => {
     const exerciseId = e.target.getAttribute('data-exercise-id');
     removeFavoriteExercise(exerciseId);
   }
+  const updatedFavorites = storageApi.load(FAVORITES_KEY) || [];
 
   if (updatedFavorites.length === 0) {
     favoritesNotification.classList.remove('is-hidden');
