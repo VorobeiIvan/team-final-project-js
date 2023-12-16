@@ -34,7 +34,6 @@
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 32px 16px;
-  /* max-width: 842px; */
   margin-left: auto;
   max-height: 487px;
 
@@ -52,9 +51,6 @@
 .favorites-list-notification {
   text-align: center;
   padding: 0 8px;
-}
-
-@media screen and (min-width: 1280px) {
 }
 
 @media only screen and (max-width: 768px) {
