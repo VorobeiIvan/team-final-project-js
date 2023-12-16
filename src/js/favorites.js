@@ -9,23 +9,23 @@ async function renderFavorites() {
   const favoritesList = storageApi.load(favoritesListKey) || [];
   const favoritesListWrapper = refs.favorites;
   const favoritesNotification = document.querySelector(
-    '.favorites-list-notification'
+    '.favorites-list-notification',
   );
 
   if (favoritesList.length === 0) {
-    // favoritesNotification.classList.remove('is-hidden');
+    favoritesNotification.classList.remove('is-hidden');
     favoritesListWrapper.innerHTML = '';
   } else {
     const exercisesList = await fetchExercises();
     renderFavoriteExercises(exercisesList.results, favoritesList);
-    // favoritesNotification.classList.add('is-hidden');
+    favoritesNotification.classList.add('is-hidden');
   }
 }
 
 function renderFavoriteExercises(exercises, favoritesList) {
   const favoritesListWrapper = refs.favorites;
   const favoritesListContainer = document.querySelector(
-    '.favorites-exercise-list'
+    '.favorites-exercise-list',
   );
 
   favoritesListContainer.innerHTML = '';
