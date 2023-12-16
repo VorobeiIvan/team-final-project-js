@@ -86,7 +86,7 @@ export function toggleFavorite() {
     FAVORITES_KEY,
     isInFavorites
       ? savedData.filter(el => el._id !== activeItem?._id)
-      : [...savedData, activeItem],
+      : [...savedData, activeItem]
   );
   setButtonContent();
 
