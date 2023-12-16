@@ -1,6 +1,6 @@
-import svgSprite from '../images/sprite.svg';
 import storageApi from './common/storage.js';
 import iziToast from 'izitoast';
+import * as bodyScrollLock from 'body-scroll-lock';
 import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
@@ -9,11 +9,11 @@ refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
 
 const removeButtonContent = `Remove from favorites
-        <svg class='modal-icon-heart'>
+        <svg class='modal-icon-favorites'>
           <use href='./images/sprite.svg#trash'></use>
         </svg>`;
 const addButtonContent = `Add to favorites
-        <svg class='modal-icon-heart'>
+        <svg class='modal-icon-favorites'>
           <use href='./images/sprite.svg#heart'></use>
         </svg>`;
 
@@ -47,22 +47,19 @@ function openModal(exerciseId) {
   });
 
   refs.backdrop.classList.remove('is-hidden');
-  document.body.classList.add('no-scroll');
-  refs.backdrop.classList.add('scroll');
+  bodyScrollLock.disableBodyScroll(document.body);
   closeModal();
 }
 
 const iconRef = document.querySelector('.modal-close-btn');
 const onClose = e => {
-  // додати правильни ref
   if (
     e.target === refs.backdrop ||
     e.key === 'Escape' ||
     e.target === iconRef
   ) {
     refs.backdrop.classList.add('is-hidden');
-    document.body.classList.remove('no-scroll');
-    refs.backdrop.classList.remove('scroll');
+    bodyScrollLock.enableBodyScroll(document.body);
     document.removeEventListener('click', onClose);
     document.removeEventListener('keydown', onClose);
     refs.closeModalBtn.removeEventListener('click', onClose);
@@ -113,7 +110,7 @@ function createCardMarkup(exercise) {
         <div class='rating-element'>
           <p class='rating-count' id='vote'>${rating}</p>
           <svg class='modal-icon-star'>
-            <use href='${svgSprite}#star'></use>
+            <use href='./images/sprite.svg#star'></use>
           </svg>
         </div>
         <div class='modal-info'>
