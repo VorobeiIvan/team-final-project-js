@@ -83,7 +83,7 @@
 .rating-element {
   display: flex;
   flex-direction: row;
-  gap: 2;
+  gap: 2px;
 }
 
 .rating-count {
