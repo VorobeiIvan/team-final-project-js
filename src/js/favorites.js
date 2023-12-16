@@ -11,10 +11,7 @@ const onRemove = (e) => {
 
 export async function renderFavorites() {
   const favoritesList = storageApi.load(FAVORITES_KEY) || [];
-
-
   const favoritesListWrapper = refs.favorites;
-
 
   const favoritesNotification = document.querySelector('.favorites-list-notification');
   const favoritesListContainer = document.querySelector('.favorites-exercise-list');
