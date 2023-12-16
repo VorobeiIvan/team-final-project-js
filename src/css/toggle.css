@@ -123,3 +123,20 @@
   opacity: .7;
   transform: scale(0.45) rotate(35deg);
 }
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .moon {
+    top: 20%;
+    left: 45%;
+    width: 45%;
+    height: 45%;
+    box-shadow: 6px 3px 0 0 var(--basic-dark);
+  }
+
+  .sun {
+    bottom: 13px;
+    width: 40%;
+    height: 40%;
+  }
+
+}
