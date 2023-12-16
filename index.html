@@ -11,7 +11,7 @@
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-5fe488fb.js">
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/favorites-b3724a26.js">
     <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-    <link rel="stylesheet" href="/team-final-project-js/assets/styles-3416601e.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/styles-b280c397.css">
   </head>
 
   <body>
@@ -193,11 +193,21 @@
     <div class="exercises-header">
       <h2 class="exercises-title">Exercises</h2>
       <div class="exercises-filter">
-
         <div class="exercises-search-wrapper is-hidden" id="search-wrapper">
-          <input class="exercises-search" id="exercises-search" type="search" name="search" placeholder="Search" />
-          <svg class="exercises-search-img" width="18" height="18" aria-label=" search icon">
-
+          <input
+            class="exercises-search"
+            id="exercises-search"
+            type="search"
+            name="search"
+            placeholder="Search"
+          />
+          <svg
+            class="exercises-search-img"
+            id="search-img"
+            width="18"
+            height="18"
+            aria-label=" search icon"
+          >
             <use href="/team-final-project-js/assets/sprite-59e25010.svg#search"></use>
           </svg>
         </div>
@@ -211,14 +221,24 @@
         <div class="quote-wrap">
           <div class="quote-wrapper">
             <div class="quote-svg-wrap">
-              <svg class="quote-svg" width="34" height="32" aria-label="icon run man">
+              <svg
+                class="quote-svg"
+                width="34"
+                height="32"
+                aria-label="icon run man"
+              >
                 <use href="/team-final-project-js/assets/sprite-59e25010.svg#run"></use>
               </svg>
             </div>
             <div class="quote-title-wrap">
               <div class="quote-title">
                 <h3>Quote of the day</h3>
-                <svg class="quote-title-svg" width="25" height="25" aria-label="icon commas">
+                <svg
+                  class="quote-title-svg"
+                  width="25"
+                  height="25"
+                  aria-label="icon commas"
+                >
                   <use href="/team-final-project-js/assets/sprite-59e25010.svg#commas"></use>
                 </svg>
               </div>
@@ -226,15 +246,33 @@
           </div>
 
           <picture>
-            <source media="(max-width: 767px)" srcset="/team-final-project-js/assets/exercise-mobile-423903f2.webp 1x, /team-final-project-js/assets/exercise-mobile@2x-6ce1db31.webp 2x" />
-            <source media="(min-width: 768px) and (max-width: 1279px)" srcset="/team-final-project-js/assets/exercise-tablet-33498d91.webp 1x, /team-final-project-js/assets/exercise-tablet@2x-459d01e3.webp 2x" />
-            <source media="(min-width: 1280px)" srcset="/team-final-project-js/assets/exercise-desktop-c21abade.webp 1x, /team-final-project-js/assets/exercise-desktop@2x-e5cd4c51.webp 2x" />
-            <img class="quote-img" src="/team-final-project-js/assets/exercise-mobile-423903f2.webp" alt="Exersices" />
+            <source
+              media="(max-width: 767px)"
+              srcset="/team-final-project-js/assets/exercise-mobile-423903f2.webp 1x, /team-final-project-js/assets/exercise-mobile@2x-6ce1db31.webp 2x"
+            />
+            <source
+              media="(min-width: 768px) and (max-width: 1279px)"
+              srcset="/team-final-project-js/assets/exercise-tablet-33498d91.webp 1x, /team-final-project-js/assets/exercise-tablet@2x-459d01e3.webp 2x"
+            />
+            <source
+              media="(min-width: 1280px)"
+              srcset="/team-final-project-js/assets/exercise-desktop-c21abade.webp 1x, /team-final-project-js/assets/exercise-desktop@2x-e5cd4c51.webp 2x"
+            />
+            <img
+              class="quote-img"
+              src="/team-final-project-js/assets/exercise-mobile-423903f2.webp"
+              alt="Exersices"
+            />
           </picture>
         </div>
         <div class="quote-wrapper article">
           <div class="quote-svg-wrap article">
-            <svg class="quote-svg" width="34" height="32" aria-label="fluent food">
+            <svg
+              class="quote-svg"
+              width="34"
+              height="32"
+              aria-label="fluent food"
+            >
               <use href="/team-final-project-js/assets/sprite-59e25010.svg#fluent-food"></use>
             </svg>
           </div>
@@ -260,11 +298,15 @@
       <div class="categories-pagination">
         <ul class="categories-list" id="categories"></ul>
         <!-- Pagination.html -->
-        <div class="tui-pagination pagination" id="tui-pagination-container"></div>
+        <div
+          class="tui-pagination pagination"
+          id="tui-pagination-container"
+        ></div>
       </div>
     </div>
   </div>
 </section>
+
       <button class="scroll-up-button" id="scroll-up-btn" type="button" aria-label="scroll-up button">
     <svg class="scroll-up-icon" width="16" height="16" aria-label="scroll-up icon">
         <use href="/team-final-project-js/assets/sprite-59e25010.svg#arrow-top"></use>
