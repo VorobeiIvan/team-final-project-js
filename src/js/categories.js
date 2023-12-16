@@ -31,6 +31,10 @@ export async function renderCategories(filter, page) {
       return categoryElement;
     });
     refs.divCategories.append(...categoriesToRender);
+    updateSubtitle();
+    //Input Search off
+    refs.divExSearch.style.display = 'none';
+    refs.exSearchImg.classList.remove('is-hidden');
   } catch (error) {
     if (error.response && error.response.status === 409) {
       const errorMessage = {
@@ -91,7 +95,19 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
+  //SubTitele
+  updateSubtitle(newActiveCard.lastElementChild.children[0].innerText);
   //Input Search on
   refs.divExSearch.style.display = 'flex'
   renderExercises();
+}
+
+function updateSubtitle(textContent = '') {
+  if (textContent) {
+    refs.exTitel.firstChild.textContent += ' / ';
+    refs.exTitel.lastElementChild.textContent = textContent;
+  } else {
+    refs.exTitel.firstChild.textContent = 'Exercises';
+    refs.exTitel.lastElementChild.textContent = textContent;
+  }
 }

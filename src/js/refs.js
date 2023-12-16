@@ -6,6 +6,7 @@ export default {
   filtersRef: document.getElementById('filters'),
   divExercises: document.getElementById('exercises'),
   footerForm: document.querySelectorAll('.footer-form'),
+  exTitel: document.querySelector('.exercises-title'),
   exSearch: document.getElementById('exercises-search'),
   divExSearch: document.getElementById('search-wrapper'),
   exSearchImg: document.getElementById('search-img'),
