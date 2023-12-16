@@ -3,6 +3,8 @@ import storageApi from './common/storage.js';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
 
+const favoritesNotification = document.querySelector('.favorites-list-notification');
+
 const onRemove = (e) => {
   const id = e.target.getAttribute('data-exercise-id');
   const favoritesList = storageApi.load(FAVORITES_KEY);
@@ -40,6 +42,8 @@ function renderFavoriteExercises(favoriteExercises) {
     const exerciseItem = createFavoriteExerciseItem(exercise);
     favoritesListContainer.appendChild(exerciseItem);
   });
+
+  favoritesNotification.classList.add('is-hidden');
 }
 
 function createFavoriteExerciseItem(exercise) {
@@ -104,6 +108,11 @@ document.addEventListener('click', e => {
     const exerciseId = e.target.getAttribute('data-exercise-id');
     removeFavoriteExercise(exerciseId);
   }
+
+  if (updatedFavorites.length === 0) {
+    favoritesNotification.classList.remove('is-hidden');
+  }
+
 });
 
 function removeFavoriteExercise(exerciseId) {

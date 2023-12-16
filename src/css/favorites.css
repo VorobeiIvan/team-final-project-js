@@ -30,10 +30,10 @@
   border-radius: 20px;
 }
 
-
 .favorites-exercise-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0fr;
   grid-gap: 32px 16px;
 
   margin-left: auto;
@@ -41,6 +41,7 @@
 
   height: 487px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .favorites-list-exercise-item {
@@ -106,9 +107,20 @@
     min-height: 141px;
   }
 
-  .favorites-list-text {
+
+  .favorites-list-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .favorites-list-notification {
     max-width: 554px;
+    width: 500px;
     margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
   }
 }
 
