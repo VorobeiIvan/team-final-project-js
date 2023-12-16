@@ -5,7 +5,6 @@ import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
 import svgSprite from '../images/sprite.svg';
-import starIcon from '../images/sprite.svg#start';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
