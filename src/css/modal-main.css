@@ -14,12 +14,12 @@
 .modal-main {
   position: absolute;
   width: 335px;
-  height: 773px;
   border-radius: 20px;
   background: var(--main-black, #242424);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+<<<<<<< HEAD
   padding: 40, 20;
 
   @media screen and (min-width: 320px) {
@@ -37,34 +37,49 @@
   @media screen and (min-width: 1440px) {
     width: 708px;
     height: 449px;
+=======
+  padding: 40px 20px;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+
+>>>>>>> main
     padding: 32px;
   }
 }
 
 .modal-container {
   display: flex;
+<<<<<<< HEAD
 
   @media screen and (min-width: 320px) {
     display: block;
   }
+=======
+  flex-direction: column;
+>>>>>>> main
 
   @media screen and (min-width: 768px) {
     display: flex;
+    flex-direction: row;
   }
 }
 
 .modal-img {
-  position: relative;
   width: 295px;
-  height: 258px;
+  height: auto;
   border-radius: 12px;
   overflow: hidden;
+  flex-shrink: 0;
 
+<<<<<<< HEAD
   @media screen and (min-width: 320px) {
     width: 295px;
     height: 258px;
   }
 
+=======
+>>>>>>> main
   @media screen and (min-width: 768px) {
     width: 270px;
     height: 259px;
@@ -72,6 +87,7 @@
 }
 
 .modal-rest {
+<<<<<<< HEAD
   overflow: hidden;
   margin: 0;
 
@@ -81,13 +97,17 @@
 
   @media screen and (min-width: 1440px) {
     margin: 0;
+=======
+  margin: 20px 0 20px 0;
+  @media screen and (min-width: 768px) {
+    margin: 0 0 20px 35px;
+>>>>>>> main
   }
 }
 
 .image {
   display: block;
   width: 100%;
-  height: auto;
 }
 
 .modal-title {
@@ -97,7 +117,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1;
-  margin-top: 20px;
   margin-bottom: 10px;
 
   @media screen and (min-width: 768px) {
@@ -111,7 +130,7 @@
 .rating-element {
   display: flex;
   flex-direction: row;
-  gap: 2;
+  gap: 2px;
 }
 
 .rating-count {
@@ -124,6 +143,7 @@
 }
 
 .modal-info {
+<<<<<<< HEAD
   margin-bottom: 20px;
 }
 
@@ -133,6 +153,8 @@
   @media screen and (min-width: 320px) {
     margin-right: 39px;
   }
+=======
+>>>>>>> main
 }
 
 .modal-table {
@@ -142,11 +164,17 @@
   gap: 20px;
   border-top: rgba(244, 244, 244, 0.2) 1px solid;
   border-bottom: rgba(244, 244, 244, 0.2) 1px solid;
+  margin-top: 20px;
   margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   @media screen and (min-width: 768px) {
     gap: 16px;
+    margin-top: 16px;
     margin-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }
 
@@ -181,17 +209,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
-  margin-bottom: 40px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 64px;
-  }
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
   gap: 9px;
+  justify-content: end;
 }
 
 .button {
@@ -263,8 +287,12 @@
     height: 30px;
   }
 
+<<<<<<< HEAD
   transition: background-color var(--transition),
   border-color var(--transition);
+=======
+  transition: background-color var(--transition), border-color var(--transition);
+>>>>>>> main
 }
 
 .modal-close-btn:hover,
@@ -277,6 +305,10 @@
   stroke: var(--basic-light, #f4f4f4);
   width: 24px;
   height: 24px;
+<<<<<<< HEAD
+=======
+  pointer-events: none;
+>>>>>>> main
 
   @media screen and (min-width: 768px) {
     width: 28px;
@@ -292,8 +324,8 @@
 }
 
 .modal-icon-heart {
-  stroke: var(--main-black, #242424);
-  fill: transparent;
+  /* stroke: var(--main-black, #242424);
+  fill: transparent; */
   width: 18px;
   height: 18px;
 
@@ -302,14 +334,18 @@
     height: 20px;
   }
 
+<<<<<<< HEAD
   transition: stroke var(--transition),
   fill var(--transition);
+=======
+  transition: stroke var(--transition), fill var(--transition);
+>>>>>>> main
 }
 
 .add-to-favorites:hover .modal-icon-heart,
 .add-to-favorites:focus .modal-icon-heart {
-  stroke: var(--basic-light, #f4f4f4);
-  fill: var(--basic-light, #f4f4f4);
+  /* stroke: var(--basic-light, #f4f4f4);
+  fill: var(--basic-light, #f4f4f4); */
 }
 
 .modal-icon-star {

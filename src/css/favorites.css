@@ -37,8 +37,19 @@
 
 .favorites-exercise-list {
   display: grid;
+<<<<<<< HEAD
   grid-template-rows: repeat(1, 1fr);
   gap: 20px;
+=======
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px 16px;
+
+  margin-left: auto;
+  max-height: 487px;
+
+  height: 487px;
+  overflow-y: scroll;
+>>>>>>> main
 }
 
 .favorites-list-exercise-item {
@@ -53,10 +64,13 @@
   padding: 0 8px;
 }
 
+<<<<<<< HEAD
 @media only screen and (min-width: 768px) {
   .favorites-section {  
     padding-bottom: 100px;
   }
+=======
+>>>>>>> main
 
   .favorites-exercise-list {
     grid-template-columns: repeat(2, 1fr);
