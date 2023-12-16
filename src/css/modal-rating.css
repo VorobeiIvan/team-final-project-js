@@ -129,10 +129,11 @@
 
 .star-label {
   cursor: pointer;
+  height: 24px;
 }
 
 
-.star {
+.star-icon-rating {
   fill: rgba(244, 244, 244, 0.2);
   transition: fill 150ms ease-in-out;
 }

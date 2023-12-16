@@ -18,6 +18,7 @@
 @import url('./quote.css');
 @import url('./filters.css');
 @import url('./favorites.css');
+@import url('./modal-rating.css');
 @import url('./exercises.css');
 @import url('./scroll-up.css');
 @import url('./social-media.css');
@@ -27,7 +28,6 @@
 @import url('./terms-of-service.css');
 @import url('./toggle.css');
 @import url('dark-theme.css');
-@import url('./modal-rating.css');
 
 :root {
   font-family: 'DMSans', sans-serif;

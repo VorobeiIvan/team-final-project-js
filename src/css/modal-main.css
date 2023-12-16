@@ -1,10 +1,6 @@
-.is-hidden {
-  visibility: hidden;
-}
-
 .backdrop {
   position: fixed;
-  z-index: 30;
+  z-index: 999;
   width: 100%;
   height: 100%;
   top: 0;
@@ -20,22 +16,11 @@
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 20px;
-
-  @media screen and (min-width: 768px) {
-    width: 704px;
-
-    padding: 32px;
-  }
 }
 
 .modal-container {
   display: flex;
   flex-direction: column;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-  }
 }
 
 .modal-img {
@@ -44,18 +29,10 @@
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
-
-  @media screen and (min-width: 768px) {
-    width: 270px;
-    height: 259px;
-  }
 }
 
 .modal-rest {
   margin: 20px 0 20px 0;
-  @media screen and (min-width: 768px) {
-    margin: 0 0 20px 35px;
-  }
 }
 
 .image {
@@ -71,13 +48,6 @@
   font-weight: 500;
   line-height: 1;
   margin-bottom: 10px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-    line-height: 1.33;
-    margin-top: 0;
-    margin-bottom: 8px;
-  }
 }
 
 .rating-element {
@@ -95,9 +65,6 @@
   line-height: 1.5;
 }
 
-.modal-info {
-}
-
 .modal-table {
   display: flex;
   flex-direction: row;
@@ -109,14 +76,6 @@
   margin-bottom: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-
-  @media screen and (min-width: 768px) {
-    gap: 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
 }
 
 .info-element {
@@ -171,19 +130,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
-
-  @media screen and (min-width: 768px) {
-    padding: 12px 24px;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 1.5;
-  }
 }
 
 .add-to-favorites {
   background: var(--basic-light, #f4f4f4);
   color: var(--main-black, #242424);
-  transition: background-color var(--transition), color var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition);
 }
 
 .give-a-rating {
@@ -198,6 +151,7 @@
 .add-to-favorites:focus {
   background: var(--main-black, #242424);
   color: var(--basic-light, #f4f4f4);
+  border: var(--basic-light, #f4f4f4) 1px solid;
 }
 
 .give-a-rating:hover,
@@ -220,21 +174,12 @@
   cursor: pointer;
   width: 26px;
   height: 26px;
-
-  @media screen and (min-width: 768px) {
-    top: 16px;
-    right: 16px;
-    width: 30px;
-    height: 30px;
-  }
-
-  transition: background-color var(--transition), border-color var(--transition);
+  transition: background-color var(--transition);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: var(--basic-light, #f4f4f4);
-  border-color: var(--basic-light, #f4f4f4);
 }
 
 .modal-icon-close {
@@ -242,12 +187,6 @@
   width: 24px;
   height: 24px;
   pointer-events: none;
-
-  @media screen and (min-width: 768px) {
-    width: 28px;
-    height: 28px;
-  }
-
   transition: stroke var(--transition);
 }
 
@@ -256,24 +195,17 @@
   stroke: var(--main-black, #242424);
 }
 
-.modal-icon-heart {
-  /* stroke: var(--main-black, #242424);
-  fill: transparent; */
+.modal-icon-favorites {
+  stroke: var(--main-black, #242424);
+  fill: transparent;
   width: 18px;
   height: 18px;
-
-  @media screen and (min-width: 768px) {
-    width: 20px;
-    height: 20px;
-  }
-
   transition: stroke var(--transition), fill var(--transition);
 }
 
-.add-to-favorites:hover .modal-icon-heart,
-.add-to-favorites:focus .modal-icon-heart {
-  /* stroke: var(--basic-light, #f4f4f4);
-  fill: var(--basic-light, #f4f4f4); */
+.add-to-favorites:hover .modal-icon-favorites,
+.add-to-favorites:focus .modal-icon-favorites {
+  stroke: var(--basic-light, #f4f4f4);
 }
 
 .modal-icon-star {
@@ -282,10 +214,62 @@
   height: 18px;
 }
 
-.no-scroll {
-  overflow: hidden;
-}
+@media screen and (min-width: 768px) {
+  .modal-main {
+    width: 704px;
+    padding: 32px;
+  }
 
-.scroll {
-  overflow-y: auto;
+  .modal-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .modal-img {
+    width: 270px;
+    height: 259px;
+  }
+
+  .modal-rest {
+    margin: 0 0 20px 35px;
+  }
+
+  .modal-title {
+    font-size: 24px;
+    line-height: 1.33;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .modal-table {
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.5;
+  }
+
+  .modal-close-btn {
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .modal-icon-close {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-icon-favorites {
+    width: 20px;
+    height: 20px;
+  }
 }
