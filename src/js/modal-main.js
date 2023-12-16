@@ -1,10 +1,3 @@
-// TODO:
-// move createCardMarkup to separate file
-// add rating
-// add handle to favorite button
-// add handle to give rating button
-// remove console.log and dead code
-
 import storageApi from '../common/storage';
 import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
@@ -26,9 +19,6 @@ export function handleExerciseCardClick(e) {
 
 function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
-    // checkIfInFavorites(exercise);
-    // comparisonFavorites();
-
     createCardMarkup(exercise);
     handleFavoriteBtnClick(exercise);
   });
@@ -40,7 +30,7 @@ function openModal(exerciseId) {
 
   closeModal();
 
-  // handleGiveRatingBtnClick();
+  handleGiveRatingBtnClick();
 }
 
 function comparisonFavorites() {
@@ -59,6 +49,20 @@ function comparisonFavorites() {
       }
     }
   }
+
+  // const savedData = storageApi.load(refs.FAVORITES_KEY) || [];
+
+  // const isExerciseInFavorites = savedData.some(el => {
+  //   console.log('el: ', el);
+  //   console.log('exerciseData: ', exerciseData);
+  //   return JSON.stringify(el._id) === JSON.stringify(exerciseData._id);
+  // });
+
+  // if (isExerciseInFavorites) {
+  //   updateFavoriteButton(true);
+  // } else {
+  //   updateFavoriteButton(false);
+  // }
 }
 
 function closeModal() {
@@ -160,60 +164,10 @@ function updateFavoriteButton(isInFavorites) {
   }
 }
 
-// function handleFavoriteBtnClick() {
-//   console.log(refs.addFavorite);
-//   refs.addFavorite.addEventListener('click', e => {
-//     if (e.target.textContent == 'Remove from favorites') {
-//       const savedData = storageApi.load(refs.FAVORITES_KEY);
-//       for (let i = 0; i < savedData.length; i++) {
-//         if (JSON.stringify(savedData[i]) === JSON.stringify(data)) {
-//           savedData.splice(i, 1);
-//           console.log(savedData);
-//           storageApi.save(refs.FAVORITES_KEY, savedData);
-//           // Notify.info(`Exercise is remove from favorites`);
-//           iziToast.show({
-//             // title: 'Hey',
-//             message: 'Removed from favorites',
-//           });
-//           refs.addFavorite.textContent = 'Add to favorites';
-//           refs.addFavorite.style.backgroundColor = '#fff';
-//           refs.addFavorite.style.color = '#000';
-//         }
-//       }
-//     } else {
-//       if (
-//         !storageApi.load(refs.FAVORITES_KEY) ||
-//         storageApi.load(refs.FAVORITES_KEY).length === 0
-//       ) {
-//         storageApi.save(refs.FAVORITES_KEY, [data]);
-//         // Notify.info(`Added to favorites`, {
-//         //   background: '#ff6b01',
-//         // });
-//         iziToast.show({
-//           // title: 'Hey',
-//           message: 'Added to favorites',
-//         });
-//         refs.addFavorite.textContent = 'Remove from favorites';
-//         refs.addFavorite.style.backgroundColor = '#ff6b01';
-//         refs.addFavorite.style.color = '#fff';
-//         return;
-//       }
-//       const savedData = storageApi.load(refs.FAVORITES_KEY);
-//       savedData.push(data);
-//       storageApi.save(refs.FAVORITES_KEY, savedData);
-//       // Notify.info(`Added to favorites`);
-//       iziToast.show({
-//         // title: 'Hey',
-//         message: 'Added to favorites',
-//       });
-//       refs.addFavorite.textContent = 'Remove from favorites';
-//       refs.addFavorite.style.backgroundColor = '#ff6b01';
-//       refs.addFavorite.style.color = '#fff';
-//     }
-
-//     refs.addFavorite.removeEventListener;
-//   });
-// }
+function handleGiveRatingBtnClick() {
+  console.log('click on button Rating');
+  // add necessary logic here
+}
 
 function createCardMarkup(exercise) {
   const gifUrl = exercise.gifUrl;
@@ -262,6 +216,5 @@ function createCardMarkup(exercise) {
             </div>
           </div>
           <p class="about-info">${description}</p>
-        </div>
-      </div>`);
+        </div>`);
 }
