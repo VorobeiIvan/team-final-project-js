@@ -313,3 +313,12 @@
     width: 900px;
   }
 }
+
+.exercises-title-span {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--basic-dark);
+  opacity: 50%;
+}
