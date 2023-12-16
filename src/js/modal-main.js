@@ -5,17 +5,18 @@ import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
 import { onCloseRatingModal, onOpenRatingModal } from './components';
+import svgSprite from '../images/sprite.svg';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
 
 const removeButtonContent = `Remove from favorites
         <svg class='modal-icon-favorites'>
-          <use href='./images/sprite.svg#trash'></use>
+          <use href='${svgSprite}#trash'></use>
         </svg>`;
 const addButtonContent = `Add to favorites
         <svg class='modal-icon-favorites'>
-          <use href='./images/sprite.svg#heart'></use>
+          <use href='${svgSprite}#heart'></use>
         </svg>`;
 
 const findFavorite = (array, id) => array.find(el => el?._id === id);
@@ -113,7 +114,7 @@ function createCardMarkup(exercise) {
         <div class='rating-element'>
           <p class='rating-count' id='vote'>${rating}</p>
           <svg class='modal-icon-star'>
-            <use href='./images/sprite.svg#star'></use>
+            <use href='${svgSprite}#star'></use>
           </svg>
         </div>
         <div class='modal-info'>
