@@ -9,9 +9,9 @@
     
     <script type="module" crossorigin src="/team-final-project-js/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-5fe488fb.js">
-    <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/favorites-cb30cc87.js">
+    <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/favorites-2604e44e.js">
     <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-    <link rel="stylesheet" href="/team-final-project-js/assets/styles-4c3e0578.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/styles-862e4e39.css">
   </head>
 
   <body>
@@ -45,7 +45,17 @@
                 </ul>
             </nav>
             <!-- social media -->
-            <div class="header-social-media-container">
+            <div class="header-social-media-container header-social-media-wrapper">
+                <div>
+                    <label class="switch">
+                        <input type="checkbox" class="theme-switch">
+                        <span class="sun"></span>
+                        <span class="moon">
+                            <span class="star"></span>
+                            <span class="star small"></span>
+                        </span>
+                    </label>
+                </div>
                 <ul class="header-social-media-list">
                     <!-- facebook -->
                     <li class="header-social-media-item">
@@ -79,6 +89,18 @@
 
             <!-- mobile burger menu -->
             <!--mobile header  -->
+            <div class="header-social-media-wrapper toggle-switch">
+                <div class="header-social-media-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" class="theme-switch">
+                        <span class="sun"></span>
+                        <span class="moon">
+                            <span class="star"></span>
+                            <span class="star small"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
             <button class="burger-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="burger-menu-icon" width="32" height="32" aria-label="burger menu icon for mobile">
                     <use href="/team-final-project-js/assets/sprite-59e25010.svg#burger-menu"></use>
