@@ -93,12 +93,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 16px;
-  transition: var(--transition);
 }
 
-.exercise-item:hover {
-  transform: scale(1.05);
-}
 
 @media only screen and (min-width: 768px) {
   .exercise-item {
@@ -158,7 +154,11 @@
   height: 18px;
   padding: 0;
   display: flex;
-  align-items: center;
+  transition: var(--transition);
+}
+
+.exercise-item-button:hover {
+  transform: scale(1.2);
 }
 
 .exercise-item-arrow {
