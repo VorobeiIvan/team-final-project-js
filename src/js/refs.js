@@ -18,4 +18,6 @@ export default {
   favorites: document.querySelector('.favorites-list'),
   buttonTheme: document.querySelectorAll('.theme-switch'),
   body: document.querySelector('body'),
+  sun: document.querySelectorAll('.sun'),
+  moon: document.querySelectorAll('.moon'),
 };
