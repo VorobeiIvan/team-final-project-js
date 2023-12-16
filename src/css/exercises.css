@@ -98,7 +98,7 @@
 }
 
 .exercise-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 @media only screen and (min-width: 768px) {
