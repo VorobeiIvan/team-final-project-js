@@ -8,7 +8,7 @@ const ratingFormRef = document.querySelector('.rating-feedback-form');
 const { allStars, number, ratingStarsRef, closeButtonRef } = {
   ratingStarsRef: ratingFormRef.querySelector('.rating-stars'),
   number: ratingFormRef.querySelector('.rating-number'),
-  allStars: ratingFormRef.querySelectorAll('.star'),
+  allStars: ratingFormRef.querySelectorAll('.star-icon-rating'),
   closeButtonRef: ratingFormRef.querySelector('.close-rating-btn-icon'),
 };
 
