@@ -6,6 +6,7 @@ import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
 import { onCloseRatingModal, onOpenRatingModal } from './components';
 import svgSprite from '../images/sprite.svg';
+import { renderFavorites } from './favorites.js';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
