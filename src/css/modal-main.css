@@ -191,7 +191,7 @@
   border: var(--basic-light, #f4f4f4) 1px solid;
   color: var(--basic-light, #f4f4f4);
   transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition);
+  color var(--transition);
 }
 
 .add-to-favorites:hover,
@@ -242,6 +242,7 @@
   stroke: var(--basic-light, #f4f4f4);
   width: 24px;
   height: 24px;
+  pointer-events: none;
 
   @media screen and (min-width: 768px) {
     width: 28px;
