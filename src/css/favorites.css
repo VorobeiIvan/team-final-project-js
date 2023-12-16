@@ -35,7 +35,7 @@
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 0fr;
   grid-gap: 32px 16px;
-
+  padding-right: 10px;
   margin-left: auto;
   max-height: 487px;
 

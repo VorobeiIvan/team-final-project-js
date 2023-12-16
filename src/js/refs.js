@@ -19,4 +19,6 @@ export default {
   buttonTheme: document.querySelectorAll('.theme-switch'),
   body: document.querySelector('body'),
   modalIconHeart: document.querySelector('.modal-icon-heart'),
+  sun: document.querySelectorAll('.sun'),
+  moon: document.querySelectorAll('.moon'),
 };

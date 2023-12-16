@@ -1,20 +1,21 @@
-import svgSprite from '../images/sprite.svg';
 import storageApi from './common/storage.js';
 import iziToast from 'izitoast';
+import * as bodyScrollLock from 'body-scroll-lock';
 import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
-import { renderFavorites } from './favorites.js';
+import { onCloseRatingModal, onOpenRatingModal } from './components';
+import svgSprite from '../images/sprite.svg';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
 
 const removeButtonContent = `Remove from favorites
-        <svg class='modal-icon-trash' width='16' height='16'>
+        <svg class='modal-icon-heart'>
           <use href='./images/sprite.svg#trash'></use>
         </svg>`;
 const addButtonContent = `Add to favorites
-        <svg class='modal-icon-heart'  width='16' height='16'>
+        <svg class='modal-icon-heart'>
           <use href='./images/sprite.svg#heart'></use>
         </svg>`;
 
@@ -44,26 +45,25 @@ function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
     activeItem = exercise;
     createCardMarkup(exercise);
+    onOpenRatingModal(exerciseId);
     setButtonContent();
   });
 
   refs.backdrop.classList.remove('is-hidden');
-  document.body.classList.add('no-scroll');
-  refs.backdrop.classList.add('scroll');
+  bodyScrollLock.disableBodyScroll(document.body);
   closeModal();
 }
 
 const iconRef = document.querySelector('.modal-close-btn');
 const onClose = e => {
-  // додати правильни ref
   if (
     e.target === refs.backdrop ||
     e.key === 'Escape' ||
     e.target === iconRef
   ) {
+    onCloseRatingModal();
     refs.backdrop.classList.add('is-hidden');
-    document.body.classList.remove('no-scroll');
-    refs.backdrop.classList.remove('scroll');
+    bodyScrollLock.enableBodyScroll(document.body);
     document.removeEventListener('click', onClose);
     document.removeEventListener('keydown', onClose);
     refs.closeModalBtn.removeEventListener('click', onClose);

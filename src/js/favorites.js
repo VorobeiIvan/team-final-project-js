@@ -14,9 +14,9 @@ const onRemove = (e) => {
 export async function renderFavorites() {
   const favoritesList = storageApi.load(FAVORITES_KEY) || [];
   const favoritesListWrapper = refs.favorites;
-
-  const favoritesNotification = document.querySelector('.favorites-list-notification');
-  const favoritesListContainer = document.querySelector('.favorites-exercise-list');
+  const favoritesNotification = document.querySelector(
+    '.favorites-list-notification',
+  );
 
   if (favoritesList.length === 0) {
     favoritesNotification.classList.remove('is-hidden');
@@ -32,11 +32,12 @@ export async function renderFavorites() {
 
 renderFavorites();
 
-function renderFavoriteExercises(favoriteExercises) {
-  const favoritesListContainer = document.querySelector('.favorites-exercise-list');
-  if (!favoritesListContainer) {
-    return;
-  }
+function renderFavoriteExercises(exercises, favoritesList) {
+  const favoritesListWrapper = refs.favorites;
+  const favoritesListContainer = document.querySelector(
+    '.favorites-exercise-list'
+  );
+
   favoritesListContainer.innerHTML = '';
   favoriteExercises.forEach(exercise => {
     const exerciseItem = createFavoriteExerciseItem(exercise);
