@@ -127,7 +127,7 @@
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .moon {
     top: 20%;
-    left: 45%;
+    left: 35%;
     width: 45%;
     height: 45%;
     box-shadow: 6px 3px 0 0 var(--basic-dark);
