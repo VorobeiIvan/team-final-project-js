@@ -7,7 +7,6 @@ function handlePageNavigation() {
   const links = [
     ...document.querySelectorAll('.header-nav-link'),
     ...document.querySelectorAll('.nav-burger-menu-link'),
-    ...document.querySelectorAll('.nav-burger-menu-link'),
   ];
 
   links.forEach(function (link) {
