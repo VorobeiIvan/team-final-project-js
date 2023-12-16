@@ -20,7 +20,7 @@ export async function renderCategories(filter, page) {
       ({ page: newPage }) => {
         renderCategories(filter, newPage);
         refs.divCategoriesContainer.scrollIntoView();
-      },
+      }
     );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
@@ -91,6 +91,7 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
+  //Input Search
   refs.divExSearch.classList.remove('is-hidden');
   renderExercises();
 }
