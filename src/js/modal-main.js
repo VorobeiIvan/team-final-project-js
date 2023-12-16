@@ -11,12 +11,12 @@ refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
 
 const removeButtonContent = `Remove from favorites
-        <svg class='modal-icon-favorites'>
-          <use href='${svgSprite}#trash'></use>
+        <svg class='modal-icon-heart'>
+          <use href='./images/sprite.svg#trash'></use>
         </svg>`;
 const addButtonContent = `Add to favorites
-        <svg class='modal-icon-favorites'>
-          <use href='${svgSprite}#heart'></use>
+        <svg class='modal-icon-heart'>
+          <use href='./images/sprite.svg#heart'></use>
         </svg>`;
 
 const findFavorite = (array, id) => array.find(el => el?._id === id);
@@ -68,6 +68,7 @@ const onClose = e => {
     document.removeEventListener('keydown', onClose);
     refs.closeModalBtn.removeEventListener('click', onClose);
     refs.addFavorite.removeEventListener('click', toggleFavorite);
+    renderFavorites();
   }
 };
 

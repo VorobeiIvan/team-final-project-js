@@ -30,10 +30,10 @@
   border-radius: 20px;
 }
 
-
 .favorites-exercise-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 0fr;
   grid-gap: 32px 16px;
   padding-right: 10px;
   margin-left: auto;
@@ -41,6 +41,7 @@
 
   height: 487px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .favorites-list-exercise-item {
@@ -56,9 +57,9 @@
 }
 
 
-@media only screen and (max-width: 768px) {
-  .favorites-list-text {
-    padding: 0 75px;
+@media only screen and (min-width: 768px) {
+  .favorites-exercise-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -106,8 +107,29 @@
     min-height: 141px;
   }
 
-  .favorites-list-text {
-    max-width: 554px;
-    margin: 0 auto;
+  .favorites-list-wrapper {
+    position: relative;
+    width: 100%;
   }
+
+  .favorites-exercise-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .favorites-list-notification {
+    max-width: 554px;
+    width: 500px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+  }
+}
+
+.exercise-item-trash-icon,
+.modal-icon-trash {
+  pointer-events: none;
+  stroke: black;
+  fill: white;
 }

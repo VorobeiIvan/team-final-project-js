@@ -1,12 +1,18 @@
-import storageApi from './common/storage.js';
 import svgSprite from '../images/sprite.svg';
-import { fetchExercises } from './api.js';
+import storageApi from './common/storage.js';
 import refs from './refs.js';
+import { FAVORITES_KEY } from './consts.js';
 
-const favoritesListKey = refs.FAVORITES_KEY;
+const favoritesNotification = document.querySelector('.favorites-list-notification');
 
-async function renderFavorites() {
-  const favoritesList = storageApi.load(favoritesListKey) || [];
+const onRemove = (e) => {
+  const id = e.target.getAttribute('data-exercise-id');
+  const favoritesList = storageApi.load(FAVORITES_KEY);
+  storageApi.save(FAVORITES_KEY, favoritesList.filter(el => el._id !== id));
+};
+
+export async function renderFavorites() {
+  const favoritesList = storageApi.load(FAVORITES_KEY) || [];
   const favoritesListWrapper = refs.favorites;
   const favoritesNotification = document.querySelector(
     '.favorites-list-notification',
@@ -16,28 +22,29 @@ async function renderFavorites() {
     favoritesNotification.classList.remove('is-hidden');
     favoritesListWrapper.innerHTML = '';
   } else {
-    const exercisesList = await fetchExercises();
-    renderFavoriteExercises(exercisesList.results, favoritesList);
-    favoritesNotification.classList.add('is-hidden');
+    renderFavoriteExercises(favoritesList);
+
+    document.querySelectorAll('.exercise-item-button-delete').forEach((el) => {
+      el.addEventListener('click', onRemove);
+    });
   }
 }
+
+renderFavorites();
 
 function renderFavoriteExercises(exercises, favoritesList) {
   const favoritesListWrapper = refs.favorites;
   const favoritesListContainer = document.querySelector(
-    '.favorites-exercise-list',
+    '.favorites-exercise-list'
   );
 
   favoritesListContainer.innerHTML = '';
-
-  exercises.forEach(exercise => {
-    if (favoritesList.includes(exercise._id)) {
-      const exerciseItem = createFavoriteExerciseItem(exercise);
-      favoritesListContainer.appendChild(exerciseItem);
-    }
+  favoriteExercises.forEach(exercise => {
+    const exerciseItem = createFavoriteExerciseItem(exercise);
+    favoritesListContainer.appendChild(exerciseItem);
   });
 
-  favoritesListWrapper.classList.remove('is-hidden');
+  favoritesNotification.classList.add('is-hidden');
 }
 
 function createFavoriteExerciseItem(exercise) {
@@ -102,12 +109,17 @@ document.addEventListener('click', e => {
     const exerciseId = e.target.getAttribute('data-exercise-id');
     removeFavoriteExercise(exerciseId);
   }
+
+  if (updatedFavorites.length === 0) {
+    favoritesNotification.classList.remove('is-hidden');
+  }
+
 });
 
 function removeFavoriteExercise(exerciseId) {
-  const favoritesList = storageApi.load(favoritesListKey) || [];
+  const favoritesList = storageApi.load(FAVORITES_KEY) || [];
   const updatedFavorites = favoritesList.filter(id => id !== exerciseId);
-  storageApi.save(favoritesListKey, updatedFavorites);
+  storageApi.save(FAVORITES_KEY, updatedFavorites);
 
   renderFavorites();
 }
