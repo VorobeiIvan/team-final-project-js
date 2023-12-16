@@ -11,11 +11,11 @@ refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
 
 const removeButtonContent = `Remove from favorites
-        <svg class='modal-icon-heart'>
+        <svg class='modal-icon-favorites'>
           <use href='./images/sprite.svg#trash'></use>
         </svg>`;
 const addButtonContent = `Add to favorites
-        <svg class='modal-icon-heart'>
+        <svg class='modal-icon-favorites'>
           <use href='./images/sprite.svg#heart'></use>
         </svg>`;
 
@@ -86,7 +86,7 @@ export function toggleFavorite() {
     FAVORITES_KEY,
     isInFavorites
       ? savedData.filter(el => el._id !== activeItem?._id)
-      : [...savedData, activeItem],
+      : [...savedData, activeItem]
   );
   setButtonContent();
 
