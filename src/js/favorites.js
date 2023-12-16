@@ -32,14 +32,14 @@ export async function renderFavorites() {
 
 renderFavorites();
 
-function renderFavoriteExercises(exercises, favoritesList) {
+function renderFavoriteExercises(exercises) {
   const favoritesListWrapper = refs.favorites;
   const favoritesListContainer = document.querySelector(
-    '.favorites-exercise-list'
+    '.favorites-exercise-list',
   );
 
   favoritesListContainer.innerHTML = '';
-  favoriteExercises.forEach(exercise => {
+  exercises.forEach(exercise => {
     const exerciseItem = createFavoriteExerciseItem(exercise);
     favoritesListContainer.appendChild(exerciseItem);
   });
