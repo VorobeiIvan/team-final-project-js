@@ -56,9 +56,9 @@
 
 .footer-email-input {
     padding-left: 14px;
-    border: 1px solid #f4f4f4;
+    border: 1px solid var(--basic-light);
     border-radius: 30px;
-    color: #f4f4f4;
+    color: var(--basic-light);
     background-color: transparent;
     padding-right: 14px;
     font-size: 14px;
@@ -87,14 +87,14 @@
     font-weight: 400;
     line-height: 18px;
     transition: background-color var(--transition), color var(--transition),
-    border var(--transition);
+        border var(--transition);
 }
 
 .footer-btn-email:hover,
 .footer-btn-email:focus {
     background-color: transparent;
-    color: #f4f4f4;
-    border: 1px solid #f4f4f4;
+    color: var(--basic-light);
+    border: 1px solid var(--basic-light);
 }
 
 .footer-term-policy-rights {
@@ -252,5 +252,3 @@
     }
 
 }
-
-

@@ -11,7 +11,9 @@ function mobileMenu() {
     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
     mobileMenu.classList.toggle('is-open');
 
-    const scrollLockMethod = !isMenuOpen ? 'disableBodyScroll' : 'enableBodyScroll';
+    const scrollLockMethod = !isMenuOpen
+      ? 'disableBodyScroll'
+      : 'enableBodyScroll';
     bodyScrollLock[scrollLockMethod](document.body);
   }
 
@@ -35,7 +37,10 @@ function mobileMenu() {
     link.addEventListener('click', handleLinkClick);
   });
 
-  matchMedia('(min-width: 768px)').addEventListener('change', handleMediaChange);
+  matchMedia('(min-width: 768px)').addEventListener(
+    'change',
+    handleMediaChange
+  );
 }
 
 document.addEventListener('DOMContentLoaded', mobileMenu);

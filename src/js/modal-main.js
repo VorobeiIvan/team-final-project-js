@@ -1,11 +1,4 @@
-// TODO:
-// move createCardMarkup to separate file
-// add rating
-// add handle to favorite button
-// add handle to give rating button
-// remove console.log and dead code
-
-import storageApi from '../common/storage';
+import storageApi from './common/storage.js';
 import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
 import svgSprite from '../images/sprite.svg';
@@ -26,39 +19,16 @@ export function handleExerciseCardClick(e, exerciseId) {
   openModal(isCard.id);
 }
 
-// handleFavoritesCardClick(){
-//   // TODO: add functionality
-// };
-
 function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
     createCardMarkup(exercise);
   });
 
-  // comparisonFavorites();
   refs.backdrop.classList.remove('is-hidden');
   document.body.classList.add('no-scroll');
   refs.backdrop.classList.add('scroll');
   closeModal();
 }
-
-// function comparisonFavorites() {
-//   refs.addFavorite.textContent = 'Add to favorites';
-//   refs.addFavorite.style.backgroundColor = '#fff';
-//   refs.addFavorite.style.color = '#000';
-//   const savedDate = storageApi.load(refs.FAVORITES_KEY);
-
-//   if (savedDate) {
-//     for (const el of savedDate) {
-//       if (JSON.stringify(el) === JSON.stringify(data)) {
-//         refs.addFavorite.textContent = 'Remove from favorites';
-//         refs.addFavorite.style.backgroundColor = '#ff6b01';
-//         refs.addFavorite.style.color = '#fff';
-//         break;
-//       }
-//     }
-//   }
-// }
 
 function closeModal() {
   document.addEventListener('click', e => {
@@ -90,9 +60,7 @@ refs.addFavorite.addEventListener('click', e => {
         savedData.splice(i, 1);
         console.log(savedData);
         storageApi.save(refs.FAVORITES_KEY, savedData);
-        // Notify.info(`Exercise is remove from favorites`);
         iziToast.show({
-          // title: 'Hey',
           message: 'Removed from favorites',
         });
         refs.addFavorite.textContent = 'Add to favorites';
@@ -106,11 +74,8 @@ refs.addFavorite.addEventListener('click', e => {
       storageApi.load(refs.FAVORITES_KEY).length === 0
     ) {
       storageApi.save(refs.FAVORITES_KEY, [data]);
-      // Notify.info(`Added to favorites`, {
-      //   background: '#ff6b01',
-      // });
+
       iziToast.show({
-        // title: 'Hey',
         message: 'Added to favorites',
       });
       refs.addFavorite.textContent = 'Remove from favorites';
@@ -121,9 +86,8 @@ refs.addFavorite.addEventListener('click', e => {
     const savedData = storageApi.load(refs.FAVORITES_KEY);
     savedData.push(data);
     storageApi.save(refs.FAVORITES_KEY, savedData);
-    // Notify.info(`Added to favorites`);
+
     iziToast.show({
-      // title: 'Hey',
       message: 'Added to favorites',
     });
     refs.addFavorite.textContent = 'Remove from favorites';

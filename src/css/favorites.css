@@ -21,7 +21,7 @@
 }
 
 .favorites-quote-bottom-wrapper .article {
-  background: #fff;
+  background: var(--white);
 }
 
 .favorites-quote-img {
@@ -30,11 +30,12 @@
   border-radius: 20px;
 }
 
+
 .favorites-exercise-list {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 32px 16px;
-  /* max-width: 842px; */
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px 16px;
+
   margin-left: auto;
   max-height: 487px;
 
@@ -44,7 +45,7 @@
 
 .favorites-list-exercise-item {
   height: 141px;
-  background: #fff;
+  background: var(--white);
   padding: 16px 18px;
   border-radius: 15px;
 }
@@ -54,8 +55,6 @@
   padding: 0 8px;
 }
 
-@media screen and (min-width: 1280px) {
-}
 
 @media only screen and (max-width: 768px) {
   .favorites-list-text {

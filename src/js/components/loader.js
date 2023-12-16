@@ -1,7 +1,11 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-export const loader = ({ targetElement, width, height, disableScroll = false } = {}) => {
-
+export const loader = ({
+  targetElement,
+  width,
+  height,
+  disableScroll = false,
+} = {}) => {
   const appendElement = targetElement || document.body;
   const loaderContainer = document.createElement('div');
   loaderContainer.classList.add('loader-container');

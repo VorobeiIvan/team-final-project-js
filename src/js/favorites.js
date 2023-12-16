@@ -1,5 +1,5 @@
-import storageApi from '../common/storage';
-import svgSprite from "../images/sprite.svg";
+import storageApi from './common/storage.js';
+import svgSprite from '../images/sprite.svg';
 import { fetchExercises } from './api.js';
 import refs from './refs.js';
 
@@ -8,7 +8,9 @@ const favoritesListKey = refs.FAVORITES_KEY;
 async function renderFavorites() {
   const favoritesList = storageApi.load(favoritesListKey) || [];
   const favoritesListWrapper = refs.favorites;
-  const favoritesNotification = document.querySelector('.favorites-list-notification');
+  const favoritesNotification = document.querySelector(
+    '.favorites-list-notification'
+  );
 
   if (favoritesList.length === 0) {
     favoritesNotification.classList.remove('is-hidden');
@@ -22,7 +24,9 @@ async function renderFavorites() {
 
 function renderFavoriteExercises(exercises, favoritesList) {
   const favoritesListWrapper = refs.favorites;
-  const favoritesListContainer = document.querySelector('.favorites-exercise-list');
+  const favoritesListContainer = document.querySelector(
+    '.favorites-exercise-list'
+  );
 
   favoritesListContainer.innerHTML = '';
 
@@ -93,7 +97,6 @@ function createFavoriteExerciseItem(exercise) {
 
 document.addEventListener('DOMContentLoaded', renderFavorites);
 
-// Додайте обробник подій для кнопки "Remove" в кожній картці
 document.addEventListener('click', e => {
   if (e.target.classList.contains('exercise-item-button-delete')) {
     const exerciseId = e.target.getAttribute('data-exercise-id');

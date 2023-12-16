@@ -83,13 +83,12 @@
   }
 }
 
-/* Вправи */
 
 .exercise-item {
   max-width: 344px;
   height: 140px;
   border-radius: 15px;
-  background: #fff;
+  background: var(--white);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -142,8 +141,8 @@
 
 .exercise-item-star {
   padding-bottom: 4px;
-  fill: #eea10c;
-  stroke: #eea10c;
+  fill: var(--orange);
+  stroke: var(--orange);
 }
 
 .exercise-item-button {
