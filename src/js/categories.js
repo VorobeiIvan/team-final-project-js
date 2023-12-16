@@ -69,8 +69,6 @@ function createCategory({ name, filter, imgURL }) {
   const div = document.createElement('div');
   div.className = 'category-item-bg';
 
-  // refs.divExSearch.style.display = 'none';
-
   const title = document.createElement('p');
   title.className = 'category-item-title';
   title.textContent = capitalizeFirstLetter(name);
@@ -95,6 +93,5 @@ function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
   //Input Search
   refs.divExSearch.classList.remove('is-hidden');
-  // refs.divExSearch.style.display = 'flex';
   renderExercises();
 }
