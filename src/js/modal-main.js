@@ -12,12 +12,10 @@ import svgSprite from '../images/sprite.svg';
 import refs from './refs.js';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
-refs.favorites.addEventListener('click', handleFavoritesCardClick);
 
-export function handleExerciseCardClick(e, exerciseId) {
+export function handleExerciseCardClick(e) {
   e.preventDefault();
-
-  const isCard = e.target.closest('.exercise-item');
+  const isCard = e.target.closest('.exercise-item-button');
 
   if (!isCard) {
     return;
@@ -26,39 +24,42 @@ export function handleExerciseCardClick(e, exerciseId) {
   openModal(isCard.id);
 }
 
-// handleFavoritesCardClick(){
-//   // TODO: add functionality
-// };
-
 function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
+    // checkIfInFavorites(exercise);
+    // comparisonFavorites();
+
     createCardMarkup(exercise);
+    handleFavoriteBtnClick(exercise);
   });
 
   // comparisonFavorites();
   refs.backdrop.classList.remove('is-hidden');
   document.body.classList.add('no-scroll');
   refs.backdrop.classList.add('scroll');
+
   closeModal();
+
+  // handleGiveRatingBtnClick();
 }
 
-// function comparisonFavorites() {
-//   refs.addFavorite.textContent = 'Add to favorites';
-//   refs.addFavorite.style.backgroundColor = '#fff';
-//   refs.addFavorite.style.color = '#000';
-//   const savedDate = storageApi.load(refs.FAVORITES_KEY);
+function comparisonFavorites() {
+  refs.addFavorite.textContent = 'Add to favorites';
+  refs.addFavorite.style.backgroundColor = '#fff';
+  refs.addFavorite.style.color = '#000';
+  const savedDate = storageApi.load(refs.FAVORITES_KEY);
 
-//   if (savedDate) {
-//     for (const el of savedDate) {
-//       if (JSON.stringify(el) === JSON.stringify(data)) {
-//         refs.addFavorite.textContent = 'Remove from favorites';
-//         refs.addFavorite.style.backgroundColor = '#ff6b01';
-//         refs.addFavorite.style.color = '#fff';
-//         break;
-//       }
-//     }
-//   }
-// }
+  if (savedDate) {
+    for (const el of savedDate) {
+      if (JSON.stringify(el) === JSON.stringify(data)) {
+        refs.addFavorite.textContent = 'Remove from favorites';
+        refs.addFavorite.style.backgroundColor = '#ff6b01';
+        refs.addFavorite.style.color = '#fff';
+        break;
+      }
+    }
+  }
+}
 
 function closeModal() {
   document.addEventListener('click', e => {
@@ -82,57 +83,137 @@ function closeModal() {
   });
 }
 
-refs.addFavorite.addEventListener('click', e => {
-  if (e.target.textContent == 'Remove from favorites') {
-    const savedData = storageApi.load(refs.FAVORITES_KEY);
-    for (let i = 0; i < savedData.length; i++) {
-      if (JSON.stringify(savedData[i]) === JSON.stringify(data)) {
-        savedData.splice(i, 1);
-        console.log(savedData);
-        storageApi.save(refs.FAVORITES_KEY, savedData);
-        // Notify.info(`Exercise is remove from favorites`);
-        iziToast.show({
-          // title: 'Hey',
-          message: 'Removed from favorites',
-        });
-        refs.addFavorite.textContent = 'Add to favorites';
-        refs.addFavorite.style.backgroundColor = '#fff';
-        refs.addFavorite.style.color = '#000';
-      }
-    }
+function handleFavoriteBtnClick(exerciseData) {
+  refs.addFavorite.addEventListener('click', () => {
+    toggleFavorite(exerciseData);
+  });
+}
+
+export function checkIfInFavorites(exerciseData) {
+  const savedData = storageApi.load(refs.FAVORITES_KEY) || [];
+
+  const isExerciseInFavorites = savedData.some(el => {
+    console.log('el: ', el);
+    console.log('exerciseData: ', exerciseData);
+    return JSON.stringify(el._id) === JSON.stringify(exerciseData._id);
+  });
+
+  if (isExerciseInFavorites) {
+    updateFavoriteButton(true);
   } else {
-    if (
-      !storageApi.load(refs.FAVORITES_KEY) ||
-      storageApi.load(refs.FAVORITES_KEY).length === 0
-    ) {
-      storageApi.save(refs.FAVORITES_KEY, [data]);
-      // Notify.info(`Added to favorites`, {
-      //   background: '#ff6b01',
-      // });
-      iziToast.show({
-        // title: 'Hey',
-        message: 'Added to favorites',
-      });
-      refs.addFavorite.textContent = 'Remove from favorites';
-      refs.addFavorite.style.backgroundColor = '#ff6b01';
-      refs.addFavorite.style.color = '#fff';
-      return;
-    }
-    const savedData = storageApi.load(refs.FAVORITES_KEY);
-    savedData.push(data);
+    updateFavoriteButton(false);
+  }
+}
+
+export function toggleFavorite(exerciseData) {
+  const savedData = storageApi.load(refs.FAVORITES_KEY) || [];
+
+  const isExerciseInFavorites = savedData.some(
+    el => JSON.stringify(el) === JSON.stringify(exerciseData)
+  );
+
+  if (isExerciseInFavorites) {
+    // Remove exercise from favorites
+    savedData.splice(
+      savedData.findIndex(
+        el => JSON.stringify(el) === JSON.stringify(exerciseData)
+      ),
+      1
+    );
+
     storageApi.save(refs.FAVORITES_KEY, savedData);
-    // Notify.info(`Added to favorites`);
+
     iziToast.show({
-      // title: 'Hey',
+      message: 'Removed from favorites',
+    });
+
+    updateFavoriteButton(false);
+  } else {
+    // Add exercise to favorites
+    savedData.push(exerciseData);
+    storageApi.save(refs.FAVORITES_KEY, savedData);
+
+    iziToast.show({
       message: 'Added to favorites',
     });
-    refs.addFavorite.textContent = 'Remove from favorites';
-    refs.addFavorite.style.backgroundColor = '#ff6b01';
-    refs.addFavorite.style.color = '#fff';
-  }
 
-  refs.addFavorite.removeEventListener;
-});
+    updateFavoriteButton(true);
+  }
+}
+
+function updateFavoriteButton(isInFavorites) {
+  if (isInFavorites) {
+    refs.addFavorite.textContent = 'Remove from favorites';
+    refs.addFavorite.style.backgroundColor = '#242424';
+    refs.addFavorite.style.color = '#f4f4f4';
+    refs.addFavorite.style.border = '#f4f4f4 1px solid';
+
+    refs.modalIconHeart.style.stroke = '#242424';
+    refs.modalIconHeart.style.fill = 'transparent';
+  } else {
+    refs.addFavorite.textContent = 'Add to favorites';
+    refs.addFavorite.style.backgroundColor = '#f4f4f4';
+    refs.addFavorite.style.color = '#242424';
+
+    refs.modalIconHeart.style.stroke = '#f4f4f4';
+    refs.modalIconHeart.style.fill = '#f4f4f4';
+  }
+}
+
+// function handleFavoriteBtnClick() {
+//   console.log(refs.addFavorite);
+//   refs.addFavorite.addEventListener('click', e => {
+//     if (e.target.textContent == 'Remove from favorites') {
+//       const savedData = storageApi.load(refs.FAVORITES_KEY);
+//       for (let i = 0; i < savedData.length; i++) {
+//         if (JSON.stringify(savedData[i]) === JSON.stringify(data)) {
+//           savedData.splice(i, 1);
+//           console.log(savedData);
+//           storageApi.save(refs.FAVORITES_KEY, savedData);
+//           // Notify.info(`Exercise is remove from favorites`);
+//           iziToast.show({
+//             // title: 'Hey',
+//             message: 'Removed from favorites',
+//           });
+//           refs.addFavorite.textContent = 'Add to favorites';
+//           refs.addFavorite.style.backgroundColor = '#fff';
+//           refs.addFavorite.style.color = '#000';
+//         }
+//       }
+//     } else {
+//       if (
+//         !storageApi.load(refs.FAVORITES_KEY) ||
+//         storageApi.load(refs.FAVORITES_KEY).length === 0
+//       ) {
+//         storageApi.save(refs.FAVORITES_KEY, [data]);
+//         // Notify.info(`Added to favorites`, {
+//         //   background: '#ff6b01',
+//         // });
+//         iziToast.show({
+//           // title: 'Hey',
+//           message: 'Added to favorites',
+//         });
+//         refs.addFavorite.textContent = 'Remove from favorites';
+//         refs.addFavorite.style.backgroundColor = '#ff6b01';
+//         refs.addFavorite.style.color = '#fff';
+//         return;
+//       }
+//       const savedData = storageApi.load(refs.FAVORITES_KEY);
+//       savedData.push(data);
+//       storageApi.save(refs.FAVORITES_KEY, savedData);
+//       // Notify.info(`Added to favorites`);
+//       iziToast.show({
+//         // title: 'Hey',
+//         message: 'Added to favorites',
+//       });
+//       refs.addFavorite.textContent = 'Remove from favorites';
+//       refs.addFavorite.style.backgroundColor = '#ff6b01';
+//       refs.addFavorite.style.color = '#fff';
+//     }
+
+//     refs.addFavorite.removeEventListener;
+//   });
+// }
 
 function createCardMarkup(exercise) {
   const gifUrl = exercise.gifUrl;
@@ -181,17 +262,6 @@ function createCardMarkup(exercise) {
             </div>
           </div>
           <p class="about-info">${description}</p>
-        </div>
-        <div class="buttons">
-          <button class="button add-to-favorites" type="button">
-            Add to favorites
-            <svg class="modal-icon-heart">
-              <use href="${svgSprite}#heart"></use>
-            </svg>
-          </button>
-          <button class="button give-a-rating" type="button">
-            Give a rating
-          </button>
         </div>
       </div>`);
 }

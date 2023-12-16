@@ -23,30 +23,33 @@
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 40, 20;
-  @media screen and (min-width: 320px) {
+  /* @media screen and (min-width: 320px) {
     width: 280px;
     height: 940px;
     padding: 48px 20px 40px 20px;
-  }
+  } */
   @media screen and (min-width: 768px) {
     width: 704px;
     height: 486px;
     padding: 32px;
   }
-  @media screen and (min-width: 1440px) {
+  /* @media screen and (min-width: 1440px) {
     width: 708px;
     height: 449px;
     padding: 32px;
-  }
+  } */
 }
 
 .modal-container {
   display: flex;
-  @media screen and (min-width: 320px) {
+  flex-direction: column;
+
+  /* @media screen and (min-width: 320px) {
     display: block;
-  }
+  } */
   @media screen and (min-width: 768px) {
     display: flex;
+    flex-direction: row;
   }
 }
 
@@ -205,31 +208,31 @@
 }
 
 .add-to-favorites {
-  background: var(--basic-light, #f4f4f4);
-  color: var(--main-black, #242424);
+  /* background: var(--basic-light, #f4f4f4);
+  color: var(--main-black, #242424); */
   transition: background-color var(--transition), color var(--transition);
 }
 
 .give-a-rating {
-  background-color: transparent;
+  /* background-color: transparent;
   border: var(--basic-light, #f4f4f4) 1px solid;
-  color: var(--basic-light, #f4f4f4);
+  color: var(--basic-light, #f4f4f4); */
   transition: background-color var(--transition), border-color var(--transition),
     color var(--transition);
 }
 
-.add-to-favorites:hover,
+/* .add-to-favorites:hover,
 .add-to-favorites:focus {
   background: var(--main-black, #242424);
   color: var(--basic-light, #f4f4f4);
-}
+} */
 
-.give-a-rating:hover,
+/* .give-a-rating:hover,
 .give-a-rating:focus {
   background-color: var(--basic-light, #f4f4f4);
   border: var(--basic-light, #f4f4f4) 1px solid;
   color: var(--main-black, #242424);
-}
+} */
 
 .modal-close-btn {
   position: absolute;
@@ -276,8 +279,8 @@
 }
 
 .modal-icon-heart {
-  stroke: var(--main-black, #242424);
-  fill: transparent;
+  /* stroke: var(--main-black, #242424);
+  fill: transparent; */
   width: 18px;
   height: 18px;
   @media screen and (min-width: 768px) {
@@ -289,8 +292,8 @@
 
 .add-to-favorites:hover .modal-icon-heart,
 .add-to-favorites:focus .modal-icon-heart {
-  stroke: var(--basic-light, #f4f4f4);
-  fill: var(--basic-light, #f4f4f4);
+  /* stroke: var(--basic-light, #f4f4f4);
+  fill: var(--basic-light, #f4f4f4); */
 }
 
 .modal-icon-star {
