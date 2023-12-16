@@ -3,11 +3,21 @@
     <div class="exercises-header">
       <h2 class="exercises-title">Exercises</h2>
       <div class="exercises-filter">
-
         <div class="exercises-search-wrapper is-hidden" id="search-wrapper">
-          <input class="exercises-search" id="exercises-search" type="search" name="search" placeholder="Search" />
-          <svg class="exercises-search-img" width="18" height="18" aria-label=" search icon">
-
+          <input
+            class="exercises-search"
+            id="exercises-search"
+            type="search"
+            name="search"
+            placeholder="Search"
+          />
+          <svg
+            class="exercises-search-img"
+            id="search-img"
+            width="18"
+            height="18"
+            aria-label=" search icon"
+          >
             <use href="./images/sprite.svg#search"></use>
           </svg>
         </div>
@@ -21,14 +31,24 @@
         <div class="quote-wrap">
           <div class="quote-wrapper">
             <div class="quote-svg-wrap">
-              <svg class="quote-svg" width="34" height="32" aria-label="icon run man">
+              <svg
+                class="quote-svg"
+                width="34"
+                height="32"
+                aria-label="icon run man"
+              >
                 <use href="./images/sprite.svg#run"></use>
               </svg>
             </div>
             <div class="quote-title-wrap">
               <div class="quote-title">
                 <h3>Quote of the day</h3>
-                <svg class="quote-title-svg" width="25" height="25" aria-label="icon commas">
+                <svg
+                  class="quote-title-svg"
+                  width="25"
+                  height="25"
+                  aria-label="icon commas"
+                >
                   <use href="./images/sprite.svg#commas"></use>
                 </svg>
               </div>
@@ -36,24 +56,42 @@
           </div>
 
           <picture>
-            <source media="(max-width: 767px)" srcset="
+            <source
+              media="(max-width: 767px)"
+              srcset="
                 ./images/exercise-mobile.webp    1x,
                 ./images/exercise-mobile@2x.webp 2x
-              " />
-            <source media="(min-width: 768px) and (max-width: 1279px)" srcset="
+              "
+            />
+            <source
+              media="(min-width: 768px) and (max-width: 1279px)"
+              srcset="
                 ./images/exercise-tablet.webp    1x,
                 ./images/exercise-tablet@2x.webp 2x
-              " />
-            <source media="(min-width: 1280px)" srcset="
+              "
+            />
+            <source
+              media="(min-width: 1280px)"
+              srcset="
                 ./images/exercise-desktop.webp    1x,
                 ./images/exercise-desktop@2x.webp 2x
-              " />
-            <img class="quote-img" src="./images/exercise-mobile.webp" alt="Exersices" />
+              "
+            />
+            <img
+              class="quote-img"
+              src="./images/exercise-mobile.webp"
+              alt="Exersices"
+            />
           </picture>
         </div>
         <div class="quote-wrapper article">
           <div class="quote-svg-wrap article">
-            <svg class="quote-svg" width="34" height="32" aria-label="fluent food">
+            <svg
+              class="quote-svg"
+              width="34"
+              height="32"
+              aria-label="fluent food"
+            >
               <use href="./images/sprite.svg#fluent-food"></use>
             </svg>
           </div>
@@ -79,7 +117,10 @@
       <div class="categories-pagination">
         <ul class="categories-list" id="categories"></ul>
         <!-- Pagination.html -->
-        <div class="tui-pagination pagination" id="tui-pagination-container"></div>
+        <div
+          class="tui-pagination pagination"
+          id="tui-pagination-container"
+        ></div>
       </div>
     </div>
   </div>
