@@ -5,34 +5,50 @@
       <div class="exercises-filter">
         <div class="exercises-search-wrapper is-hidden" id="search-wrapper">
           <input
+            class="exercises-search"
             id="exercises-search"
             type="search"
             name="search"
             placeholder="Search"
-            class="exercises-search"
           />
-          <svg class="exercises-search-img" width="18" height="18">
+          <svg
+            class="exercises-search-img"
+            id="search-img"
+            width="18"
+            height="18"
+            aria-label=" search icon"
+          >
             <use href="./images/sprite.svg#search"></use>
           </svg>
         </div>
-        <ul id="filters" class="filters-list"></ul>
+        <ul class="filters-list" id="filters"></ul>
       </div>
     </div>
 
-    <div id="categories-wrapper" class="categories-wrapper">
+    <div class="categories-wrapper" id="categories-wrapper">
       <!-- Quote Content -->
       <div class="quote-container">
         <div class="quote-wrap">
           <div class="quote-wrapper">
             <div class="quote-svg-wrap">
-              <svg class="quote-svg" width="34" height="32">
+              <svg
+                class="quote-svg"
+                width="34"
+                height="32"
+                aria-label="icon run man"
+              >
                 <use href="./images/sprite.svg#run"></use>
               </svg>
             </div>
             <div class="quote-title-wrap">
               <div class="quote-title">
                 <h3>Quote of the day</h3>
-                <svg class="quote-title-svg" width="25" height="25">
+                <svg
+                  class="quote-title-svg"
+                  width="25"
+                  height="25"
+                  aria-label="icon commas"
+                >
                   <use href="./images/sprite.svg#commas"></use>
                 </svg>
               </div>
@@ -62,15 +78,20 @@
               "
             />
             <img
+              class="quote-img"
               src="./images/exercise-mobile.webp"
               alt="Exersices"
-              class="quote-img"
             />
           </picture>
         </div>
         <div class="quote-wrapper article">
           <div class="quote-svg-wrap article">
-            <svg class="quote-svg" width="34" height="32">
+            <svg
+              class="quote-svg"
+              width="34"
+              height="32"
+              aria-label="fluent food"
+            >
               <use href="./images/sprite.svg#fluent-food"></use>
             </svg>
           </div>
@@ -94,19 +115,11 @@
 
       <!-- Categities Content -->
       <div class="categories-pagination">
-        <ul id="categories" class="categories-list"></ul>
-
-        <!-- <div class="categories-bad-requast is-hidden">
-
-          <svg class="bad-requast" width="335" height="300">
-            <use href="./images/sprite.svg#BadRequast"></use>
-          </svg>
-        </div> -->
-
+        <ul class="categories-list" id="categories"></ul>
         <!-- Pagination.html -->
         <div
-          id="tui-pagination-container"
           class="tui-pagination pagination"
+          id="tui-pagination-container"
         ></div>
       </div>
     </div>

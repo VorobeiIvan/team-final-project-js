@@ -1,140 +1,99 @@
-// TODO:
-// move createCardMarkup to separate file
-// add rating
-// add handle to favorite button
-// add handle to give rating button
-// remove console.log and dead code
-
-import storageApi from '../common/storage';
+import svgSprite from '../images/sprite.svg';
+import storageApi from './common/storage.js';
 import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
-import svgSprite from '../images/sprite.svg';
 import refs from './refs.js';
+import { FAVORITES_KEY } from './consts.js';
 import { onOpenRatingModal } from './components';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
-refs.favorites.addEventListener('click', handleFavoritesCardClick);
+let activeItem;
 
-export function handleExerciseCardClick(e, exerciseId) {
+const removeButtonContent = `Remove from favorites
+        <svg class='modal-icon-heart'>
+          <use href='./images/sprite.svg#trash'></use>
+        </svg>`;
+const addButtonContent = `Add to favorites
+        <svg class='modal-icon-heart'>
+          <use href='./images/sprite.svg#heart'></use>
+        </svg>`;
+
+const findFavorite = (array, id) => array.find(el => el?._id === id);
+
+const setButtonContent = () => {
+  const savedData = storageApi.load(FAVORITES_KEY) || [];
+  const isInFavorites = !!findFavorite(savedData, activeItem?._id);
+  if (isInFavorites) {
+    document.querySelector('.add-to-favorites').innerHTML = removeButtonContent;
+    return;
+  }
+  document.querySelector('.add-to-favorites').innerHTML = addButtonContent;
+};
+
+export function handleExerciseCardClick(e) {
   e.preventDefault();
-
-  const isCard = e.target.closest('.exercise-item');
+  const isCard = e.target.closest('.exercise-item-button');
 
   if (!isCard) {
     return;
   }
-
   openModal(isCard.id);
 }
 
-// handleFavoritesCardClick(){
-//   // TODO: add functionality
-// };
-
 function openModal(exerciseId) {
   fetchOneExercise(exerciseId).then(exercise => {
+    activeItem = exercise;
     createCardMarkup(exercise);
     onOpenRatingModal(exerciseId);
+    setButtonContent();
   });
 
-  // comparisonFavorites();
   refs.backdrop.classList.remove('is-hidden');
   document.body.classList.add('no-scroll');
   refs.backdrop.classList.add('scroll');
   closeModal();
 }
 
-// function comparisonFavorites() {
-//   refs.addFavorite.textContent = 'Add to favorites';
-//   refs.addFavorite.style.backgroundColor = '#fff';
-//   refs.addFavorite.style.color = '#000';
-//   const savedDate = storageApi.load(refs.FAVORITES_KEY);
-
-//   if (savedDate) {
-//     for (const el of savedDate) {
-//       if (JSON.stringify(el) === JSON.stringify(data)) {
-//         refs.addFavorite.textContent = 'Remove from favorites';
-//         refs.addFavorite.style.backgroundColor = '#ff6b01';
-//         refs.addFavorite.style.color = '#fff';
-//         break;
-//       }
-//     }
-//   }
-// }
-
-function closeModal() {
-  document.addEventListener('click', e => {
-    if (e.target === refs.backdrop) {
-      refs.backdrop.classList.add('is-hidden');
-      document.body.classList.remove('no-scroll');
-      refs.backdrop.classList.remove('scroll');
-    }
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      refs.backdrop.classList.add('is-hidden');
-      document.body.classList.remove('no-scroll');
-      refs.backdrop.classList.remove('scroll');
-    }
-  });
-  refs.closeModalBtn.addEventListener('click', () => {
+const iconRef = document.querySelector('.modal-close-btn');
+const onClose = e => {
+  // додати правильни ref
+  if (
+    e.target === refs.backdrop ||
+    e.key === 'Escape' ||
+    e.target === iconRef
+  ) {
     refs.backdrop.classList.add('is-hidden');
     document.body.classList.remove('no-scroll');
     refs.backdrop.classList.remove('scroll');
-  });
+    document.removeEventListener('click', onClose);
+    document.removeEventListener('keydown', onClose);
+    refs.closeModalBtn.removeEventListener('click', onClose);
+    refs.addFavorite.removeEventListener('click', toggleFavorite);
+  }
+};
+
+function closeModal() {
+  refs.backdrop.addEventListener('click', onClose);
+  document.addEventListener('keydown', onClose);
+  refs.closeModalBtn.addEventListener('click', onClose);
+  refs.addFavorite.addEventListener('click', toggleFavorite);
 }
 
-refs.addFavorite.addEventListener('click', e => {
-  if (e.target.textContent == 'Remove from favorites') {
-    const savedData = storageApi.load(refs.FAVORITES_KEY);
-    for (let i = 0; i < savedData.length; i++) {
-      if (JSON.stringify(savedData[i]) === JSON.stringify(data)) {
-        savedData.splice(i, 1);
-        console.log(savedData);
-        storageApi.save(refs.FAVORITES_KEY, savedData);
-        // Notify.info(`Exercise is remove from favorites`);
-        iziToast.show({
-          // title: 'Hey',
-          message: 'Removed from favorites',
-        });
-        refs.addFavorite.textContent = 'Add to favorites';
-        refs.addFavorite.style.backgroundColor = '#fff';
-        refs.addFavorite.style.color = '#000';
-      }
-    }
-  } else {
-    if (
-      !storageApi.load(refs.FAVORITES_KEY) ||
-      storageApi.load(refs.FAVORITES_KEY).length === 0
-    ) {
-      storageApi.save(refs.FAVORITES_KEY, [data]);
-      // Notify.info(`Added to favorites`, {
-      //   background: '#ff6b01',
-      // });
-      iziToast.show({
-        // title: 'Hey',
-        message: 'Added to favorites',
-      });
-      refs.addFavorite.textContent = 'Remove from favorites';
-      refs.addFavorite.style.backgroundColor = '#ff6b01';
-      refs.addFavorite.style.color = '#fff';
-      return;
-    }
-    const savedData = storageApi.load(refs.FAVORITES_KEY);
-    savedData.push(data);
-    storageApi.save(refs.FAVORITES_KEY, savedData);
-    // Notify.info(`Added to favorites`);
-    iziToast.show({
-      // title: 'Hey',
-      message: 'Added to favorites',
-    });
-    refs.addFavorite.textContent = 'Remove from favorites';
-    refs.addFavorite.style.backgroundColor = '#ff6b01';
-    refs.addFavorite.style.color = '#fff';
-  }
+export function toggleFavorite() {
+  const savedData = storageApi.load(FAVORITES_KEY) || [];
+  const isInFavorites = !!findFavorite(savedData, activeItem?._id);
+  storageApi.save(
+    FAVORITES_KEY,
+    isInFavorites
+      ? savedData.filter(el => el._id !== activeItem?._id)
+      : [...savedData, activeItem]
+  );
+  setButtonContent();
 
-  refs.addFavorite.removeEventListener;
-});
+  iziToast.show({
+    message: isInFavorites ? 'Removed from favorites' : 'Added to favorites',
+  });
+}
 
 function createCardMarkup(exercise) {
   const gifUrl = exercise.gifUrl;
@@ -147,53 +106,41 @@ function createCardMarkup(exercise) {
   const burnedCalories = exercise.burnedCalories;
   const description = exercise.description;
 
-  return (refs.modalContainer.innerHTML = `
-      <div class="modal-img">
-        <img src="${gifUrl}" alt="${name}" class="image" />
+  refs.modalContainer.innerHTML = `
+      <div class='modal-img'>
+        <img src='${gifUrl}' alt='${name}' class='image' />
       </div>
-      <div class="modal-rest">
-        <h3 class="modal-title">${name}</h3>
-        <div class="rating-element">
-          <p class="rating-count" id="vote">${rating}</p>
-          <svg class="modal-icon-star">
-            <use href="${svgSprite}#star"></use>
+      <div class='modal-rest'>
+        <h3 class='modal-title'>${name}</h3>
+        <div class='rating-element'>
+          <p class='rating-count' id='vote'>${rating}</p>
+          <svg class='modal-icon-star'>
+            <use href='${svgSprite}#star'></use>
           </svg>
         </div>
-        <div class="modal-info">
-          <div class="modal-table">
-            <div class="info-element">
-              <p class="info-item">Target</p>
-              <p class="count">${target}</p>
+        <div class='modal-info'>
+          <div class='modal-table'>
+            <div class='info-element'>
+              <p class='info-item'>Target</p>
+              <p class='count'>${target}</p>
             </div>
-            <div class="info-element">
-              <p class="info-item">Body part</p>
-              <p class="count">${bodyPart}</p>
+            <div class='info-element'>
+              <p class='info-item'>Body part</p>
+              <p class='count'>${bodyPart}</p>
             </div>
-            <div class="info-element">
-              <p class="info-item">Equipment</p>
-              <p class="count">${equipment}</p>
+            <div class='info-element'>
+              <p class='info-item'>Equipment</p>
+              <p class='count'>${equipment}</p>
             </div>
-            <div class="info-element">
-              <p class="info-item">Popular</p>
-              <p class="count">${popularity}</p>
+            <div class='info-element'>
+              <p class='info-item'>Popular</p>
+              <p class='count'>${popularity}</p>
             </div>
-            <div class="info-element">
-              <p class="info-item">Burned Calories</p>
-              <p class="count">${burnedCalories}</p>
+            <div class='info-element'>
+              <p class='info-item'>Burned Calories</p>
+              <p class='count'>${burnedCalories}</p>
             </div>
           </div>
-          <p class="about-info">${description}</p>
-        </div>
-        <div class="buttons">
-          <button class="button add-to-favorites" type="button">
-            Add to favorites
-            <svg class="modal-icon-heart">
-              <use href="${svgSprite}#heart"></use>
-            </svg>
-          </button>
-          <button class="button give-a-rating" type="button">
-            Give a rating
-          </button>
-        </div>
-      </div>`);
+          <p class='about-info'>${description}</p>
+        </div>`;
 }
