@@ -3,6 +3,10 @@
   min-height: 100vh;
 }
 
+.favorites-section {
+  padding-bottom: 80px;
+}
+
 .favorites-container {
   display: flex;
   flex-direction: column;
@@ -32,13 +36,8 @@
 
 .favorites-exercise-list {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 32px 16px;
-  margin-left: auto;
-  max-height: 487px;
-
-  height: 487px;
-  overflow-y: scroll;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 20px;
 }
 
 .favorites-list-exercise-item {
@@ -53,13 +52,28 @@
   padding: 0 8px;
 }
 
-@media only screen and (max-width: 768px) {
-  .favorites-list-text {
-    padding: 0 75px;
+@media only screen and (min-width: 768px) {
+  .favorites-section {  
+    padding-bottom: 100px;
+  }
+
+  .favorites-exercise-list {
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: unset;
+    height: auto;
+  }
+
+  .favorites-exercise-list .exercise-item {
+    width: 100%;
+    max-width: unset;
   }
 }
 
 @media only screen and (min-width: 1440px) {
+  .favorites-section {  
+    padding-bottom: 0px;
+  }
+
   .favorites-container {
     flex-direction: row;
     justify-content: space-between;
@@ -101,6 +115,17 @@
   .favorites-quote-img {
     max-width: 239px;
     min-height: 141px;
+  }
+
+  .favorites-exercise-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 32px 16px;
+    margin-left: auto;
+    max-height: 487px;
+  
+    height: 487px;
+    overflow-y: scroll;
   }
 
   .favorites-list-text {

@@ -195,3 +195,27 @@ function createCardMarkup(exercise) {
         </div>
       </div>`);
 }
+
+
+refs.addFavorite.addEventListener('click', e => {
+  const exerciseId = e.target.id; // Отримуємо ID вправи з кнопки
+  const favoritesList = storageApi.load(refs.FAVORITES_KEY) || [];
+
+  if (favoritesList.includes(exerciseId)) {
+    // Якщо вправа вже улюблена, то видаляємо її
+    const updatedFavorites = favoritesList.filter(id => id !== exerciseId);
+    storageApi.save(refs.FAVORITES_KEY, updatedFavorites);
+    iziToast.show({
+      message: 'Removed from favorites',
+    });
+  } else {
+    // Якщо вправа ще не улюблена, то додаємо її
+    favoritesList.push(exerciseId);
+    storageApi.save(refs.FAVORITES_KEY, favoritesList);
+    iziToast.show({
+      message: 'Added to favorites',
+    });
+  }
+
+  renderFavorites(); // Оновлюємо відображення улюблених вправ
+});
