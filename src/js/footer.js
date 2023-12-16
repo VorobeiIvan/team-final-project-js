@@ -2,8 +2,10 @@ import { postSubscription } from './api';
 import refs from './refs';
 import iziToast from 'izitoast';
 
-const validateEmail = email => {
-  const template = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const validateEmail = (email) => {
+  const template = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
   return template.test(email);
 };
 

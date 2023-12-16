@@ -93,7 +93,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: 16px;
-  cursor: pointer;
+  transition: var(--transition);
+}
+
+.exercise-item:hover {
+  transform: scale(1.05);
 }
 
 @media only screen and (min-width: 768px) {
@@ -188,10 +192,15 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 24px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: lowercase;
+}
+
+.exercise-item-subtitle::first-letter {
+  text-transform: uppercase;
 }
 
 @media only screen and (min-width: 768px) {
@@ -270,6 +279,10 @@
 @media only screen and (min-width: 1440px) {
   .burned-calories {
     max-width: 149px;
+  }
+
+  .target {
+    max-width: 100px;
   }
 }
 

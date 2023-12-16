@@ -8,6 +8,7 @@ export default {
   footerForm: document.querySelectorAll('.footer-form'),
   exSearch: document.getElementById('exercises-search'),
   divExSearch: document.getElementById('search-wrapper'),
+  exSearchImg: document.getElementById('search-img'),
   closeModalBtn: document.querySelector('.modal-close-btn'),
   backdrop: document.querySelector('.backdrop'),
   modalContainer: document.querySelector('.modal-container'),
@@ -15,4 +16,6 @@ export default {
   giveRating: document.querySelector('.give-a-rating'),
   FAVORITES_KEY: 'favorites-list',
   favorites: document.querySelector('.favorites-list'),
+  buttonTheme: document.querySelectorAll('.theme-switch'),
+  body: document.querySelector('body'),
 };

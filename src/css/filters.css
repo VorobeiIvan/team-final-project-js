@@ -48,4 +48,7 @@
     font-size: 44px;
     line-height: 48px;
   }
+  .filters-list {
+    min-width: 300px;
+  }
 }
