@@ -91,7 +91,7 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
-  //Input Search
+  //Input Search on
   refs.divExSearch.classList.remove('is-hidden');
   renderExercises();
 }
