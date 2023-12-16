@@ -94,6 +94,7 @@
   white-space: nowrap;
   padding: 16px;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .exercise-item:hover {
