@@ -70,3 +70,21 @@
 .dark-theme .filter-selected::after {
   background-color: var(--basic-light);;
 }
+
+.dark-theme .exercises-search-wrapper {
+  border-color: var(--basic-light);
+
+}
+
+.dark-theme .exercises-search::placeholder, .dark-theme .exercises-search {
+  color: var(--basic-light);
+}
+
+
+.dark-theme .exercises-search-img {
+  stroke: var(--basic-light);
+}
+
+.dark-theme .backdrop {
+  background-color: rgba(251, 251, 251, 0.2);
+}

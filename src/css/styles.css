@@ -44,8 +44,6 @@
   --basic-gray: #f4f4f466;
   --shadow-dark: #00000040;
   --orange: #eea10c;
-  --white: #fff;
-
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
