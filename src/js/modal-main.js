@@ -12,11 +12,11 @@ let activeItem;
 
 const removeButtonContent = `Remove from favorites
         <svg class='modal-icon-favorites'>
-          <use href='./images/sprite.svg#trash'></use>
+          <use href='${svgSprite}#trash'></use>
         </svg>`;
 const addButtonContent = `Add to favorites
         <svg class='modal-icon-favorites'>
-          <use href='./images/sprite.svg#heart'></use>
+          <use href='${svgSprite}#heart'></use>
         </svg>`;
 
 const findFavorite = (array, id) => array.find(el => el?._id === id);
