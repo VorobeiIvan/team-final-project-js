@@ -191,7 +191,7 @@
   border: var(--basic-light, #f4f4f4) 1px solid;
   color: var(--basic-light, #f4f4f4);
   transition: background-color var(--transition), border-color var(--transition),
-    color var(--transition);
+  color var(--transition);
 }
 
 .add-to-favorites:hover,
@@ -288,4 +288,9 @@
 
 .scroll {
   overflow-y: auto;
+}
+
+.modal-icon-trash {
+  fill: var(--main-black, #242424);
+  stroke: white;
 }

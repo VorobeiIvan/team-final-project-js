@@ -112,6 +112,9 @@
   }
 }
 
-.exercise-item-trash-icon {
+.exercise-item-trash-icon,
+.modal-icon-trash {
   pointer-events: none;
+  stroke: black;
+  fill: white;
 }
