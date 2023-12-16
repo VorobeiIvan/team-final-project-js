@@ -2,13 +2,14 @@ import { postSubscription } from './api';
 import refs from './refs';
 import iziToast from 'izitoast';
 
+
 const validateEmail = (email) => {
   const template = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
   return template.test(email);
 };
 
-const handleSubmit = (event) => {
-
+const handleSubmit = event => {
   event.preventDefault();
   const { email } = event.currentTarget.elements;
   if (!validateEmail(email.value.trim())) {
@@ -22,8 +23,7 @@ const handleSubmit = (event) => {
   }
   const userEmail = email.value.trim();
   postSubscription(userEmail)
-    .then((response) => {
-
+    .then(response => {
       if (response.message) {
         const successMessage = {
           title: 'Success',
@@ -34,7 +34,7 @@ const handleSubmit = (event) => {
         return iziToast.show(successMessage);
       }
     })
-    .catch((error) => {
+    .catch(error => {
       if (error.response && error.response.status === 409) {
         const errorMessage = {
           title: 'Error',

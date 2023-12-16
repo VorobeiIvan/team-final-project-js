@@ -20,7 +20,7 @@ export async function renderCategories(filter, page) {
       ({ page: newPage }) => {
         renderCategories(filter, newPage);
         refs.divCategoriesContainer.scrollIntoView();
-      },
+      }
     );
     const categoriesToRender = data.results.map(category => {
       const categoryElement = createCategory(category);
@@ -69,6 +69,8 @@ function createCategory({ name, filter, imgURL }) {
   const div = document.createElement('div');
   div.className = 'category-item-bg';
 
+  refs.divExSearch.style.display = 'none';
+
   const title = document.createElement('p');
   title.className = 'category-item-title';
   title.textContent = capitalizeFirstLetter(name);
@@ -91,6 +93,7 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
-  refs.divExSearch.classList.remove('is-hidden');
+  // refs.divExSearch.classList.remove('is-hidden');
+  refs.divExSearch.style.display = 'flex';
   renderExercises();
 }

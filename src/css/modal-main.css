@@ -23,6 +23,7 @@
 
   @media screen and (min-width: 768px) {
     width: 704px;
+
     padding: 32px;
   }
 }
@@ -78,6 +79,7 @@
     margin-bottom: 8px;
   }
 }
+
 .rating-element {
   display: flex;
   flex-direction: row;
@@ -116,6 +118,7 @@
     padding-bottom: 8px;
   }
 }
+
 .info-element {
   display: flex;
   flex-direction: column;
@@ -217,13 +220,16 @@
   cursor: pointer;
   width: 26px;
   height: 26px;
+
   @media screen and (min-width: 768px) {
     top: 16px;
     right: 16px;
     width: 30px;
     height: 30px;
   }
-  transition: background-color var(--transition), border-color var(--transition);
+
+  transition: background-color var(--transition),
+  border-color var(--transition);
 }
 
 .modal-close-btn:hover,
@@ -236,10 +242,12 @@
   stroke: var(--basic-light, #f4f4f4);
   width: 24px;
   height: 24px;
+
   @media screen and (min-width: 768px) {
     width: 28px;
     height: 28px;
   }
+
   transition: stroke var(--transition);
 }
 
@@ -253,11 +261,14 @@
   fill: transparent; */
   width: 18px;
   height: 18px;
+
   @media screen and (min-width: 768px) {
     width: 20px;
     height: 20px;
   }
-  transition: stroke var(--transition), fill var(--transition);
+
+  transition: stroke var(--transition),
+  fill var(--transition);
 }
 
 .add-to-favorites:hover .modal-icon-heart,

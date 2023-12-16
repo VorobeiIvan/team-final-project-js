@@ -176,7 +176,7 @@
 }
 
 .quote-wrapper.article {
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -187,11 +187,11 @@
 }
 
 .quote-svg-wrap.article {
-  background-color: var(--main-black);
+  background-color: var(--basic-dark);
 }
 
 .quote-title.article {
-  color: var(--main-black);
+  color: var(--basic-dark);
 }
 
 .quote-author.article {
@@ -200,7 +200,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  color: var(--main-black);
+  color: var(--basic-dark);
 }
 
 @media screen and (min-width: 1440px) {

@@ -1,4 +1,4 @@
-import storageApi from '../common/storage';
+import storageApi from './common/storage.js';
 import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
 import svgSprite from '../images/sprite.svg';
@@ -23,7 +23,6 @@ function openModal(exerciseId) {
     handleFavoriteBtnClick(exercise);
   });
 
-  // comparisonFavorites();
   refs.backdrop.classList.remove('is-hidden');
   document.body.classList.add('no-scroll');
   refs.backdrop.classList.add('scroll');
@@ -135,6 +134,7 @@ export function toggleFavorite(exerciseData) {
   } else {
     // Add exercise to favorites
     savedData.push(exerciseData);
+
     storageApi.save(refs.FAVORITES_KEY, savedData);
 
     iziToast.show({
