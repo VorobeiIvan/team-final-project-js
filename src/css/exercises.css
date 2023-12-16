@@ -3,7 +3,7 @@
   padding: 12px 14px;
   border-radius: 30px;
   border: 1px solid var(--basic-dark);
-  display: flex;
+  display: none;
   margin-bottom: 20px;
 }
 
@@ -16,10 +16,6 @@
 
   .exercises-search-wrapper {
     width: 273px;
-    padding: 12px 14px;
-    border-radius: 30px;
-    border: 1px solid var(--basic-dark);
-    display: flex;
     margin-bottom: 32px;
   }
 }
@@ -83,7 +79,6 @@
   }
 }
 
-
 .exercise-item {
   max-width: 344px;
   height: 140px;
@@ -94,7 +89,6 @@
   white-space: nowrap;
   padding: 16px;
 }
-
 
 @media only screen and (min-width: 768px) {
   .exercise-item {
