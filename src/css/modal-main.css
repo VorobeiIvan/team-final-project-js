@@ -19,45 +19,18 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-<<<<<<< HEAD
-  padding: 40, 20;
-
-  @media screen and (min-width: 320px) {
-    width: 280px;
-    height: 940px;
-    padding: 48px 20px 40px 20px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 704px;
-    height: 486px;
-    padding: 32px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 708px;
-    height: 449px;
-=======
   padding: 40px 20px;
 
   @media screen and (min-width: 768px) {
     width: 704px;
 
->>>>>>> main
     padding: 32px;
   }
 }
 
 .modal-container {
   display: flex;
-<<<<<<< HEAD
-
-  @media screen and (min-width: 320px) {
-    display: block;
-  }
-=======
   flex-direction: column;
->>>>>>> main
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -72,14 +45,6 @@
   overflow: hidden;
   flex-shrink: 0;
 
-<<<<<<< HEAD
-  @media screen and (min-width: 320px) {
-    width: 295px;
-    height: 258px;
-  }
-
-=======
->>>>>>> main
   @media screen and (min-width: 768px) {
     width: 270px;
     height: 259px;
@@ -87,21 +52,9 @@
 }
 
 .modal-rest {
-<<<<<<< HEAD
-  overflow: hidden;
-  margin: 0;
-
-  @media screen and (min-width: 768px) {
-    margin: 35px 0 0 50px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    margin: 0;
-=======
   margin: 20px 0 20px 0;
   @media screen and (min-width: 768px) {
     margin: 0 0 20px 35px;
->>>>>>> main
   }
 }
 
@@ -143,18 +96,6 @@
 }
 
 .modal-info {
-<<<<<<< HEAD
-  margin-bottom: 20px;
-}
-
-.modal-description {
-  margin-right: 83px;
-
-  @media screen and (min-width: 320px) {
-    margin-right: 39px;
-  }
-=======
->>>>>>> main
 }
 
 .modal-table {
@@ -287,12 +228,7 @@
     height: 30px;
   }
 
-<<<<<<< HEAD
-  transition: background-color var(--transition),
-  border-color var(--transition);
-=======
   transition: background-color var(--transition), border-color var(--transition);
->>>>>>> main
 }
 
 .modal-close-btn:hover,
@@ -305,10 +241,7 @@
   stroke: var(--basic-light, #f4f4f4);
   width: 24px;
   height: 24px;
-<<<<<<< HEAD
-=======
   pointer-events: none;
->>>>>>> main
 
   @media screen and (min-width: 768px) {
     width: 28px;
@@ -334,12 +267,7 @@
     height: 20px;
   }
 
-<<<<<<< HEAD
-  transition: stroke var(--transition),
-  fill var(--transition);
-=======
   transition: stroke var(--transition), fill var(--transition);
->>>>>>> main
 }
 
 .add-to-favorites:hover .modal-icon-heart,
