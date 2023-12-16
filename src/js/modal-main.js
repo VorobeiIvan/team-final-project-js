@@ -4,17 +4,17 @@ import iziToast from 'izitoast';
 import { fetchOneExercise } from './api';
 import refs from './refs.js';
 import { FAVORITES_KEY } from './consts.js';
-import { onOpenRatingModal } from './components';
+import { onCloseRatingModal, onOpenRatingModal } from './components';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
 
 const removeButtonContent = `Remove from favorites
-        <svg class='modal-icon-heart'>
+        <svg class='modal-icon-heart' width='24' height='24'>
           <use href='./images/sprite.svg#trash'></use>
         </svg>`;
 const addButtonContent = `Add to favorites
-        <svg class='modal-icon-heart'>
+        <svg class='modal-icon-heart' width='24' height='24'>
           <use href='./images/sprite.svg#heart'></use>
         </svg>`;
 
@@ -62,6 +62,7 @@ const onClose = e => {
     e.key === 'Escape' ||
     e.target === iconRef
   ) {
+    onCloseRatingModal();
     refs.backdrop.classList.add('is-hidden');
     document.body.classList.remove('no-scroll');
     refs.backdrop.classList.remove('scroll');
@@ -86,7 +87,7 @@ export function toggleFavorite() {
     FAVORITES_KEY,
     isInFavorites
       ? savedData.filter(el => el._id !== activeItem?._id)
-      : [...savedData, activeItem]
+      : [...savedData, activeItem],
   );
   setButtonContent();
 

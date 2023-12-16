@@ -28,7 +28,7 @@
 @import url('./terms-of-service.css');
 @import url('./toggle.css');
 @import url('dark-theme.css');
-@import url('./rating-modals.css');
+@import url('./modal-rating.css');
 
 :root {
   font-family: 'DMSans', sans-serif;

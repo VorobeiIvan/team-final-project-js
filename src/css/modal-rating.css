@@ -17,7 +17,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%);
   width: calc(100% - 20px);
   height: calc(100% - 20px);
   border-radius: 20px;
@@ -135,7 +135,7 @@
 }
 
 .star-checked {
-  fill:var(--orange);
+  fill: var(--orange);
   fill-opacity: 1;
 }
 
@@ -181,6 +181,6 @@
 
 .rating-submit-btn:hover {
   color: var(--basic-light);
-  border: 1px solid ;
+  border: 1px solid;
   background-color: transparent;
 }

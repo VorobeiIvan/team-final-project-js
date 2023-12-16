@@ -22,7 +22,7 @@ export const onOpenRatingModal = (exerciseId) => {
   });
 };
 
-const onClose = () => {
+export const onCloseRatingModal = () => {
   ratingFormRef.reset();
   ratingFormRef.classList.add('is-hidden');
   number.textContent = '0.0';
@@ -103,7 +103,7 @@ ratingFormRef.addEventListener('submit', async (e) => {
     const id = ratingFormRef.getAttribute('id');
     await editExercisesRating(id, data);
     generateSuccess('Rating submitted successfully');
-    onClose();
+    onCloseRatingModal();
   } catch (error) {
     if (error) {
       [...ratingFormRef.elements].forEach(e => {
@@ -120,7 +120,7 @@ ratingFormRef.addEventListener('submit', async (e) => {
 });
 
 
-closeButtonRef.addEventListener('click', () => onClose());
+closeButtonRef.addEventListener('click', () => onCloseRatingModal());
 ratingStarsRef.addEventListener('mouseout', (e) => {
   const checked = ratingStarsRef.querySelector(':checked')?.value || 0;
   number.textContent = Number(checked)?.toFixed(1);
