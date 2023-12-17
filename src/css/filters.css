@@ -7,6 +7,7 @@
   font-size: 28px;
   line-height: 38px;
   width: 100%;
+  font-weight: 400;
 }
 
 .filters-list {
@@ -43,11 +44,6 @@
     justify-content: space-between;
   }
 
-  .exercises-title {
-    text-shadow: 0px 4px 4px var(--shadow-dark);
-    font-size: 44px;
-    line-height: 48px;
-  }
   .filters-list {
     min-width: 300px;
   }
