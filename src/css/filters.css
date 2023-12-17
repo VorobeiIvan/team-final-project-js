@@ -1,19 +1,24 @@
 .exercises-header {
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .exercises-title {
-  margin-bottom: 20px;
   font-size: 28px;
   line-height: 38px;
   width: 100%;
   font-weight: 400;
 }
 
+@media only screen and (max-width: 767px) {
+  .exercises-title {
+    margin-bottom: 20px;
+  }
+}
+
 .filters-list {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px;
 }
 
 .filter-selected::after {
@@ -26,7 +31,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .filters-list {
+  .exercises-header {
     margin-bottom: 32px;
   }
 

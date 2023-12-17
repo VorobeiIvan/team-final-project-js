@@ -7,24 +7,24 @@ import iziToast from 'izitoast';
 
 refs.exSearch.addEventListener('input', toInput);
 refs.exSearch.addEventListener('keydown', toSearch);
+refs.btnSearch.addEventListener('click', toSearch);
 
 function toInput(event) {
   const keyword = event.target.value;
-  if (keyword==='') {
-    refs.exSearchImg.classList.remove('is-hidden');
-  } else {
-    refs.exSearchImg.classList.add('is-hidden');
-  }
+
   if (event.inputType === undefined) {
     renderExercises();
  } 
 }
 
 function toSearch(event) {
-  const keyword = event.target.value;
-  if (event.code === 'Enter') {
-     renderExercises(keyword);
+  const keyword = refs.exSearch.value;
+
+  if (event.target.name === 'search-input' && !(event.code === 'Enter')) {
+    return
   }
+  console.log(keyword);
+  renderExercises(keyword);
 }
 
 function setPerPage() {

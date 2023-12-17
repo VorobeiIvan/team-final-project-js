@@ -95,7 +95,7 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
-  //SubTitele
+  //SubTitle
   updateSubtitle(newActiveCard.lastElementChild.children[0].innerText);
   //Input Search on
   refs.divExSearch.style.display = 'flex'
