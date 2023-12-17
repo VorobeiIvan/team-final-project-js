@@ -22,8 +22,10 @@ export async function renderFavorites() {
   }
 
   if (favoritesList.length === 0) {
-    favoritesNotification.classList.remove('is-hidden');
-    favoritesListWrapper.innerHTML = '';
+     if (favoritesNotification.classList.contains('is-hidden')) {
+       favoritesNotification.classList.remove('is-hidden');
+      }
+      favoritesListWrapper.innerHTML = '';
   } else {
     renderFavoriteExercises(favoritesList);
 
