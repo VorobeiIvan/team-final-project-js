@@ -12,9 +12,9 @@ function mobileMenu() {
     mobileMenu.classList.toggle('is-open');
 
     const scrollLockMethod = !isMenuOpen
-      ? 'disableBodyScroll'
-      : 'enableBodyScroll';
-    bodyScrollLock[scrollLockMethod](document.body);
+      ? bodyScrollLock.disableBodyScroll
+      : bodyScrollLock.enableBodyScroll;
+    scrollLockMethod(document.body);
   }
 
   function handleLinkClick() {
