@@ -9,6 +9,7 @@ export default {
   exTitel: document.querySelector('.exercises-title'),
   exSearch: document.getElementById('exercises-search'),
   divExSearch: document.getElementById('search-wrapper'),
+  btnSearch: document.querySelector('.exercises-search-button'),
   exSearchImg: document.getElementById('search-img'),
   closeModalBtn: document.querySelector('.modal-close-btn'),
   modalMainRef: document.querySelector('.modal-main'),

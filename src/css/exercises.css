@@ -4,7 +4,12 @@
   border-radius: 30px;
   border: 1px solid var(--basic-dark);
   display: none;
-  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .exercises-search-wrapper {
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -16,7 +21,6 @@
 
   .exercises-search-wrapper {
     width: 273px;
-    margin-bottom: 32px;
   }
 }
 
@@ -51,9 +55,17 @@
   color: transparent;
 }
 
+.exercises-search-button {
+  width: 40px;
+}
+
 .exercises-search-img {
   stroke: var(--basic-dark);
   fill: transparent;
+}
+
+.exercises-search-button:hover {
+  transform: scale(1.2);
 }
 
 .exercises-list {
