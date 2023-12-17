@@ -21,7 +21,7 @@ export async function renderFavorites() {
     return
   }
 
-  if (favoritesList.length === 0) {
+  if (favoritesList.length === 0 && favoritesNotification) {
      if (favoritesNotification.classList.contains('is-hidden')) {
        favoritesNotification.classList.remove('is-hidden');
       }
@@ -117,10 +117,10 @@ document.addEventListener('click', e => {
   }
   const updatedFavorites = storageApi.load(FAVORITES_KEY) || [];
 
-  if (updatedFavorites.length === 0) {
+  if (updatedFavorites.length === 0 && favoritesNotification) {
     if (favoritesNotification.classList.contains('is-hidden')) {
       favoritesNotification.classList.remove('is-hidden');
-    }
+    }   
   }
 
 });
