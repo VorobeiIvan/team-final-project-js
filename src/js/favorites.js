@@ -22,8 +22,10 @@ export async function renderFavorites() {
   }
 
   if (favoritesList.length === 0) {
-    favoritesNotification.classList.remove('is-hidden');
-    favoritesListWrapper.innerHTML = '';
+     if (favoritesNotification.classList.contains('is-hidden')) {
+       favoritesNotification.classList.remove('is-hidden');
+      }
+      favoritesListWrapper.innerHTML = '';
   } else {
     renderFavoriteExercises(favoritesList);
 
@@ -116,7 +118,9 @@ document.addEventListener('click', e => {
   const updatedFavorites = storageApi.load(FAVORITES_KEY) || [];
 
   if (updatedFavorites.length === 0) {
-    favoritesNotification.classList.remove('is-hidden');
+    if (favoritesNotification.classList.contains('is-hidden')) {
+      favoritesNotification.classList.remove('is-hidden');
+    }
   }
 
 });

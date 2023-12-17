@@ -34,7 +34,6 @@ export async function renderCategories(filter, page) {
     updateSubtitle();
     //Input Search off
     refs.divExSearch.style.display = 'none';
-    refs.exSearchImg.classList.remove('is-hidden');
   } catch (error) {
     if (error.response && error.response.status === 409) {
       const errorMessage = {
