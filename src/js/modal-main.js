@@ -7,6 +7,7 @@ import { FAVORITES_KEY } from './consts.js';
 import { onCloseRatingModal, onOpenRatingModal } from './components';
 import svgSprite from '../images/sprite.svg';
 import { renderFavorites } from './favorites.js';
+import { loader } from './components';
 
 refs.divCategories.addEventListener('click', handleExerciseCardClick);
 let activeItem;
@@ -42,15 +43,37 @@ export function handleExerciseCardClick(e) {
   openModal(isCard.id);
 }
 
-function openModal(exerciseId) {
-  fetchOneExercise(exerciseId).then(exercise => {
+async function openModal(exerciseId) {
+  const { setLoader, deleteLoader } = loader({ disableScroll: true });
+  try {
+    setLoader();
+    const exercise = await fetchOneExercise(exerciseId);
     activeItem = exercise;
     createCardMarkup(exercise);
     onOpenRatingModal(exerciseId);
     setButtonContent();
-  });
+  } catch (error) {
+    if (error.response && error.response.status === 409) {
+      const errorMessage = {
+        title: 'Error',
+        message: error.response.data.message,
+        position: 'topRight',
+        color: 'red',
+      };
+      return iziToast.show(errorMessage);
+    }
+    const errorMessage = {
+      title: 'Error',
+      message: 'Oops, something went wrong, try again later',
+      color: 'red',
+    };
+    return iziToast.show(errorMessage);
+  } finally {
+    deleteLoader();
+  }
 
   refs.backdrop.classList.remove('is-hidden');
+  refs.modalMain.classList.remove('inactive');
   bodyScrollLock.disableBodyScroll(document.body);
   closeModal();
 }
@@ -64,6 +87,7 @@ const onClose = e => {
   ) {
     onCloseRatingModal();
     refs.backdrop.classList.add('is-hidden');
+    refs.modalMain.classList.add('inactive');
     bodyScrollLock.enableBodyScroll(document.body);
     document.removeEventListener('click', onClose);
     document.removeEventListener('keydown', onClose);

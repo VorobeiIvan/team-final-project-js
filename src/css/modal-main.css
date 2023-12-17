@@ -16,6 +16,9 @@
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 20px;
+
+  opacity: 1;
+  transition: opacity var(--transition);
 }
 
 .modal-container {
@@ -144,7 +147,7 @@
   border: var(--basic-light, #f4f4f4) 1px solid;
   color: var(--basic-light, #f4f4f4);
   transition: background-color var(--transition), border-color var(--transition),
-  color var(--transition);
+    color var(--transition);
 }
 
 .add-to-favorites:hover,

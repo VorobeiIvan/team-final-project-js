@@ -22,4 +22,5 @@ export default {
   body: document.querySelector('body'),
   sun: document.querySelectorAll('.sun'),
   moon: document.querySelectorAll('.moon'),
+  modalMain: document.querySelector('.modal-main'),
 };
