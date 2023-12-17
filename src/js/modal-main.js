@@ -69,7 +69,6 @@ const onClose = e => {
     document.removeEventListener('keydown', onClose);
     refs.closeModalBtn.removeEventListener('click', onClose);
     refs.addFavorite.removeEventListener('click', toggleFavorite);
-    renderFavorites();
   }
 };
 
@@ -87,10 +86,10 @@ export function toggleFavorite() {
     FAVORITES_KEY,
     isInFavorites
       ? savedData.filter(el => el._id !== activeItem?._id)
-      : [...savedData, activeItem]
+      : [...savedData, activeItem],
   );
   setButtonContent();
-
+  renderFavorites();
   iziToast.show({
     message: isInFavorites ? 'Removed from favorites' : 'Added to favorites',
   });
