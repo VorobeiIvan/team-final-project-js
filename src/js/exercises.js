@@ -6,23 +6,27 @@ import { loader } from './components/index.js';
 import iziToast from 'izitoast';
 
 refs.exSearch.addEventListener('input', toInput);
-refs.exSearch.addEventListener('keydown', toSearch);
+refs.exSearch.addEventListener('keyup', toSearch);
 refs.btnSearch.addEventListener('click', toSearch);
+
+let isSubmitted = false;
 
 function toInput(event) {
   const keyword = event.target.value;
 
-  if (event.inputType === undefined) {
+  if (event.inputType === undefined && isSubmitted) {
+    isSubmitted = false;
     renderExercises();
- } 
+  }
 }
 
 function toSearch(event) {
-  const keyword = refs.exSearch.value;
+  const keyword = refs.exSearch.value.trim();
 
-  if (event.target.name === 'search-input' && !(event.code === 'Enter')) {
-    return
+  if (event.target.name === 'search-input' && !(event.code === 'Enter') || !keyword) {
+    return;
   }
+  isSubmitted = true;
   renderExercises(keyword);
 }
 
