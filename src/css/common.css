@@ -39,3 +39,7 @@
 .invalid-input-form {
   border-color: red !important;
 }
+
+.inactive {
+  opacity: 0;
+}
