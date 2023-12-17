@@ -23,7 +23,6 @@ function toSearch(event) {
   if (event.target.name === 'search-input' && !(event.code === 'Enter')) {
     return
   }
-  console.log(keyword);
   renderExercises(keyword);
 }
 
