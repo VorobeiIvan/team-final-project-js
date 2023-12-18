@@ -1,21 +1,15 @@
-<header class="page-header">
-
-    <!-- header container -->
+<header class="page-header" role="banner">
     <div class="container">
-        <div class="header-container ">
-            <!-- header navigation -->
-            <!-- logo -->
-            <a class="logo" href="./index.html">
-                <svg class="social-media-icon" width="132" height="24" aria-label="logo your energy">
+        <div class="header-container">
+            <a class="logo" href="./index.html" aria-label="Logo Your Energy">
+                <svg class="social-media-icon" width="132" height="24" aria-hidden="true">
                     <use href="./images/sprite.svg#logo"></use>
                 </svg>
             </a>
-            <!-- navigation -->
-            <nav class="header-nav">
+            <nav class="header-nav" role="navigation">
                 <ul class="header-nav-list">
-                    <!-- menu -->
                     <li class="header-nav-item">
-                        <a class="header-nav-link " href="./index.html">
+                        <a class="header-nav-link" href="./index.html">
                             Home
                         </a>
                     </li>
@@ -24,80 +18,73 @@
                             Favorites
                         </a>
                     </li>
-
                 </ul>
             </nav>
-            <!-- social media -->
-            <div class="header-social-media-container header-social-media-wrapper">
+            <div class="header-social-media-container header-social-media-wrapper"
+                aria-label="Theme Switch and Social Media">
                 <div>
-                    <label class="switch">
-                        <input type="checkbox" class="theme-switch">
-                        <span class="sun"></span>
-                        <span class="moon">
-                            <span class="star"></span>
-                            <span class="star small"></span>
-                        </span>
-                    </label>
+                    <div class="header-social-media-wrapper">
+                        <label class="switch" aria-label="Toggle Dark Mode">
+                            <input type="checkbox" class="theme-switch">
+                            <span class="sun"></span>
+                            <span class="moon">
+                                <span class="star"></span>
+                                <span class="star small"></span>
+                            </span>
+                        </label>
+                    </div>
                 </div>
-                <ul class="header-social-media-list">
-                    <!-- facebook -->
+                <ul class="header-social-media-list" aria-label="Social Media Links">
                     <li class="header-social-media-item">
                         <a class="header-social-media-link" href="https://www.facebook.com/goITclub/" target="_blank"
-                           rel="noopener noreferrer" aria-label="facebook link">
-                            <svg class="header-social-media-icon" width="28" height="28" aria-label="facebook icon">
+                            rel="noopener noreferrer" aria-label="Facebook">
+                            <svg class="header-social-media-icon" width="28" height="28" aria-hidden="true">
                                 <use href="./images/sprite.svg#facebook"></use>
                             </svg>
                         </a>
                     </li>
-                    <!-- instagram -->
                     <li class="header-social-media-item">
                         <a class="header-social-media-link" href="https://www.instagram.com/goitclub/" target="_blank"
-                           rel="noopener noreferrer" aria-label="instagram link">
-                            <svg class="header-social-media-icon" width="28" height="28" aria-label="instagram icon">
+                            rel="noopener noreferrer" aria-label="Instagram">
+                            <svg class="header-social-media-icon" width="28" height="28" aria-hidden="true">
                                 <use href="./images/sprite.svg#instagram"></use>
                             </svg>
                         </a>
                     </li>
-                    <!-- youtube -->
                     <li class="header-social-media-item">
                         <a class="header-social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
-                           rel="noopener noreferrer" aria-label="youtube link">
-                            <svg class="header-social-media-icon" width="28" height="28" aria-label="youtube icon">
+                            rel="noopener noreferrer" aria-label="Youtube">
+                            <svg class="header-social-media-icon" width="28" height="28" aria-hidden="true">
                                 <use href="./images/sprite.svg#youtube"></use>
                             </svg>
                         </a>
                     </li>
                 </ul>
             </div>
-
-            <!-- mobile burger menu -->
-            <!--mobile header  -->
-            <div class="header-social-media-wrapper toggle-switch">
+            <div class="header-social-media-wrapper toggle-switch" aria-label="Mobile Header and Theme Switch">
                 <div>
                     <div class="header-social-media-wrapper">
                         <label class="switch">
                             <input type="checkbox" class="theme-switch">
                             <span class="sun"></span>
                             <span class="moon">
-                            <span class="star"></span>
-                            <span class="star small"></span>
-                        </span>
+                                <span class="star"></span>
+                                <span class="star small"></span>
+                            </span>
                         </label>
                     </div>
                 </div>
-                <button class="burger-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
-                    <svg class="burger-menu-icon" width="32" height="32" aria-label="burger menu icon for mobile">
+                <button class="burger-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu"
+                    aria-label="Open Mobile Menu">
+                    <svg class="burger-menu-icon" width="32" height="32" aria-hidden="true">
                         <use href="./images/sprite.svg#burger-menu"></use>
                     </svg>
                 </button>
             </div>
-            <!-- modal burger menu  -->
-            <div class="menu-container js-menu-container" id="mobile-menu">
+            <div class="menu-container js-menu-container" id="mobile-menu" aria-label="Mobile Menu">
                 <div class="modal">
-                    <button class="close-btn js-close-menu" type="button"
-                            aria-label="closing button for burger menu mobile">
-                        <svg class="close-modal-btn-icon" width="32" height="32"
-                             aria-label="closing button icon for burger menu mobile">
+                    <button class="close-btn js-close-menu" type="button" aria-label="Close Mobile Menu">
+                        <svg class="close-modal-btn-icon" width="32" height="32" aria-hidden="true">
                             <use href="./images/sprite.svg#close"></use>
                         </svg>
                     </button>
@@ -115,41 +102,33 @@
                             </li>
                         </ul>
                     </nav>
-                    <!-- social media -->
-                    <div class="burger-social-media-container">
+                    <div class="burger-social-media-container" aria-label="Social Media Links">
                         <ul class="burger-social-media-list">
-                            <!-- facebook -->
                             <li class="burger-social-media-item">
                                 <a class="burger-social-media-link" href="https://www.facebook.com/goITclub/"
-                                   target="_blank" rel="noopener noreferrer" aria-label="facebook link">
-                                    <svg class="burger-social-media-icon" width="24" height="24"
-                                         aria-label="facebook icon">
+                                    target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <svg class="burger-social-media-icon" width="24" height="24" aria-hidden="true">
                                         <use href="./images/sprite.svg#facebook"></use>
                                     </svg>
                                 </a>
                             </li>
-                            <!-- instagram -->
                             <li class="burger-social-media-item">
                                 <a class="burger-social-media-link" href="https://www.instagram.com/goitclub/"
-                                   target="_blank" rel="noopener noreferrer" aria-label="instagram link">
-                                    <svg class="burger-social-media-icon" width="24" height="24"
-                                         aria-label="instagram icon">
+                                    target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                    <svg class="burger-social-media-icon" width="24" height="24" aria-hidden="true">
                                         <use href="./images/sprite.svg#instagram"></use>
                                     </svg>
                                 </a>
                             </li>
-                            <!-- youtube -->
                             <li class="burger-social-media-item">
                                 <a class="burger-social-media-link" href="https://www.youtube.com/c/GoIT"
-                                   target="_blank" rel="noopener noreferrer" aria-label="youtube link">
-                                    <svg class="burger-social-media-icon" width="24" height="24"
-                                         aria-label="youtube icon">
+                                    target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+                                    <svg class="burger-social-media-icon" width="24" height="24" aria-hidden="true">
                                         <use href="./images/sprite.svg#youtube"></use>
                                     </svg>
                                 </a>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
