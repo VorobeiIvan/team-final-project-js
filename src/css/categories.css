@@ -3,7 +3,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column-reverse;
-  margin-bottom: 80px;
+
+}
+
+.section-container {
+  padding-bottom: 132px;
 }
 
 .categories-list {
@@ -103,9 +107,7 @@
     margin-bottom: 64px;
   }
 
-  .categories-wrapper {
-    margin-bottom: 100px;
-  }
+
 
   .categories-pagination {
     margin-bottom: 64px;
