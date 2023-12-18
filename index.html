@@ -11,28 +11,22 @@
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/vendor-a3df9737.js">
     <link rel="modulepreload" crossorigin href="/team-final-project-js/assets/burger-menu-ff718f1d.js">
     <link rel="stylesheet" href="/team-final-project-js/assets/vendor-34b8c2a2.css">
-    <link rel="stylesheet" href="/team-final-project-js/assets/styles-67f09714.css">
+    <link rel="stylesheet" href="/team-final-project-js/assets/styles-7ead9cfb.css">
   </head>
 
   <body>
-    <header class="page-header">
-
-    <!-- header container -->
+    <header class="page-header" role="banner">
     <div class="container">
-        <div class="header-container ">
-            <!-- header navigation -->
-            <!-- logo -->
-            <a class="logo" href="./index.html">
-                <svg class="social-media-icon" width="132" height="24" aria-label="logo your energy">
+        <div class="header-container">
+            <a class="logo" href="./index.html" aria-label="Logo Your Energy">
+                <svg class="social-media-icon" width="132" height="24" aria-hidden="true">
                     <use href="/team-final-project-js/assets/sprite-59e25010.svg#logo"></use>
                 </svg>
             </a>
-            <!-- navigation -->
-            <nav class="header-nav">
+            <nav class="header-nav" role="navigation">
                 <ul class="header-nav-list">
-                    <!-- menu -->
                     <li class="header-nav-item">
-                        <a class="header-nav-link " href="./index.html">
+                        <a class="header-nav-link" href="./index.html">
                             Home
                         </a>
                     </li>
@@ -41,80 +35,73 @@
                             Favorites
                         </a>
                     </li>
-
                 </ul>
             </nav>
-            <!-- social media -->
-            <div class="header-social-media-container header-social-media-wrapper">
+            <div class="header-social-media-container header-social-media-wrapper"
+                aria-label="Theme Switch and Social Media">
                 <div>
-                    <label class="switch">
-                        <input type="checkbox" class="theme-switch">
-                        <span class="sun"></span>
-                        <span class="moon">
-                            <span class="star"></span>
-                            <span class="star small"></span>
-                        </span>
-                    </label>
+                    <div class="header-social-media-wrapper">
+                        <label class="switch" aria-label="Toggle Dark Mode">
+                            <input type="checkbox" class="theme-switch">
+                            <span class="sun"></span>
+                            <span class="moon">
+                                <span class="star"></span>
+                                <span class="star small"></span>
+                            </span>
+                        </label>
+                    </div>
                 </div>
-                <ul class="header-social-media-list">
-                    <!-- facebook -->
+                <ul class="header-social-media-list" aria-label="Social Media Links">
                     <li class="header-social-media-item">
                         <a class="header-social-media-link" href="https://www.facebook.com/goITclub/" target="_blank"
-                           rel="noopener noreferrer" aria-label="facebook link">
-                            <svg class="header-social-media-icon" width="28" height="28" aria-label="facebook icon">
+                            rel="noopener noreferrer" aria-label="Facebook">
+                            <svg class="header-social-media-icon" width="28" height="28" aria-hidden="true">
                                 <use href="/team-final-project-js/assets/sprite-59e25010.svg#facebook"></use>
                             </svg>
                         </a>
                     </li>
-                    <!-- instagram -->
                     <li class="header-social-media-item">
                         <a class="header-social-media-link" href="https://www.instagram.com/goitclub/" target="_blank"
-                           rel="noopener noreferrer" aria-label="instagram link">
-                            <svg class="header-social-media-icon" width="28" height="28" aria-label="instagram icon">
+                            rel="noopener noreferrer" aria-label="Instagram">
+                            <svg class="header-social-media-icon" width="28" height="28" aria-hidden="true">
                                 <use href="/team-final-project-js/assets/sprite-59e25010.svg#instagram"></use>
                             </svg>
                         </a>
                     </li>
-                    <!-- youtube -->
                     <li class="header-social-media-item">
                         <a class="header-social-media-link" href="https://www.youtube.com/c/GoIT" target="_blank"
-                           rel="noopener noreferrer" aria-label="youtube link">
-                            <svg class="header-social-media-icon" width="28" height="28" aria-label="youtube icon">
+                            rel="noopener noreferrer" aria-label="Youtube">
+                            <svg class="header-social-media-icon" width="28" height="28" aria-hidden="true">
                                 <use href="/team-final-project-js/assets/sprite-59e25010.svg#youtube"></use>
                             </svg>
                         </a>
                     </li>
                 </ul>
             </div>
-
-            <!-- mobile burger menu -->
-            <!--mobile header  -->
-            <div class="header-social-media-wrapper toggle-switch">
+            <div class="header-social-media-wrapper toggle-switch" aria-label="Mobile Header and Theme Switch">
                 <div>
                     <div class="header-social-media-wrapper">
                         <label class="switch">
                             <input type="checkbox" class="theme-switch">
                             <span class="sun"></span>
                             <span class="moon">
-                            <span class="star"></span>
-                            <span class="star small"></span>
-                        </span>
+                                <span class="star"></span>
+                                <span class="star small"></span>
+                            </span>
                         </label>
                     </div>
                 </div>
-                <button class="burger-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
-                    <svg class="burger-menu-icon" width="32" height="32" aria-label="burger menu icon for mobile">
+                <button class="burger-menu-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu"
+                    aria-label="Open Mobile Menu">
+                    <svg class="burger-menu-icon" width="32" height="32" aria-hidden="true">
                         <use href="/team-final-project-js/assets/sprite-59e25010.svg#burger-menu"></use>
                     </svg>
                 </button>
             </div>
-            <!-- modal burger menu  -->
-            <div class="menu-container js-menu-container" id="mobile-menu">
+            <div class="menu-container js-menu-container" id="mobile-menu" aria-label="Mobile Menu">
                 <div class="modal">
-                    <button class="close-btn js-close-menu" type="button"
-                            aria-label="closing button for burger menu mobile">
-                        <svg class="close-modal-btn-icon" width="32" height="32"
-                             aria-label="closing button icon for burger menu mobile">
+                    <button class="close-btn js-close-menu" type="button" aria-label="Close Mobile Menu">
+                        <svg class="close-modal-btn-icon" width="32" height="32" aria-hidden="true">
                             <use href="/team-final-project-js/assets/sprite-59e25010.svg#close"></use>
                         </svg>
                     </button>
@@ -132,41 +119,33 @@
                             </li>
                         </ul>
                     </nav>
-                    <!-- social media -->
-                    <div class="burger-social-media-container">
+                    <div class="burger-social-media-container" aria-label="Social Media Links">
                         <ul class="burger-social-media-list">
-                            <!-- facebook -->
                             <li class="burger-social-media-item">
                                 <a class="burger-social-media-link" href="https://www.facebook.com/goITclub/"
-                                   target="_blank" rel="noopener noreferrer" aria-label="facebook link">
-                                    <svg class="burger-social-media-icon" width="24" height="24"
-                                         aria-label="facebook icon">
+                                    target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <svg class="burger-social-media-icon" width="24" height="24" aria-hidden="true">
                                         <use href="/team-final-project-js/assets/sprite-59e25010.svg#facebook"></use>
                                     </svg>
                                 </a>
                             </li>
-                            <!-- instagram -->
                             <li class="burger-social-media-item">
                                 <a class="burger-social-media-link" href="https://www.instagram.com/goitclub/"
-                                   target="_blank" rel="noopener noreferrer" aria-label="instagram link">
-                                    <svg class="burger-social-media-icon" width="24" height="24"
-                                         aria-label="instagram icon">
+                                    target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                    <svg class="burger-social-media-icon" width="24" height="24" aria-hidden="true">
                                         <use href="/team-final-project-js/assets/sprite-59e25010.svg#instagram"></use>
                                     </svg>
                                 </a>
                             </li>
-                            <!-- youtube -->
                             <li class="burger-social-media-item">
                                 <a class="burger-social-media-link" href="https://www.youtube.com/c/GoIT"
-                                   target="_blank" rel="noopener noreferrer" aria-label="youtube link">
-                                    <svg class="burger-social-media-icon" width="24" height="24"
-                                         aria-label="youtube icon">
+                                    target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+                                    <svg class="burger-social-media-icon" width="24" height="24" aria-hidden="true">
                                         <use href="/team-final-project-js/assets/sprite-59e25010.svg#youtube"></use>
                                     </svg>
                                 </a>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
@@ -174,13 +153,13 @@
     </div>
 </header>
     <main>
-      <section class="hero-section">
+      <section class="hero-section" aria-labelledby="hero-title">
     <div class="container hero-section-wrapper">
         <div class="hero-title-container">
-            <svg class="hero-title-icon" width="38" height="38">
+            <svg class="hero-title-icon" width="38" height="38" aria-hidden="true">
                 <use href="/team-final-project-js/assets/sprite-59e25010.svg#icon-sun"></use>
             </svg>
-            <h1 class="hero-title">
+            <h1 class="hero-title" id="hero-title">
                 Get <span class="hero-title-span">Body</span> in <br />shape, Stay healthy
             </h1>
             <img class="hero-image-small-desktop" src="/team-final-project-js/assets/hero-small-desktop-0b7df89e.webp"
@@ -192,7 +171,7 @@
             support.
         </p>
 
-        <div class="hero-imag-container">
+        <div class="hero-imag-container" aria-hidden="true">
             <picture class="hero-image">
                 <source media="(max-width: 767px)" srcset="/team-final-project-js/assets/hero-mobile-a127b2f5.webp 1x, /team-final-project-js/assets/hero-mobile@2x-ed2040c7.webp 2x" />
                 <source media="(min-width: 768px) and (max-width: 1279px)" srcset="/team-final-project-js/assets/hero-tablet-71a1da3d.webp 1x, /team-final-project-js/assets/hero-tablet@2x-e2d2217e.webp 2x" />
@@ -201,7 +180,7 @@
             </picture>
         </div>
 
-        <ul class="hero-hashtags-list">
+        <ul class="hero-hashtags-list" aria-label="Hashtags">
             <li class="hero-hashtag-item">Sport</li>
             <li class="hero-hashtag-item">Healthy</li>
             <li class="hero-hashtag-item">Workout</li>
@@ -212,30 +191,15 @@
       <section class="section-container">
   <div class="container categories-container">
     <div class="exercises-header">
-      <h2 class="exercises-title" id="exercises-title">
+      <h2 class="exercises-title" id="exercises-title" aria-labelledby="exercises-title">
         Exercises<span class="exercises-title-span"></span>
       </h2>
       <div class="exercises-filter">
         <div class="exercises-search-wrapper" id="search-wrapper">
-          <input
-            class="exercises-search"
-            id="exercises-search"
-            type="search"
-            name="search-input"
-            placeholder="Search"
-          />
-          <button
-            class="exercises-search-button"
-            type="button"
-            name="btn-search"
-          >
-            <svg
-              class="exercises-search-img"
-              id="search-img"
-              width="18"
-              height="18"
-              aria-label=" search icon"
-            >
+          <input class="exercises-search" id="exercises-search" type="search" name="search-input" placeholder="Search"
+            aria-label="Search exercises" />
+          <button class="exercises-search-button" type="button" name="btn-search" aria-label="Search">
+            <svg class="exercises-search-img" id="search-img" width="18" height="18" aria-label="Search icon">
               <use href="/team-final-project-js/assets/sprite-59e25010.svg#search"></use>
             </svg>
           </button>
@@ -245,29 +209,18 @@
     </div>
 
     <div class="categories-wrapper" id="categories-wrapper">
-      <!-- Quote Content -->
       <div class="quote-container">
         <div class="quote-wrap">
           <div class="quote-wrapper">
             <div class="quote-svg-wrap">
-              <svg
-                class="quote-svg"
-                width="34"
-                height="32"
-                aria-label="icon run man"
-              >
+              <svg class="quote-svg" width="34" height="32" aria-label="Icon run man">
                 <use href="/team-final-project-js/assets/sprite-59e25010.svg#run"></use>
               </svg>
             </div>
             <div class="quote-title-wrap">
               <div class="quote-title">
                 <h3>Quote of the day</h3>
-                <svg
-                  class="quote-title-svg"
-                  width="25"
-                  height="25"
-                  aria-label="icon commas"
-                >
+                <svg class="quote-title-svg" width="25" height="25" aria-label="Icon commas">
                   <use href="/team-final-project-js/assets/sprite-59e25010.svg#commas"></use>
                 </svg>
               </div>
@@ -275,33 +228,15 @@
           </div>
 
           <picture>
-            <source
-              media="(max-width: 767px)"
-              srcset="/team-final-project-js/assets/exercise-mobile-423903f2.webp 1x, /team-final-project-js/assets/exercise-mobile@2x-6ce1db31.webp 2x"
-            />
-            <source
-              media="(min-width: 768px) and (max-width: 1439px)"
-              srcset="/team-final-project-js/assets/exercise-tablet-33498d91.webp 1x, /team-final-project-js/assets/exercise-tablet@2x-459d01e3.webp 2x"
-            />
-            <source
-              media="(min-width: 1280px)"
-              srcset="/team-final-project-js/assets/exercise-desktop-c21abade.webp 1x, /team-final-project-js/assets/exercise-desktop@2x-e5cd4c51.webp 2x"
-            />
-            <img
-              class="quote-img"
-              src="/team-final-project-js/assets/exercise-mobile-423903f2.webp"
-              alt="Exersices"
-            />
+            <source media="(max-width: 767px)" srcset="/team-final-project-js/assets/exercise-mobile-423903f2.webp 1x, /team-final-project-js/assets/exercise-mobile@2x-6ce1db31.webp 2x" />
+            <source media="(min-width: 768px) and (max-width: 1439px)" srcset="/team-final-project-js/assets/exercise-tablet-33498d91.webp 1x, /team-final-project-js/assets/exercise-tablet@2x-459d01e3.webp 2x" />
+            <source media="(min-width: 1280px)" srcset="/team-final-project-js/assets/exercise-desktop-c21abade.webp 1x, /team-final-project-js/assets/exercise-desktop@2x-e5cd4c51.webp 2x" />
+            <img class="quote-img" src="/team-final-project-js/assets/exercise-mobile-423903f2.webp" alt="Quote of the day: Exercises" />
           </picture>
         </div>
         <div class="quote-wrapper article">
           <div class="quote-svg-wrap article">
-            <svg
-              class="quote-svg"
-              width="34"
-              height="32"
-              aria-label="fluent food"
-            >
+            <svg class="quote-svg" width="34" height="32" aria-label="Fluent food">
               <use href="/team-final-project-js/assets/sprite-59e25010.svg#fluent-food"></use>
             </svg>
           </div>
@@ -323,118 +258,103 @@
         </div>
       </div>
 
-      <!-- Categities Content -->
       <div class="categories-pagination">
-        <ul class="categories-list" id="categories"></ul>
-        <!-- Pagination.html -->
-        <div
-          class="tui-pagination pagination"
-          id="tui-pagination-container"
-        ></div>
+        <ul class="categories-list" id="categories" aria-labelledby="categories"></ul>
+        <div class="tui-pagination pagination" id="tui-pagination-container" aria-label="Pagination"></div>
       </div>
     </div>
   </div>
 </section>
-
-      <button class="scroll-up-button" id="scroll-up-btn" style="display:none;" type="button" aria-label="scroll-up button">
-    <svg class="scroll-up-icon" width="16" height="16" aria-label="scroll-up icon">
+      <button class="scroll-up-button" id="scroll-up-btn" style="display:none;" type="button" aria-label="Scroll to top">
+    <svg class="scroll-up-icon" width="16" height="16" aria-hidden="true">
         <use href="/team-final-project-js/assets/sprite-59e25010.svg#arrow-top"></use>
     </svg>
 </button>
       <!-- Modal main -->
-<div class="backdrop is-hidden" data-modal>
-  <div class="modal-main">
-    <button type="button" class="modal-close-btn" data-modal-close>
-      <svg class="modal-icon-close">
+<div class="backdrop is-hidden" data-modal aria-hidden="true">
+  <div class="modal-main" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">
+      <svg class="modal-icon-close" aria-hidden="true">
         <use href="/team-final-project-js/assets/sprite-59e25010.svg#close"></use>
       </svg>
     </button>
-    <div class="modal-container"></div>
-    <div class="buttons">
-      <button class="button add-to-favorites" type="button"></button>
-      <button class="button give-a-rating" type="button">Give a rating</button>
+    <div class="modal-container" aria-hidden="true"></div>
+    <div class="buttons" aria-hidden="true">
+      <button class="button add-to-favorites" type="button" aria-hidden="true"></button>
+      <button class="button give-a-rating" type="button" aria-hidden="true">Give a rating</button>
     </div>
   </div>
 </div>
-       <form class='rating-feedback-form is-hidden'>
-  <button class='close-rating-btn' type='button'>
-    <svg class='close-rating-btn-icon' width='24' height='24'>
+       <form class='rating-feedback-form is-hidden' aria-hidden='true'>
+  <button class='close-rating-btn' type='button' aria-label='Close rating form'>
+    <svg class='close-rating-btn-icon' width='24' height='24' aria-hidden='true'>
       <use href='/team-final-project-js/assets/sprite-59e25010.svg#close'></use>
     </svg>
   </button>
-  <p class='rating-modal-title'>Rating <span class='rating-error'>add rating to submit</span></p>
+  <p class='rating-modal-title'>Rating <span class='rating-error' aria-live='polite'>add rating to submit</span></p>
 
-  <div class='rating-stars'>
+  <div class='rating-stars' role='radiogroup' aria-label='Rating stars'>
     <span class='rating-number'>0.0</span>
-    <input class='star-radio' name='star' id='star1' type='radio' value='1' />
-    <label class='star-label' for='star1' data-value='1'>
-      <svg class='star-icon-rating' width='24' height='24'>
+    <input class='star-radio' name='star' id='star1' type='radio' value='1' aria-labelledby='star1-label' />
+    <label class='star-label' for='star1' data-value='1' id='star1-label'>
+      <svg class='star-icon-rating' width='24' height='24' aria-hidden='true'>
         <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
       </svg>
     </label>
-    <input class='star-radio' name='star' id='star2' type='radio' value='2' />
-    <label class='star-label' for='star2' data-value='2'>
-      <svg class='star-icon-rating' width='24' height='24'>
+    <input class='star-radio' name='star' id='star2' type='radio' value='2' aria-labelledby='star2-label' />
+    <label class='star-label' for='star2' data-value='2' id='star2-label'>
+      <svg class='star-icon-rating' width='24' height='24' aria-hidden='true'>
         <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
       </svg>
     </label>
-    <input class='star-radio' name='star' id='star3' type='radio' value='3' />
-    <label class='star-label' for='star3' data-value='3'>
-      <svg class='star-icon-rating' width='24' height='24'>
+    <input class='star-radio' name='star' id='star3' type='radio' value='3' aria-labelledby='star3-label' />
+    <label class='star-label' for='star3' data-value='3' id='star3-label'>
+      <svg class='star-icon-rating' width='24' height='24' aria-hidden='true'>
         <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
       </svg>
     </label>
-    <input class='star-radio' name='star' id='star4' type='radio' value='4' />
-    <label class='star-label' for='star4' data-value='4'>
-      <svg class='star-icon-rating' width='24' height='24'>
+    <input class='star-radio' name='star' id='star4' type='radio' value='4' aria-labelledby='star4-label' />
+    <label class='star-label' for='star4' data-value='4' id='star4-label'>
+      <svg class='star-icon-rating' width='24' height='24' aria-hidden='true'>
         <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
       </svg>
     </label>
-    <input class='star-radio' name='star' id='star5' type='radio' value='5' />
-    <label class='star-label' for='star5' data-value='5'>
-      <svg class='star-icon-rating' width='24' height='24'>
+    <input class='star-radio' name='star' id='star5' type='radio' value='5' aria-labelledby='star5-label' />
+    <label class='star-label' for='star5' data-value='5' id='star5-label'>
+      <svg class='star-icon-rating' width='24' height='24' aria-hidden='true'>
         <use href='/team-final-project-js/assets/sprite-59e25010.svg#star'></use>
       </svg>
     </label>
-
-
   </div>
+
   <label>
-    <input
-      class='rating-user-email'
-      name='email'
-      placeholder='Email'
-    />
+    <input class='rating-user-email' name='email' placeholder='Email' aria-label='Email' />
   </label>
   <label for='textarea-rating'>
-<textarea
-  id='textarea-rating'
-  class='rating-user-comment'
-  name='review'
-  placeholder='Your comment'
-></textarea>
+    <textarea id='textarea-rating' class='rating-user-comment' name='review' placeholder='Your comment'
+      aria-label='Your comment'></textarea>
   </label>
   <button type='submit' class='rating-submit-btn'>Send</button>
 </form>
     </main>
-       <footer class='footer'>
+       <footer class='footer' aria-labelledby="footer-logo-link">
   <div class='container'>
     <div class='footer-wrapper'>
       <div class='footer-form-wrapper'>
 
         <div class='footer-svg-container flex-column'>
           <div>
-            <a href='./index.html' class='footer-logo-link' aria-label='page header'>
+            <a href='./index.html' class='footer-logo-link' aria-label='Page header' id="footer-logo-link">
               <svg class='footer-logo-link-img' width='132' height='24'>
                 <use href='/team-final-project-js/assets/sprite-59e25010.svg#logo'></use>
               </svg>
             </a>
 
-            <ul class='footer-social-networks'>
+            <ul class='footer-social-networks' aria-label="Social Networks">
               <li class='footer-social-item'>
                 <a class='footer-link-network' href='https://www.facebook.com/goITclub/' target='_blank'
                   aria-label='Facebook' rel='noopener noreferrer'>
-                  <svg class='footer-svg' width='24' height='24' aria-label="facebook icon">
+                  <svg class='footer-svg' width='24' height='24' aria-label="Facebook icon">
                     <use href='/team-final-project-js/assets/sprite-59e25010.svg#facebook'></use>
                   </svg>
                 </a>
@@ -457,63 +377,64 @@
               </li>
             </ul>
           </div>
-          <p class='footer-term-policy-rights hide-mobile'>Your Energy. All rights reserved.</p>
+          <p class='footer-term-policy-rights hide-mobile' aria-label='Your Energy. All rights reserved.'>Your Energy.
+            All rights reserved.</p>
         </div>
 
-
         <div class='flex-column hide-desktop'>
-          <h2 class='footer-title'>
+          <h2 class='footer-title' aria-label="Transforming your body shape with us">
             Transforming your <span class='footer-body-span'>body </span>shape
             with us
           </h2>
           <div class='footer-term-policy-rights'>
-            <a class='link-hover' href='./privacy-policy.html' target='_blank' aria-label='privacy policy'>Privacy
+            <a class='link-hover' href='./privacy-policy.html' target='_blank' aria-label='Privacy policy'>Privacy
               Policy </a>
             <span> / </span>
-            <a class='link-hover' href='./terms-of-service.html' target='_blank' aria-label='terms of service'> Terms of
+            <a class='link-hover' href='./terms-of-service.html' target='_blank' aria-label='Terms of service'> Terms of
               Service</a>
           </div>
         </div>
 
         <div class='flex-column hide-desktop'>
-          <p class='footer-subscribe'>
+          <p class='footer-subscribe' aria-label="Subscribe and learn about new exercises!">
             Subscribe and learn about new exercises!
           </p>
-          <form class='footer-form'>
+          <form class='footer-form' aria-label="Subscription form">
             <label class='footer-label-form-email' for='footer-email-input1'>
               <input class='footer-email-input' name='email' type='email' id='footer-email-input1'
                 placeholder='Email' />
             </label>
-            <button class='footer-btn-email' type='submit' aria-label='submit subscription form'>Send</button>
+            <button class='footer-btn-email' type='submit' aria-label='Submit subscription form'>Send</button>
           </form>
-          <p class='footer-term-policy-rights'>&copy; 2023</p>
+          <p class='footer-term-policy-rights' aria-label='© 2023'>&copy; 2023</p>
         </div>
 
         <div class='flex-column hide-tablet'>
-          <h2 class='footer-title'>
+          <h2 class='footer-title' aria-label="Transforming your body shape with us">
             Transforming your <span class='footer-body-span'>body </span>shape
             with us
           </h2>
-          <p class='footer-subscribe'>
+          <p class='footer-subscribe' aria-label="Subscribe and learn about new exercises!">
             Subscribe and learn about new exercises!
           </p>
-          <form class='footer-form'>
+          <form class='footer-form' aria-label="Subscription form">
             <label class='footer-label-form-email' for='footer-email-input'>
               <input class='footer-email-input' name='email' type='email' id='footer-email-input' placeholder='Email' />
             </label>
-            <button class='footer-btn-email' type='submit' aria-label='submit subscription form'>Send</button>
+            <button class='footer-btn-email' type='submit' aria-label='Submit subscription form'>Send</button>
           </form>
           <div class='footer-flex-wrapper'>
 
             <div class='footer-term-policy-rights'>
-              <p class='hide-copyright'>Your Energy. All rights reserved.</p>
-              <a class='link-hover' href='./privacy-policy.html' target='_blank' aria-label='privacy policy'>Privacy
+              <p class='hide-copyright' aria-label='Your Energy. All rights reserved.'>Your Energy. All rights reserved.
+              </p>
+              <a class='link-hover' href='./privacy-policy.html' target='_blank' aria-label='Privacy policy'>Privacy
                 Policy </a>
               <span> / </span>
-              <a class='link-hover' href='./terms-of-service.html' target='_blank' aria-label='terms of service'> Terms
+              <a class='link-hover' href='./terms-of-service.html' target='_blank' aria-label='Terms of service'> Terms
                 of Service</a>
             </div>
-            <p class='footer-term-policy-rights'>&copy; 2023</p>
+            <p class='footer-term-policy-rights' aria-label='© 2023'>&copy; 2023</p>
           </div>
         </div>
 
