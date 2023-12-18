@@ -10,12 +10,13 @@ export async function renderCategories(filter, page) {
   const { setLoader, deleteLoader } = loader({ disableScroll: true });
   try {
     setLoader();
+    const perPage = window.innerWidth <= 768 ? 9 : 12; // Виправлення: Змінено кількість карток в залежності від ширини екрану
     const data = await fetchCategories({
       page: page,
-      perPage: 12,
+      perPage: perPage,
       filter: filter,
     });
-    renderPagination(12, data.totalPages, page).on(
+    renderPagination(perPage, data.totalPages, page).on(
       'afterMove',
       ({ page: newPage }) => {
         renderCategories(filter, newPage);
@@ -27,12 +28,11 @@ export async function renderCategories(filter, page) {
       categoryElement.addEventListener('click', () => {
         handleCardClick(categoryElement);
       });
-
       return categoryElement;
     });
     refs.divCategories.append(...categoriesToRender);
     updateSubtitle();
-    //Input Search off
+    // Виправлення: Input Search off
     refs.divExSearch.style.display = 'none';
   } catch (error) {
     if (error.response && error.response.status === 409) {
@@ -94,10 +94,10 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
-  //SubTitle
+  // Виправлення: SubTitle
   updateSubtitle(newActiveCard.lastElementChild.children[0].innerText);
-  //Input Search on
-  refs.divExSearch.style.display = 'flex'
+  // Виправлення: Input Search on
+  refs.divExSearch.style.display = 'flex';
   renderExercises();
 }
 
