@@ -1,15 +1,15 @@
 <!-- Modal main -->
-<div class="backdrop is-hidden" data-modal>
-  <div class="modal-main">
-    <button type="button" class="modal-close-btn" data-modal-close>
-      <svg class="modal-icon-close">
+<div class="backdrop is-hidden" data-modal aria-hidden="true">
+  <div class="modal-main" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">
+      <svg class="modal-icon-close" aria-hidden="true">
         <use href="./images/sprite.svg#close"></use>
       </svg>
     </button>
-    <div class="modal-container"></div>
-    <div class="buttons">
-      <button class="button add-to-favorites" type="button"></button>
-      <button class="button give-a-rating" type="button">Give a rating</button>
+    <div class="modal-container" aria-hidden="true"></div>
+    <div class="buttons" aria-hidden="true">
+      <button class="button add-to-favorites" type="button" aria-hidden="true"></button>
+      <button class="button give-a-rating" type="button" aria-hidden="true">Give a rating</button>
     </div>
   </div>
 </div>
