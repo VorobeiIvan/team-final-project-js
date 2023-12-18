@@ -10,7 +10,7 @@ export async function renderCategories(filter, page) {
   const { setLoader, deleteLoader } = loader({ disableScroll: true });
   try {
     setLoader();
-    const perPage = window.innerWidth <= 768 ? 9 : 12; // Виправлення: Змінено кількість карток в залежності від ширини екрану
+    const perPage = window.innerWidth <= 768 ? 9 : 12;
     const data = await fetchCategories({
       page: page,
       perPage: perPage,
@@ -32,7 +32,7 @@ export async function renderCategories(filter, page) {
     });
     refs.divCategories.append(...categoriesToRender);
     updateSubtitle();
-    // Виправлення: Input Search off
+
     refs.divExSearch.style.display = 'none';
   } catch (error) {
     if (error.response && error.response.status === 409) {
@@ -94,9 +94,9 @@ function capitalizeFirstLetter(inputString) {
 
 function handleCardClick(newActiveCard) {
   sessionStorage.setItem('category', JSON.stringify(newActiveCard.dataset));
-  // Виправлення: SubTitle
+
   updateSubtitle(newActiveCard.lastElementChild.children[0].innerText);
-  // Виправлення: Input Search on
+
   refs.divExSearch.style.display = 'flex';
   renderExercises();
 }
