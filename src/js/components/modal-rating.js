@@ -25,6 +25,9 @@ export const onOpenRatingModal = (exerciseId) => {
 export const onCloseRatingModal = () => {
   ratingFormRef.reset();
   ratingFormRef.classList.add('is-hidden');
+  ratingFormRef.classList.remove(INVALID_INPUT_CLASS);
+  const errorsFields =  ratingFormRef.querySelectorAll('.'+INVALID_INPUT_CLASS);
+  errorsFields?.forEach(e => e?.classList.remove(INVALID_INPUT_CLASS))
   number.textContent = '0.0';
   allStars.forEach((el) => el.classList.remove('star-active'));
   allStars.forEach((el) => el.classList.remove('star-checked'));
